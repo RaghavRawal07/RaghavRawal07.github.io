@@ -1,63 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sticky and Fixed Elements</title>
   <style>
     body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-.sticky {
-  position: sticky;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #f1f1f1;
-  padding: 1rem;
-  z-index: 10; /* Ensure sticky element stays on top */
-}
+    .container {
+      /* Change position here */
+      position: fixed; /* Or absolute with defined height and overflow-y: scroll */
+      height: 500px; /* Adjust as needed */
+    }
 
-.fixed {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #f1f1f1;
-  padding: 1rem;
-  z-index: 10; /* Ensure fixed element stays on top */
-}
+    .sticky {
+      position: sticky;
+      top: 50px; /* Adjust as needed */
+      background-color: #f1f1f1;
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+    }
 
-/* Adjust width and height for your elements as needed */
-.sticky, .fixed {
-  width: 200px;
-  height: 50px;
-}
-
-/* Adjust text alignment as needed */
-.sticky, .fixed {
-  text-align: center;
-}
-
-/* Main content styles (optional) */
-main {
-  padding: 2rem;
-}
+    .fixed {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      /* Optional: adjust z-index if needed */
+      z-index: 1000;
+    }
   </style>
 </head>
+
 <body>
-
-  <header class="sticky">
-    </header>
-
-  <main>
-    </main>
-
-  <footer class="fixed">
-    </footer>
-
+  <div class="container">
+    <div class="sticky">
+      <h2>This is a sticky element</h2>
+      <p>It will stick to the top of the page when you scroll</p>
+    </div>
+    <div class="fixed">
+      <h2>This is a fixed element</h2>
+      <p>It will stay fixed in the center of the page</p>
+    </div>
+  </div>
 </body>
+
 </html>
