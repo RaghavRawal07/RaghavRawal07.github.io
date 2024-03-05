@@ -1,164 +1,184 @@
 
-
-<!DOCTYPE html> 
-<html> 
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Login Page </title>
-//  <script>
-
-//         window.VWO = window.VWO || [];
-//         VWO.push(['config', {
-//             storage: {
-//             syncUrl: '/sync.php'
-//         }
-//         }]);
-// session will expire in 2 minutes
-    //         window.VWO.TRACK_SESSION_COOKIE_EXPIRY_CUSTOM = 0.00013888888;
-    //  </script>
-
-<!-- Start VWO Async SmartCode -->
-<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
-<script type='text/javascript' id='vwoCode'>
-    function getQueryStringValue (key) {  
-return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
-} 
-window._vwo_code || (function() {
-var account_id=getQueryStringValue('id')?getQueryStringValue('id'):'18000211',
-version=2.0,
-settings_tolerance=2000,
-hide_element='body',
-hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
-/* DO NOT EDIT BELOW THIS LINE */
-f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(){if(!f){f=true;var e=d.getElementById('_vis_opt_path_hides');if(e)e.parentNode.removeChild(e)}},finished:function(){return f},load:function(e){var t=this.getSettings(),n=d.createElement('script'),i=this;if(t){n.textContent=t;d.getElementsByTagName('head')[0].appendChild(n);if(!w.VWO||VWO.caE){stT.removeItem(cK);i.load(e)}}else{n.fetchPriority='high';n.src=e;n.type='text/javascript';n.onerror=function(){_vwo_code.finish()};d.getElementsByTagName('head')[0].appendChild(n)}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t=d.currentScript,n=d.createElement('style'),i=this.hide_element(),r=t&&!t.async&&i?i+this.hide_element_style():'',c=d.getElementsByTagName('head')[0];n.setAttribute('id','_vis_opt_path_hides');v&&n.setAttribute('nonce',v.nonce);n.setAttribute('type','text/css');if(n.styleSheet)n.styleSheet.cssText=r;else n.appendChild(d.createTextNode(r));c.appendChild(n);this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&vn='+version)}};w._vwo_code=code;code.init();})();
-window._vwo_pc_custom = {
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Start VWO Async SmartCode -->
+    <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+    <script type='text/javascript' id='vwoCode'>
+    window._vwo_code || (function() {
+    var account_id=18000211,
+    version=2.0,
+    settings_tolerance=2000,
+    hide_element='body',
+    hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
+    /* DO NOT EDIT BELOW THIS LINE */
+    f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(){if(!f){f=true;var e=d.getElementById('_vis_opt_path_hides');if(e)e.parentNode.removeChild(e)}},finished:function(){return f},load:function(e){var t=this.getSettings(),n=d.createElement('script'),i=this;if(t){n.textContent=t;d.getElementsByTagName('head')[0].appendChild(n);if(!w.VWO||VWO.caE){stT.removeItem(cK);i.load(e)}}else{n.fetchPriority='high';n.src=e;n.type='text/javascript';n.onerror=function(){_vwo_code.finish()};d.getElementsByTagName('head')[0].appendChild(n)}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t=d.currentScript,n=d.createElement('style'),i=this.hide_element(),r=t&&!t.async&&i?i+this.hide_element_style():'',c=d.getElementsByTagName('head')[0];n.setAttribute('id','_vis_opt_path_hides');v&&n.setAttribute('nonce',v.nonce);n.setAttribute('type','text/css');if(n.styleSheet)n.styleSheet.cssText=r;else n.appendChild(d.createTextNode(r));c.appendChild(n);this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&vn='+version)}};w._vwo_code=code;code.init();})();
+    window._vwo_pc_custom = {
     't': 100, //track
     'a': 100 //analyze
-};
-</script>
-<!-- End VWO Async SmartCode -->
-</head>  
-<body>  
-    <center> <h1> Login Form Edited </h1> </center> 
-        <div id="Login_form" class="container"> 
-            <label>Username : </label> 
-            <input id="username" type="text" placeholder="Enter Username" name="username" required><br/>
-            <label>Password : </label> 
-            <input id="password" type="password" placeholder="Enter Password" name="password" required><br/>
-            <input id="remember_me" type="checkbox" checked="checked"> Remember me
-            <button id="Login" type="submit">Login</button> 
-            <button id="cancel" type="button" class="cancelbtn"> Cancel</button> <br/>
-            Forgot <a id="forgot_password" href="https://ritakumari.wingified.com/"> password? </a><br/><br/>
-            
-            <a id="go_to_cart" href="https://ritakumari.wingified.com/cart.html"> Go to Cart </a><br>
-            <a id="change_domain" href="https://mohit094.github.io/?id=613235">go to mohit's domain</a><br>
-            <a id="change_domain2" href="https://ritathakur29.github.io/?id=613235">go to rita's domain</a><br>
-            <a id="open_new_tab" href="https://ritakumari.wingified.com/?id=613235" target="_blank">This link opens a new tab</a><br>
-        </div> 
-        <div>
-            <br/><br/>
-            <form id="submit_form" action="/action_page.html">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname2" name="fname2" value="John"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname2" name="lname2" value="Doe"><br><br>
-  <input type="checkbox" id="vehicle2" name="vehicle2" value="Bike">
-  <input id="submit2" type="submit" value="Submit">
-</form>
-
-<a href="javascript:void(0)" onclick="history.pushState(null, 'test', 'spa/1.html')" id='historyPush'>History Push New URL || </a><br>
-<a href="javascript:void(0)" onclick="history.pushState(null, 'test', 'spa/2.html')" id='historyPush'>History Push New URL 2|| </a><br>
-<h3 id="revenueGoal" onclick="convertRevenueGoal()">Click me to convert Revenue Goal</h3>
-<h3 id="customConversionGoal" onclick="convertCustomConversionGoal(30)">Click me to convert Custom Conversion Goal</h3>
-
-
-
-        </div>
-        
-
-<h1>Different Elements</h1>
-
-    <!-- Text Link -->
-    <a href="#">Click Me (Text Link)</a><br/>
-    
-    <!-- Button -->
-    <button>Click Me (Button)</button><br/>
-    
-    <!-- Image -->
-    <img src="https://via.placeholder.com/150" alt="Sample Image" /><br/>
-    
-    <!-- Checkbox -->
-    <input type="checkbox" id="checkbox">
-    <label for="checkbox">Check Me (Checkbox)</label><br/>
-    
-    <!-- Radio Button -->
-    <input type="radio" id="radio">
-    <label for="radio">Select Me (Radio Button)</label><br/>
-    
-    <!-- Drop-Down Menu -->
-    <select>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-    </select><br/>
-    
-    <!-- Navigation Menu -->
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-    </ul><br/>
-    
-    <!-- Form Submission Button -->
-    <form action="#">
-        <input type="text" placeholder="Enter text">
-        <input type="submit" value="Submit (Form Submission Button)">
-    </form><br/>
-    
-    <!-- Custom Div Element -->
-    <div style="width: 100px; height: 100px; background-color: #007bff; cursor: pointer;">
-        Click Me (Custom Div)
-    </div><br/>
-    
-    <!-- Table -->
-    <table>
-        <tr>
-            <td>Row 1, Cell 1</td>
-            <td>Row 1, Cell 2</td>
-        </tr>
-        <tr>
-            <td>Row 2, Cell 1</td>
-            <td>Row 2, Cell 2</td>
-        </tr>
-    </table><br/>
-    
-    <!-- Accordion -->
-    <div class="accordion">
-        <h3>Accordion Section 1</h3>
-        <div>
-            <p>Content for Accordion Section 1.</p>
-        </div>
-        <h3>Accordion Section 2</h3>
-        <div>
-            <p>Content for Accordion Section 2.</p>
-        </div>
-    </div><br/>
-    
-    <!-- Modal Dialog -->
-    <div id="modal" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
-        <p>This is a modal dialog.</p>
-        <button id="closeModal">Close</button>
+    };
+    </script>
+    <!-- End VWO Async SmartCode -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tags with Alternate Text</title>
+  </head>
+  <body>
+  
+    <!-- Image Tag -->
+    <div>
+      <img src="example.jpg" alt="This is an example image">
     </div>
-    <button id="openModal">Open Modal Dialog</button><br/>
+    <br>
+    <hr>
     
-    <!-- Embedded Video (YouTube) -->
-    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=qiDiW6tIdKk" frameborder="0" allowfullscreen></iframe><br/>
+    <!-- Input Tag -->
+    <div>
+      <input type="text" placeholder="Enter your text here">
+    </div>
+    <br>
+    <hr>
     
-    <!-- Canvas Element -->
-    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000;">canvas</canvas><br/>
+    <!-- Textarea Tag -->
+    <div>
+      <textarea placeholder="Enter your text here"></textarea>
+    </div>
+    <br>
+    <hr>
     
+    <!-- Anchor Tag -->
+    <a href="#" title="This is a link"></a>
+    <br>
+    <hr>
     
-</body>   
+    <!-- Area Tag -->
+    <map name="example">
+        <area shape="rect" coords="0,0,50,50" alt="Clickable area 1">
+        <area shape="circle" coords="100,100,50" alt="Clickable area 2">
+    </map>
+    <br>
+    <img src="example.jpg" usemap="#example" alt="Map Example">
+    <br>
+    <hr>
+    
+    <!-- Iframe Tag -->
+    <div>
+      <iframe src="https://example.com" title="Example Iframe" width="300" height="200">
+        <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+          <script type='text/javascript' id='vwoCode'>
+          window._vwo_code || (function() {
+          var account_id=18000211,
+          version=2.0,
+          settings_tolerance=2000,
+          hide_element='body',
+          hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
+          /* DO NOT EDIT BELOW THIS LINE */
+          f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(){if(!f){f=true;var e=d.getElementById('_vis_opt_path_hides');if(e)e.parentNode.removeChild(e)}},finished:function(){return f},load:function(e){var t=this.getSettings(),n=d.createElement('script'),i=this;if(t){n.textContent=t;d.getElementsByTagName('head')[0].appendChild(n);if(!w.VWO||VWO.caE){stT.removeItem(cK);i.load(e)}}else{n.fetchPriority='high';n.src=e;n.type='text/javascript';n.onerror=function(){_vwo_code.finish()};d.getElementsByTagName('head')[0].appendChild(n)}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t=d.currentScript,n=d.createElement('style'),i=this.hide_element(),r=t&&!t.async&&i?i+this.hide_element_style():'',c=d.getElementsByTagName('head')[0];n.setAttribute('id','_vis_opt_path_hides');v&&n.setAttribute('nonce',v.nonce);n.setAttribute('type','text/css');if(n.styleSheet)n.styleSheet.cssText=r;else n.appendChild(d.createTextNode(r));c.appendChild(n);this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&vn='+version)}};w._vwo_code=code;code.init();})();
+          window._vwo_pc_custom = {
+          't': 100, //track
+          'a': 100 //analyze
+          };
+          </script>
+      </iframe>
+    </div>
+    <br>
+    <hr>
+    
+    <!-- Object Tag -->
+    <object data="example.pdf" type="application/pdf" title="Example PDF"></object>
+    <br>
+    <hr>
+    
+    <!-- Video Tag -->
+    <video width="320" height="240" controls title="Example Video">
+        <source src="movie.mp4" type="video/mp4">
+    </video>
+    <br>
+    <hr>
+    
+    <!-- Audio Tag -->
+    <audio controls title="Example Audio">
+        <source src="assets/Albele Tange Wale_320(PagalWorld.com.cm).mp3" type="audio/mpeg">
+    </audio>
+    <br>
+    <hr>
+    
+    <!-- Abbr Tag -->
+    <p><abbr title="Hypertext Markup Language">HTML</abbr> is the standard markup language for creating web pages.</p>
+    <br>
+    <hr>
+    
+    <!-- Acronym Tag -->
+    <p><acronym title="World Wide Web Consortium">W3C</acronym> sets standards for the World Wide Web.</p>
+    <br>
+    <hr>
+    
+    <!-- Image Input Tag -->
+    <form action="#" method="post">
+        <input type="image" src="submit.png" alt="Submit Button">
+    </form>
+    <br>
+    <hr>
+    
+    <!-- Track Tag -->
+    <video controls>
+        <source src="movie.mp4" type="video/mp4">
+        <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+    </video>
+    <br>
+    <hr>
+    
+    <!-- Canvas Tag -->
+    <canvas id="exampleCanvas" width="200" height="100">
+        Your browser does not support the canvas element.
+    </canvas>
+    <br>
+    <hr>
+    
+    <!-- Button Tag -->
+    <button>This is a button</button>
+    <br>
+    <hr>
+    
+    <!-- Figcaption Tag -->
+    <figure>
+        <img src="example.jpg" alt="An example image">
+        <figcaption>This is an example image</figcaption>
+    </figure>
+    <br>
+    <hr>
+    
+    <!-- Legend Tag -->
+    <fieldset>
+        <legend>Personal Information</legend>
+        <!-- form fields go here -->
+    </fieldset>
+    <br>
+    <hr>
+    
+    <!-- Optgroup and Option Tags -->
+    <select>
+        <optgroup label="Group 1">
+            <option label="Option 1"></option>
+            <option label="Option 2"></option>
+        </optgroup>
+        <optgroup label="Group 2">
+            <option label="Option 3"></option>
+            <option label="Option 4"></option>
+        </optgroup>
+    </select>
+    <br>
+    <hr>
+    
+    <!-- Progress Tag -->
+    <progress value="45" max="100">50%</progress>
+    <br>
+    <hr>
+    
+    <!-- Meter Tag -->
+    <meter value="0.6" min="0" max="1">60%</meter>
+    <br>
+    <hr>
+  
+  </body>
 </html>
-
- 
