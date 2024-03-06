@@ -23,6 +23,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Tags with Alternate Text</title>
 
+    <script>
+      // JavaScript code to change
+      // the content of <textarea>
+      function changeContent() {
+          document.getElementById(
+              "textArea"
+          ).innerText = "Hiiiii";
+      }
+  </script>
+
     <style>
         #C1{
           background-color: blue;
@@ -47,7 +57,7 @@
   </head>
   <body>
 
-    <p>   This element has extra spacing   and contains <span>a span element</span>.</p>
+    <p>   This element has extra spacing   and contains <span>a span element</span> .</p>
   
     <!-- Image Tag -->
     <div>
@@ -77,13 +87,13 @@
     
     <!-- Textarea Tag -->
     <div>
-      <textarea placeholder="Enter your text here">Hi there1</textarea>
+      <textarea id = 'textArea' placeholder="Enter your text here">Hi there1</textarea>
     </div>
     <br>
     <hr>
 
     <div>
-        <textarea>Hi there2</textarea>
+        <textarea id = 'textArea'></textarea>
       </div>
       <br>
       <hr>
