@@ -13,17 +13,12 @@
     </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> Login Page </title>
-//  <script>
-
-//         window.VWO = window.VWO || [];
-//         VWO.push(['config', {
-//             storage: {
-//             syncUrl: '/sync.php'
-//         }
-//         }]);
-// session will expire in 2 minutes
-    //         window.VWO.TRACK_SESSION_COOKIE_EXPIRY_CUSTOM = 0.00013888888;
-    //  </script>
+<script>
+window.VWO = window.VWO || [];
+window.VWO.push(['onSurveyCompleted', function (data) {
+    console.log(data);
+}])
+    </script>
 
 <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
