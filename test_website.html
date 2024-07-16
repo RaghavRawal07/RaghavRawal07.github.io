@@ -16,6 +16,17 @@
 
 <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+    <script>
+window.VWO = window.VWO || [];
+window.VWO.push(['onSurveyAnswerSubmitted', function(data) {
+   if (!data) {
+       return;
+   }
+   window.dataLayer.push({"SurveyId" : data.surveyId, "QuestionType" : data.questionType, "QuestionText" : data.questionText, "answer": JSON.stringify(data.answers)});
+   window.dataLayer.push({event: 'VWO-survey-answer-submitted'});
+}]);
+   console.log(data);
+    </script>
 <script type='text/javascript' id='vwoCode'>
     function getQueryStringValue (key) {  
 return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
@@ -34,12 +45,6 @@ window._vwo_pc_custom = {
 };
 </script>
 <!-- End VWO Async SmartCode -->
-    <script>
-window.VWO = window.VWO || [];
-window.VWO.push(['onSurveyShown', function (data) {
-    console.log(data);
-}]);
-    </script>
 <!-- <script>
     window.name = "";
 </script> -->
