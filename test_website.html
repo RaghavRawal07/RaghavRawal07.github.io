@@ -18,14 +18,9 @@
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
     <script>
 window.VWO = window.VWO || [];
-window.VWO.push(['onSurveyAnswerSubmitted', function(data) {
-   if (!data) {
-       return;
-   }
+window.VWO.push(['onSurveyCompleted', function (data) {
    console.log(data);
-   window.dataLayer.push({"SurveyId" : data.surveyId, "QuestionType" : data.questionType, "QuestionText" : data.questionText, "answer": JSON.stringify(data.answers)});
-   window.dataLayer.push({event: 'VWO-survey-answer-submitted'});
-}]);
+}])
     </script>
 <script type='text/javascript' id='vwoCode'>
     function getQueryStringValue (key) {  
