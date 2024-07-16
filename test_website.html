@@ -22,10 +22,10 @@ window.VWO.push(['onSurveyAnswerSubmitted', function(data) {
    if (!data) {
        return;
    }
+   console.log(data);
    window.dataLayer.push({"SurveyId" : data.surveyId, "QuestionType" : data.questionType, "QuestionText" : data.questionText, "answer": JSON.stringify(data.answers)});
    window.dataLayer.push({event: 'VWO-survey-answer-submitted'});
 }]);
-   console.log(data);
     </script>
 <script type='text/javascript' id='vwoCode'>
     function getQueryStringValue (key) {  
