@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Ecommerce Template : Product</title>
+
+	<link href="http://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css" />
+
+	<!-- Custom styles for this template (imports bootstrap from LESS) -->
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/social.css" rel="stylesheet">
+	<script type='text/javascript'>
+        var _vwo_clicks = 200000; //this will track first 10 clicks
+	</script>
+
+	<script>
+        window._vwo_pc_custom = {
+            't': 100, //track
+            'a': 100 //analyze
+        };
+	</script>
+	<!--Start Visual Website Optimizer Asynchronous Code -->
+	<script type='text/javascript'>
+        var _vwo_code = (function() {
+            var account_id = location.search.split('id=')[1] ? location.search.split('id=')[1] : '808235';
+            settings_tolerance = 2000,
+                library_tolerance = 2500,
+                use_existing_jquery = false,
+					/* DO NOT EDIT BELOW THIS LINE */
+                f = false, d = document;
+            return {
+                use_existing_jquery: function() {
+                    return use_existing_jquery;
+                },
+                library_tolerance: function() {
+                    return library_tolerance;
+                },
+                finish: function() {
+                    if (!f) {
+                        f = true;
+                        var a = d.getElementById('_vis_opt_path_hides');
+                        if (a) a.parentNode.removeChild(a);
+                    }
+                },
+                finished: function() {
+                    return f;
+                },
+                load: function(a) {
+                    var b = d.createElement('script');
+                    b.src = a;
+                    b.type = 'text/javascript';
+                    b.innerText;
+                    b.onerror = function() {
+                        _vwo_code.finish();
+                    };
+                    d.getElementsByTagName('head')[0].appendChild(b);
+                },
+                init: function() {
+                    settings_timer = setTimeout('_vwo_code.finish()', settings_tolerance);
+                    var a = d.createElement('style'),
+                        b = 'body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',
+                        h = d.getElementsByTagName('head')[0];
+                    a.setAttribute('id', '_vis_opt_path_hides');
+                    a.setAttribute('type', 'text/css');
+                    if (a.styleSheet) a.styleSheet.cssText = b;
+                    else a.appendChild(d.createTextNode(b));
+                    h.appendChild(a);
+                    this.load('//dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&r=' + Math.random());
+                    return settings_timer;
+                }
+            };
+        }());
+        _vwo_settings_timer = _vwo_code.init();
+	</script>
+	<script>
+        function appendQS() {
+            var querystring = window.location.search;
+            $('a.linkUpdate').each(function() {
+                var href = $(this).attr('href');
+                href += querystring;
+                $(this).attr('href', href);
+            });
+        }
+	</script>
+</head>
+
+<body onload="appendQS()">
+
+<div class="container">
+
+	<header>
+		<div class="row">
+			<div class="col-md-4 col-sm-12">
+				<h1 class="logo"><i class="glyphicon glyphicon-tag"></i> My Store</h1>
+				<p class="subtext">Bootstrap Ecommerce Template</p>
+			</div>
+			<!-- col-md-4 -->
+			<div class="col-md-8 col-sm-12">
+				<form class="form-inline">
+					<div class="form-group">
+						<label>Email</label>
+						<input id="emailBox" type="email" class="form-control" placeholder="Enter Email">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input id="passwordBox" type="password" class="form-control" placeholder="Enter Password">
+					</div>
+					<a id="login_Button" class="btn btn-default">Login</a>
+				</form>
+			</div>
+			<!-- col-md-8 -->
+		</div>
+		<!-- row -->
+	</header>
+
+	<!-- Static navbar -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div id="navbar">
+				<ul class="nav navbar-nav">
+					<p class="navbar-text">Home</p>
+					<p class="navbar-text">What's New</p>
+					<p class="navbar-text">Specials</p>
+					<p class="navbar-text">My Account</p>
+
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+		<!--/.container-fluid -->
+	</nav>
+
+	<section id="" class="">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">
+						<img class="main-image" src="img/s5.png" />
+						<h2>List Group With Badges</h2>
+						<ul class="list-group">
+							<li class="list-group-item">New <span class="badge">12</span></li>
+							<li class="list-group-item">Deleted <span class="badge">5</span></li>
+							<li class="list-group-item">Warnings <span class="badge">3</span></li>
+						</ul>
+					</div>
+					<!-- col-md-4 -->
+					<div class="col-md-8">
+						<h2 id="name-heading">Samsung Galaxy S5</h2>
+						<div class="price">$699.99</div>
+						<hr/>
+						Quantity:
+						<input type="text" id="quantity" value="1">
+						</p>
+						<div class="col-md-3">
+							<select class="form-control" name="">
+								<option value="">Color</option>
+								<option value="01">Red</option>
+								<option value="02">Blue</option>
+								<option value="03">Black</option>
+							</select>
+						</div>
+						<ul>
+							<button class="btn btn-success linkUpdate">Add To Cart</button>
+							<a href="buyNow.html" class="btn btn-success linkUpdate">Buy Now</a>
+						</ul>
+
+						<br/>
+						<br/>
+						<br/>
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingOne">
+									<h4 class="panel-title">
+										Description
+									</h4>
+								</div>
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingTwo">
+									<h4 class="panel-title">
+										Specifications
+									</h4>
+								</div>
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<h4 class="panel-title">
+										Related
+										</a>
+									</h4>
+								</div>
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- col-md-8 -->
+				</div>
+				<!-- row -->
+			</div>
+			<!-- col-md-8 -->
+			<div class="col-md-4">
+				<ul class="list-group">
+					<li id="category-one" href="" class="list-group-item">Category One</li>
+					<li id="category-two" href="" class="list-group-item">Category Two</li>
+					<li id="category-three" href="" class="list-group-item">Category Three</li>
+					<li id="category-four" href="" class="list-group-item">Category Four</li>
+					<li id="category-five" href="" class="list-group-item">Category Five</li>
+				</ul>
+				<div class="list-group">
+					<div>
+						<h2>Choose an option</h2>
+						<p>The form below contains three checkboxes. The last option is disabled:</p>
+						<form>
+							<div class="checkbox">
+								<label><input type="checkbox" value="">Option 1</label>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="list-group">
+					<div>
+						<h2>Choose a radio button</h2>
+						<p>The form below contains three radio buttons. The last option is disabled:</p>
+						<form>
+							<div class="radio">
+								<label><input type="radio" name="optradio">Option 1</label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- col-md-4 -->
+		</div>
+		<!-- row -->
+	</section>
+	
+	<div class="row i-am-centered">
+		<div class="col-md-4">
+			<div class="center-block jumbotron text-center center-block thumbnail tbheight">
+				<div>
+					<h4>DYNAMIC ID Text Box</h4>
+					<h6>This is a case where input box id changes every time a page is reloaded</h6>
+				</div>
+				<div id="dynamicID">
+					<input class="dynamicID" type="text" name="myInputs[]">
+					<script>
+                        var div = document.getElementsByClassName('dynamicID');
+                        div[0].setAttribute('id', 'dynamic' + Date.now());
+					</script>
+				</div>
+				<div>
+					<ul>
+						<button class="btn btn-default">Button 1</button>
+						<button class="btn btn-default">Button 2</button>
+						<button class="btn btn-default">Button 3</button>
+						<button class="btn btn-default">Button 4</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="thumbnail tbheight text-center">
+				<div>
+					<h4>Open Modal Dialog</h4>
+				</div>
+				<a id="modal" class="btn btn-default" data-toggle="modal" data-target="#mySpecials"">Click to open Modal</a>
+				<br>
+				<br>
+				<div>
+					<ul>
+						<button class="btn btn-default">Button 1</button>
+						<button class="btn btn-default">Button 2</button>
+						<button class="btn btn-default">Button 3</button>
+						<button class="btn btn-default">Button 4</button>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-4">
+			<div class="thumbnail tbheight jumbotron text-center">
+				<div>
+					<h2>Heading 2 Style</h2>
+					<h6>This has been added so that we have more elements on page</h6>
+				</div>
+				<br>
+				<div>
+					<ul>
+						<button class="btn btn-default">Button 1</button>
+						<button class="btn btn-default">Button 2</button>
+						<button class="btn btn-default">Button 3</button>
+						<button class="btn btn-default">Button 4</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="footer-social-icons">
+		<h4 class="_14 text-center">Follow us on</h4>
+		<ul class="social-icons center-block center" style="margin: auto;">
+			<a href="https://facebook.com" target="_blank" class="social-icon"> <i class="fa fa-facebook"></i></a>
+			<a href="https://twitter.com" target="_blank" class="social-icon"> <i class="fa fa-twitter"></i></a>
+			<a href="https://rss.com" target="_blank" class="social-icon"> <i class="fa fa-rss"></i></a>
+			<a href="https://youtube.com" target="_blank" class="social-icon"> <i class="fa fa-youtube"></i></a>
+			<a href="https://linkedin.com" target="_blank" class="social-icon"> <i class="fa fa-linkedin"></i></a>
+			<a href="https://plus.google.com" target="_blank" class="social-icon"> <i class="fa fa-google-plus"></i></a>
+		</ul>
+	</div>
+
+</div>
+<!-- /container -->
+
+<footer>
+	<p>MyStore Copyright &copy; 2015 - <a href="">Terms</a> &middot; <a href="">Privacy</a></p>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
