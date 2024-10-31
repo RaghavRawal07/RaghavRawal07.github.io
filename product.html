@@ -1,183 +1,339 @@
-<!DOCTYPE html> 
-<html> 
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <style>
-        .container {
-                      display: flex;  /* Make the container a flexbox */
-                   }
-        .second-button {
-                         display: none;
-                       }
-    </style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Login Page </title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<!-- Start VWO Async SmartCode -->
-<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
-<script type='text/javascript' id='vwoCode'>
-    function getQueryStringValue (key) {  
-return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
-} 
-window._vwo_code || (function() {
-var account_id=getQueryStringValue('id')?getQueryStringValue('id'):'808235',
-version=2.0,
-settings_tolerance=2000,
-hide_element='body',
-hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
-/* DO NOT EDIT BELOW THIS LINE */
-f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(){if(!f){f=true;var e=d.getElementById('_vis_opt_path_hides');if(e)e.parentNode.removeChild(e)}},finished:function(){return f},load:function(e){var t=this.getSettings(),n=d.createElement('script'),i=this;if(t){n.textContent=t;d.getElementsByTagName('head')[0].appendChild(n);if(!w.VWO||VWO.caE){stT.removeItem(cK);i.load(e)}}else{n.fetchPriority='high';n.src=e;n.type='text/javascript';n.onerror=function(){_vwo_code.finish()};d.getElementsByTagName('head')[0].appendChild(n)}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t=d.currentScript,n=d.createElement('style'),i=this.hide_element(),r=t&&!t.async&&i?i+this.hide_element_style():'',c=d.getElementsByTagName('head')[0];n.setAttribute('id','_vis_opt_path_hides');v&&n.setAttribute('nonce',v.nonce);n.setAttribute('type','text/css');if(n.styleSheet)n.styleSheet.cssText=r;else n.appendChild(d.createTextNode(r));c.appendChild(n);this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&vn='+version)}};w._vwo_code=code;code.init();})();
-window._vwo_pc_custom = {
-    't': 100, //track
-    'a': 100 //analyze
-};
-</script>
-<!-- End VWO Async SmartCode -->
-<!-- <script>
-    window.name = "";
-</script> -->
-</head>  
-<body>  
-    <div class="container">
-     <div class="div">
-      <div>
-      <button class="test">Button 1</button>
-      </div>
-     </div>
+	<title>Ecommerce Template : Product</title>
 
-        <a href= "https://raghavrawal.wingified.com/E-Commerce-website-html-css-js-master/index.html">Raghav Wingify Website</a>
-        <button onclick="VWO_d.Broadcaster.trigger('tIB', 2)">Execute TIB for HM</button>
-    
-    <div class="div">
-        <div>
-        <button class="test second-button">Button 2</button>
-        </div>
-     </div>
-    </div>
-    <center> <h1> Login Form Edited </h1> </center> 
-        <div id="Login_form" class="container"> 
-            <label>Username : </label> 
-            <input id="username" type="text" placeholder="Enter  Username" name="username" required><br/>
-            <label>Password : </label> 
-            <input id="password" type="password" placeholder="Enter Password" name="password" required><br/>
-            <input id="remember_me" type="checkbox" checked="checked"> Remember me
-            <button id="Login" type="submit">Login</button> 
-            <button id="cancel" type="button" class="cancelbtn"> Cancel</button> <br/>
-            Forgot <a id="forgot_password" href="https://ritakumari.wingified.com/"> password? </a><br/><br/>
-            
-            <a id="go_to_cart" href="https://ritakumari.wingified.com/cart.html"> Go to Cart </a><br>
-            <a id="change_domain" href="https://mohit094.github.io/?id=613235">go to mohit's domain</a><br>
-            <a id="change_domain2" href="https://ritathakur29.github.io/?id=613235">go to rita's domain</a><br>
-            <a id="open_new_tab" href="https://ritakumari.wingified.com/?id=613235" target="_blank">This link opens a new tab</a><br>
-        </div> 
-            <img src = "200w.gif">
-            <img src = "images.jpeg">
-            <img src = "pngtree-landscape-jpg-wallpapers-free-download-picture-image_2668463.jpg">
-        <div>
+	<link href="http://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css" />
 
-            
-            <br/><br/>
-            <form id="submit_form" action="/action_page.html">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname2" name="fname2" value="John"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname2" name="lname2" value="Doe"><br><br>
-  <input type="checkbox" id="vehicle2" name="vehicle2" value="Bike">
-  <input id="submit2" type="submit" value="Submit">
-</form>
+	<!-- Custom styles for this template (imports bootstrap from LESS) -->
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/social.css" rel="stylesheet">
+	<script type='text/javascript'>
+        var _vwo_clicks = 200000; //this will track first 10 clicks
+	</script>
 
-<a href="javascript:void(0)" onclick="history.pushState(null, 'test', 'spa/1.html')" id='historyPush'>History Push New URL || </a><br>
-<a href="javascript:void(0)" onclick="history.pushState(null, 'test', 'spa/2.html')" id='historyPush'>History Push New URL 2|| </a><br>
-<h3 id="revenueGoal" onclick="convertRevenueGoal()">Click me to convert Revenue Goal</h3>
-<h3 id="customConversionGoal" onclick="convertCustomConversionGoal(30)">Click me to convert Custom Conversion Goal</h3>
+	<script>
+        window._vwo_pc_custom = {
+            't': 100, //track
+            'a': 100 //analyze
+        };
+	</script>
+	<!--Start Visual Website Optimizer Asynchronous Code -->
+	<script type='text/javascript'>
+        var _vwo_code = (function() {
+            var account_id = location.search.split('id=')[1] ? location.search.split('id=')[1] : '808235';
+            settings_tolerance = 2000,
+                library_tolerance = 2500,
+                use_existing_jquery = false,
+					/* DO NOT EDIT BELOW THIS LINE */
+                f = false, d = document;
+            return {
+                use_existing_jquery: function() {
+                    return use_existing_jquery;
+                },
+                library_tolerance: function() {
+                    return library_tolerance;
+                },
+                finish: function() {
+                    if (!f) {
+                        f = true;
+                        var a = d.getElementById('_vis_opt_path_hides');
+                        if (a) a.parentNode.removeChild(a);
+                    }
+                },
+                finished: function() {
+                    return f;
+                },
+                load: function(a) {
+                    var b = d.createElement('script');
+                    b.src = a;
+                    b.type = 'text/javascript';
+                    b.innerText;
+                    b.onerror = function() {
+                        _vwo_code.finish();
+                    };
+                    d.getElementsByTagName('head')[0].appendChild(b);
+                },
+                init: function() {
+                    settings_timer = setTimeout('_vwo_code.finish()', settings_tolerance);
+                    var a = d.createElement('style'),
+                        b = 'body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',
+                        h = d.getElementsByTagName('head')[0];
+                    a.setAttribute('id', '_vis_opt_path_hides');
+                    a.setAttribute('type', 'text/css');
+                    if (a.styleSheet) a.styleSheet.cssText = b;
+                    else a.appendChild(d.createTextNode(b));
+                    h.appendChild(a);
+                    this.load('//dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&r=' + Math.random());
+                    return settings_timer;
+                }
+            };
+        }());
+        _vwo_settings_timer = _vwo_code.init();
+	</script>
+	<script>
+        function appendQS() {
+            var querystring = window.location.search;
+            $('a.linkUpdate').each(function() {
+                var href = $(this).attr('href');
+                href += querystring;
+                $(this).attr('href', href);
+            });
+        }
+	</script>
+</head>
 
+<body onload="appendQS()">
 
+<div class="container">
 
-        </div>
-        
+	<header>
+		<div class="row">
+			<div class="col-md-4 col-sm-12">
+				<h1 class="logo"><i class="glyphicon glyphicon-tag"></i> My Store</h1>
+				<p class="subtext">Bootstrap Ecommerce Template</p>
+			</div>
+			<!-- col-md-4 -->
+			<div class="col-md-8 col-sm-12">
+				<form class="form-inline">
+					<div class="form-group">
+						<label>Email</label>
+						<input id="emailBox" type="email" class="form-control" placeholder="Enter Email">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input id="passwordBox" type="password" class="form-control" placeholder="Enter Password">
+					</div>
+					<a id="login_Button" class="btn btn-default">Login</a>
+				</form>
+			</div>
+			<!-- col-md-8 -->
+		</div>
+		<!-- row -->
+	</header>
 
-<h1>Different Elements</h1>
+	<!-- Static navbar -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div id="navbar">
+				<ul class="nav navbar-nav">
+					<p class="navbar-text">Home</p>
+					<p class="navbar-text">What's New</p>
+					<p class="navbar-text">Specials</p>
+					<p class="navbar-text">My Account</p>
 
-    <!-- Text Link -->
-    <a href="#">Click Me (Text Link)</a><br/>
-    
-    <!-- Button -->
-    <button>Click Me (Button)</button><br/>
-    
-    <!-- Image -->
-    <img src="https://via.placeholder.com/150" alt="Sample Image" /><br/>
-    
-    <!-- Checkbox -->
-    <input type="checkbox" id="checkbox">
-    <label for="checkbox">Check Me (Checkbox)</label><br/>
-    
-    <!-- Radio Button -->
-    <input type="radio" id="radio">
-    <label for="radio">Select Me (Radio Button)</label><br/>
-    
-    <!-- Drop-Down Menu -->
-    <select>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-    </select><br/>
-    
-    <!-- Navigation Menu -->
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-    </ul><br/>
-    
-    <!-- Form Submission Button -->
-    <form action="#">
-        <input type="text" placeholder="Enter text">
-        <input type="submit" value="Submit (Form Submission Button)">
-    </form><br/>
-    
-    <!-- Custom Div Element -->
-    <div style="width: 100px; height: 100px; background-color: #007bff; cursor: pointer;">
-        Click Me (Custom Div)
-    </div><br/>
-    
-    <!-- Table -->
-    <table>
-        <tr>
-            <td>Row 1, Cell 1</td>
-            <td>Row 1, Cell 2</td>
-        </tr>
-        <tr>
-            <td>Row 2, Cell 1</td>
-            <td>Row 2, Cell 2</td>
-        </tr>
-    </table><br/>
-    
-    <!-- Accordion -->
-    <div class="accordion">
-        <h3>Accordion Section 1</h3>
-        <div>
-            <p>Content for Accordion Section 1.</p>
-        </div>
-        <h3>Accordion Section 2</h3>
-        <div>
-            <p>Content for Accordion Section 2.</p>
-        </div>
-    </div><br/>
-    
-    <!-- Modal Dialog -->
-    <div id="modal" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
-        <p>This is a modal dialog.</p>
-        <button id="closeModal">Close</button>
-    </div>
-    <button id="openModal">Open Modal Dialog</button><br/>
-    
-    <!-- Embedded Video (YouTube) -->
-    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=qiDiW6tIdKk" frameborder="0" allowfullscreen></iframe><br/>
-    
-    <!-- Canvas Element -->
-    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000;">canvas</canvas><br/>
-    
-    
-</body>   
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+		<!--/.container-fluid -->
+	</nav>
+
+	<section id="" class="">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-4">
+						<img class="main-image" src="img/s5.png" />
+						<h2>List Group With Badges</h2>
+						<ul class="list-group">
+							<li class="list-group-item">New <span class="badge">12</span></li>
+							<li class="list-group-item">Deleted <span class="badge">5</span></li>
+							<li class="list-group-item">Warnings <span class="badge">3</span></li>
+						</ul>
+					</div>
+					<!-- col-md-4 -->
+					<div class="col-md-8">
+						<h2 id="name-heading">Samsung Galaxy S5</h2>
+						<div class="price">$699.99</div>
+						<hr/>
+						Quantity:
+						<input type="text" id="quantity" value="1">
+						</p>
+						<div class="col-md-3">
+							<select class="form-control" name="">
+								<option value="">Color</option>
+								<option value="01">Red</option>
+								<option value="02">Blue</option>
+								<option value="03">Black</option>
+							</select>
+						</div>
+						<ul>
+							<button class="btn btn-success linkUpdate">Add To Cart</button>
+							<a href="buyNow.html" class="btn btn-success linkUpdate">Buy Now</a>
+						</ul>
+
+						<br/>
+						<br/>
+						<br/>
+						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingOne">
+									<h4 class="panel-title">
+										Description
+									</h4>
+								</div>
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingTwo">
+									<h4 class="panel-title">
+										Specifications
+									</h4>
+								</div>
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingThree">
+									<h4 class="panel-title">
+										Related
+										</a>
+									</h4>
+								</div>
+								<div class="panel-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- col-md-8 -->
+				</div>
+				<!-- row -->
+			</div>
+			<!-- col-md-8 -->
+			<div class="col-md-4">
+				<ul class="list-group">
+					<li id="category-one" href="" class="list-group-item">Category One</li>
+					<li id="category-two" href="" class="list-group-item">Category Two</li>
+					<li id="category-three" href="" class="list-group-item">Category Three</li>
+					<li id="category-four" href="" class="list-group-item">Category Four</li>
+					<li id="category-five" href="" class="list-group-item">Category Five</li>
+				</ul>
+				<div class="list-group">
+					<div>
+						<h2>Choose an option</h2>
+						<p>The form below contains three checkboxes. The last option is disabled:</p>
+						<form>
+							<div class="checkbox">
+								<label><input type="checkbox" value="">Option 1</label>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="list-group">
+					<div>
+						<h2>Choose a radio button</h2>
+						<p>The form below contains three radio buttons. The last option is disabled:</p>
+						<form>
+							<div class="radio">
+								<label><input type="radio" name="optradio">Option 1</label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- col-md-4 -->
+		</div>
+		<!-- row -->
+	</section>
+	
+	<div class="row i-am-centered">
+		<div class="col-md-4">
+			<div class="center-block jumbotron text-center center-block thumbnail tbheight">
+				<div>
+					<h4>DYNAMIC ID Text Box</h4>
+					<h6>This is a case where input box id changes every time a page is reloaded</h6>
+				</div>
+				<div id="dynamicID">
+					<input class="dynamicID" type="text" name="myInputs[]">
+					<script>
+                        var div = document.getElementsByClassName('dynamicID');
+                        div[0].setAttribute('id', 'dynamic' + Date.now());
+					</script>
+				</div>
+				<div>
+					<ul>
+						<button class="btn btn-default">Button 1</button>
+						<button class="btn btn-default">Button 2</button>
+						<button class="btn btn-default">Button 3</button>
+						<button class="btn btn-default">Button 4</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="thumbnail tbheight text-center">
+				<div>
+					<h4>Open Modal Dialog</h4>
+				</div>
+				<a id="modal" class="btn btn-default" data-toggle="modal" data-target="#mySpecials"">Click to open Modal</a>
+				<br>
+				<br>
+				<div>
+					<ul>
+						<button class="btn btn-default">Button 1</button>
+						<button class="btn btn-default">Button 2</button>
+						<button class="btn btn-default">Button 3</button>
+						<button class="btn btn-default">Button 4</button>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-4">
+			<div class="thumbnail tbheight jumbotron text-center">
+				<div>
+					<h2>Heading 2 Style</h2>
+					<h6>This has been added so that we have more elements on page</h6>
+				</div>
+				<br>
+				<div>
+					<ul>
+						<button class="btn btn-default">Button 1</button>
+						<button class="btn btn-default">Button 2</button>
+						<button class="btn btn-default">Button 3</button>
+						<button class="btn btn-default">Button 4</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="footer-social-icons">
+		<h4 class="_14 text-center">Follow us on</h4>
+		<ul class="social-icons center-block center" style="margin: auto;">
+			<a href="https://facebook.com" target="_blank" class="social-icon"> <i class="fa fa-facebook"></i></a>
+			<a href="https://twitter.com" target="_blank" class="social-icon"> <i class="fa fa-twitter"></i></a>
+			<a href="https://rss.com" target="_blank" class="social-icon"> <i class="fa fa-rss"></i></a>
+			<a href="https://youtube.com" target="_blank" class="social-icon"> <i class="fa fa-youtube"></i></a>
+			<a href="https://linkedin.com" target="_blank" class="social-icon"> <i class="fa fa-linkedin"></i></a>
+			<a href="https://plus.google.com" target="_blank" class="social-icon"> <i class="fa fa-google-plus"></i></a>
+		</ul>
+	</div>
+
+</div>
+<!-- /container -->
+
+<footer>
+	<p>MyStore Copyright &copy; 2015 - <a href="">Terms</a> &middot; <a href="">Privacy</a></p>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+
 </html>
-
- 
