@@ -92,26 +92,6 @@
             });
         }
 	</script>
-	<script>
-		var i = 0;
-                document.querySelector("#textBox11").onclick = () =>{
-		     console.log("Hi Raghav");
-                     throw new Error("ERROR" + i++)
-		}
-	</script>
-	<script>
-		var j = 10;
-                document.querySelector("#textBox21").onclick = () =>{
-                     throw new Error("ERROR" + j++)
-		}
-	</script>
-	<script>
-		var k = 20;
-                document.querySelector("#label11").onclick = () =>{
-                     throw new Error("ERROR" + k++)
-		}
-	</script>
-	
 </head>
 
 <body onload="appendQS()">
@@ -245,6 +225,9 @@
 				</div>
 				<div style="margin: 5rem;">
 				        <h5 id="label11">Dead and Error Click</h5>
+				</div>
+				<div style="margin: 5rem;">
+				        <h5 id="label21">Dead, Rage and Error Clicks</h5>
 				</div>
 				</div>
 				<div>
@@ -547,7 +530,32 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-
+<script>
+		var i = 0;
+                document.querySelector("#textBox11").onclick = () =>{
+		     console.log("Hi Raghav");
+                     throw new Error("ERROR" + i++)
+		}
+	</script>
+	<script>
+		var j = 10;
+                document.querySelector("#textBox21").onclick = () =>{
+                     throw new Error("ERROR" + j++)
+		}
+	</script>
+	<script>
+		var k = 20;
+                document.querySelector("#label11").onclick = () =>{
+                     throw new Error("ERROR" + k++)
+		}
+</script>
+	<script>
+		var l = 30;
+                document.querySelector("#label21").onclick = () =>{
+                     throw new Error("ERROR" + k++)
+		}
+</script>
+	
 </body>
 
 </html>
