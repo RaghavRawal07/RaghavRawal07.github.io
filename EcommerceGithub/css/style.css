@@ -6835,3 +6835,9 @@ footer {
 .block-header div {
   padding-top: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+    #input-container {
+        flex-direction: column;
+    }
+}
