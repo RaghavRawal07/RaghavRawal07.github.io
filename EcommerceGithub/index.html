@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Ecommerce Template</title>
+
+	<link href="http://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css" />
+
+	<!-- Custom styles for this template (imports bootstrap from LESS) -->
+	<link href="style.css" rel="stylesheet">
+	<link href="social.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type='text/javascript'>
+        //var _vwo_clicks = 200000; //this will track first 10 clicks
+	</script>
+
+	<script>
+        window._vwo_pc_custom = {
+            't': 100, //track
+            'a': 100 //analyze
+        };
+	</script>
+<!-- Start VWO Async SmartCode -->
+<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+<script type='text/javascript' id='vwoCode'>
+window._vwo_code || (function() {
+var account_id = location.search.split('id=')[1] ? location.search.split('id=')[1] : '808235';
+version=2.1,
+settings_tolerance=2000,
+hide_element='body',
+hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;',
+/* DO NOT EDIT BELOW THIS LINE */
+f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={nonce:v&&v.nonce,use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}v&&t.setAttribute('nonce',v.nonce);d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var n=this.getSettings(),i=d.createElement('script'),r=this;t=t||{};if(n){i.textContent=n;d.getElementsByTagName('head')[0].appendChild(i);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200||o.status===304){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var n=this.hide_element(),i=n?n+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=i;else t.appendChild(d.createTextNode(i));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var i=d.createElement('div');i.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';i.setAttribute('id','_vis_opt_path_hides');i.classList.add('_vis_hide_layer');t.parentNode.insertBefore(i,t.nextSibling)}var o=window._vis_opt_url||d.URL,s='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(o)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:s})}else{this.load(s+'&x=true')}}};w._vwo_code=code;code.init();})();
+</script>
+<!-- End VWO Async SmartCode -->
+	<script>
+        function appendQS() {
+            var querystring = window.location.search;
+            $('a.linkUpdate').each(function() {
+                var href = $(this).attr('href');
+                href += querystring;
+                $(this).attr('href', href);
+            });
+        }
+	</script>
+</head>
+
+<body onload="appendQS()">
+
+<div class="container">
+
+	<header>
+		<div class="row">
+			<div class="col-md-4 col-sm-12">
+				<h1 class="logo"><i class="glyphicon glyphicon-tag"></i> My Store</h1>
+				<p class="subtext">Bootstrap Ecommerce Template</p>
+			</div>
+			<!-- col-md-4 -->
+			<div class="col-md-8 col-sm-12">
+				<br class="form-inline">
+					<div class="form-group">
+						<label>Email</label>
+						<input id="emailBox" type="email" class="form-control" placeholder="Enter Email">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input id="passwordBox" type="password" class="form-control" placeholder="Enter Password">
+					</div>
+					<div class="form-group">
+						<label>Hint</label>
+						<input id="hint" type="input" class="form-control" placeholder="VWO">
+					</div>
+					<br> </br>
+					<a id="login_Button" class="btn btn-default" style="display: block; margin: 0 auto;">Login</a>
+				</form>
+			</div>
+			<!-- col-md-8 -->
+		</div>
+		<!-- row -->
+	</header>
+
+	<!-- Static navbar -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div id="navbar">
+				<ul class="nav navbar-nav">
+					<p class="navbar-text">Home</p>
+					<p class="navbar-text">What's New</p>
+					<p class="navbar-text">Specials</p>
+					<p class="navbar-text">My Account</p>
+
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+		<!--/.container-fluid -->
+	</nav>
+
+	<!-- Main component for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<!-- Nav tabs -->
+		<ul class="tablist" role="tablist">
+			<li id="featured" role="presentation" class="active"><a href="#featured-item" aria-controls="featured-item" role="tab" data-toggle="tab">Featured Item</a></li>
+			<li id="bestSeller" role="presentation"><a href="#best-seller" aria-controls="best-seller" role="tab" data-toggle="tab">Best Seller</a></li>
+			<li id="summerDiscount" role="presentation"><a href="#discount" aria-controls="discount" role="tab" data-toggle="tab">Summer Discount</a></li>
+			<li id="premium" role="presentation"><a href="#premium" aria-controls="premium" role="tab" data-toggle="tab">Premium Product</a></li>
+			<li id="giftIdea" role="presentation"><a href="#gift-idea" aria-controls="gift-idea" role="tab" data-toggle="tab">Gift Idea</a></li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="featured-item">
+				<div class="tab-text">
+					<h2>Apple iPhone 6</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
+					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
+				</div>
+				<!-- tab-text -->
+				<img class="slide-img" src="img/iphone.png" />
+			</div>
+			<div role="tabpanel" class="tab-pane" id="best-seller">
+				<div class="tab-text">
+					<h2>Xbox One</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
+					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
+				</div>
+				<!-- tab-text -->
+				<img class="slide-img" src="img/xbox.png" />
+			</div>
+			<div role="tabpanel" class="tab-pane" id="discount">
+				<div class="tab-text">
+					<h2>Playstation 4</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
+					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
+				</div>
+				<!-- tab-text -->
+				<img class="slide-img" src="img/ps4.png" />
+			</div>
+			<div role="tabpanel" class="tab-pane" id="premium">
+				<div class="tab-text">
+					<h2>Microsoft Surface</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
+					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
+				</div>
+				<!-- tab-text -->
+				<img class="slide-img" src="img/surface.png" />
+			</div>
+			<div role="tabpanel" class="tab-pane" id="gift-idea">
+				<div class="tab-text">
+					<h2>Vizio Smart TV</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
+					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
+				</div>
+				<!-- tab-text -->
+				<img class="slide-img" src="img/tv.png" />
+			</div>
+		</div>
+	</div>
+	<!-- jumbotron -->
+	<script src="js/addField.js" language="Javascript" type="text/javascript"></script>
+	<div class="row">
+		<div class="col-md-12 col-centered">
+			<div id="dynamicEle" class="text-center center-block thumbnail tbheight" style=>
+				<div>
+					<h4>DYNAMIC ELEMENT</h4>
+					<h6>Clicking the button more elements are added on the page</h6>
+				</div>
+				<div id="input-container" style="display:flex; padding: auto; justify-content: center;
+">
+				<div id="dynamicInput" style="margin: 5rem;">
+					<h5 id="normal1">Normal Click</h5>
+					<input id="normalclick" type="text" name="myInputs[]">
+				</div>
+				<div id="dynamicInput" style="margin: 5rem;">
+					<h5 id="rage1">Rage Clicks</h5>
+					<input id="rageclicks" type="text" name="myInputs[]">
+				</div>
+				<div style="margin: 5rem;">
+					<h5 id="dead1">Dead Clicks</h5>
+				</div>
+				<div id="dynamicInput" style="margin: 5rem;">
+					<h5 id="error1">Error Click</h5>
+					<input id="errorclicks1" type="text" name="myInputs[]">
+				</div>
+			 </div>
+
+			<div class="col-md-12 col-centered">
+			<div id="dynamicEle" class="text-center center-block thumbnail tbheight" style=>
+
+				<div id="dynamicInput" style="margin: 5rem;">
+					<h5 id="ragedead1">Rage and Dead Clicks</h5>
+				</div>
+				
+				<div id="dynamicInput" style="margin: 5rem;">
+					<h5 id="rageerror1">Rage and Error Clicks</h5>
+					<input id="rageerrorclicks1" type="text" name="myInputs[]">
+				</div>
+				
+				<div style="margin: 5rem;">
+				        <h5 id="deaderror1">Dead and Error Click</h5>
+				</div>
+				<div style="margin: 5rem;">
+				        <h5 id="deadrageerror1">Dead, Rage and Error Clicks</h5>
+				</div>
+			</div>
+				
+				<div>
+					<a id="addDynamic" class="btn btn-default" onClick="addInput('dynamicInput')">Add another text input</a>
+					<!--<input id="addDynamic" type="button" value="Add another text input" class="btn btn-default" onClick="addInput('dynamicInput');">-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row i-am-centered">
+		<div class="col-md-4">
+			<div class="center-block jumbotron text-center center-block thumbnail tbheight">
+				<div>
+					<h4>DYNAMIC ID Text Box</h4>
+					<h6>This is a case where input box id changes every time a page is reloaded</h6>
+				</div>
+				<div id="dynamicID">
+					<input class="dynamicID" type="text" name="myInputs[]">
+					<script>
+                        var div = document.getElementsByClassName('dynamicID');
+                        div[0].setAttribute('id', 'dynamic' + Date.now());
+					</script>
+				</div>
+				<div>
+					<ul>
+						<button class="btn btn-default">Button 1</button>
+						<button class="btn btn-default">Button 2</button>
+						<button class="btn btn-default">Button 3</button>
+						<button class="btn btn-default">Button 4</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="thumbnail tbheight text-center">
+				<div>
+					<h4 id=openModalDialog>Open Modal Dialog</h4>
+				</div>
+				<a id="modal" class="btn btn-default" data-toggle="modal" data-target="#mySpecials"">Click to open Modal</a>
+			<br>
+				<br>
+				<div>
+					<ul>
+						<button class="btn btn-default">Button 1</button>
+						<button class="btn btn-default">Button 2</button>
+						<button class="btn btn-default">Button 3</button>
+						<button class="btn btn-default">Button 4</button>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-4">
+			<div class="thumbnail tbheight jumbotron text-center">
+				<div>
+					<h2 id=heading2>Heading 2 Style</h2>
+					<h6>This has been added so that we have more elements on page</h6>
+				</div>
+				<br>
+				<div>
+					<ul>
+						<button class="btn btn-default">Button 1</button>
+						<button class="btn btn-default">Button 2</button>
+						<button class="btn btn-default">Button 3</button>
+						<button class="btn btn-default">Button 4</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<ul class="list-group">
+				<li id="category-one" href="" class="list-group-item">Category One</li>
+				<li id="category-two" href="" class="list-group-item">Category Two</li>
+				<li id="category-three" href="" class="list-group-item">Category Three</li>
+				<li id="category-four" href="" class="list-group-item">Category Four</li>
+				<li id="category-five" href="" class="list-group-item">Category Five</li>
+			</ul>
+		</div>
+		<div class="col-md-4">
+			<div class="list-group">
+				<div>
+					<h2 id=choose>Choose an option</h2>
+					<p>The form below contains three checkboxes. The last option is disabled:</p>
+					<form>
+						<div class="checkbox">
+							<label><input type="checkbox" value="">Option 1</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="list-group">
+				<div>
+					<h2>Choose a radio button</h2>
+					<p>The form below contains three radio buttons. The last option is disabled:</p>
+					<form>
+						<div class="radio">
+							<label><input type="radio" name="optradio">Option 1</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		</div>
+	<section id="products" class="">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="thumbnail" id="sg5">
+					<img src="img/s5.png">
+					<div class="caption">
+						<h4 class="pull-right">$699.99</h4>
+						<h4>Samsung Galaxy S5</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod</p>
+					</div>
+					<!-- caption -->
+					<div class="ratings" id="">
+						<p class="pull-right">15 Reviews</p>
+						<p>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+						</p>
+					</div>
+				</div>
+				<!-- thumbnail -->
+			</div>
+			<!-- col-md-4 -->
+			<div class="col-md-4">
+				<div class="thumbnail" id="xbox">
+					<img src="img/xbox.png">
+					<div class="caption">
+						<h4 class="pull-right">$399.99</h4>
+						<h4>Xbox One</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod</p>
+					</div>
+					<!-- caption -->
+					<div class="ratings" id="">
+						<p class="pull-right">8 Reviews</p>
+						<p>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star-empty"></span>
+						</p>
+					</div>
+				</div>
+				<!-- thumbnail -->
+			</div>
+			<!-- col-md-4 -->
+			<div class="col-md-4">
+				<div class="thumbnail" id="ps4">
+					<img src="img/ps4.png">
+					<div class="caption">
+						<h4 class="pull-right">$699.99</h4>
+						<h4>Playstation 4</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod</p>
+					</div>
+					<!-- caption -->
+					<div class="ratings" id="">
+						<p class="pull-right">4 Reviews</p>
+						<p>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+						</p>
+					</div>
+				</div>
+				<!-- thumbnail -->
+			</div>
+			<!-- col-md-4 -->
+		</div>
+		<!-- row -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="thumbnail" id="smartTv">
+					<img src="img/tv.png">
+					<div class="caption">
+						<h4 class="pull-right">$599.99</h4>
+						<h4>Vizio Smart TV</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod</p>
+					</div>
+					<!-- caption -->
+					<div class="ratings" id="">
+						<p class="pull-right">12 Reviews</p>
+						<p>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star-empty"></span>
+						</p>
+					</div>
+				</div>
+				<!-- thumbnail -->
+			</div>
+			<!-- col-md-4 -->
+			<div class="col-md-4">
+				<div class="thumbnail" id="msSurface">
+					<img src="img/surface.png">
+					<div class="caption">
+						<h4 class="pull-right">$499.99</h4>
+						<h4>Microsoft Surface</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod</p>
+					</div>
+					<!-- caption -->
+					<div class="ratings" id="">
+						<p class="pull-right">9 Reviews</p>
+						<p>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span class="glyphicon glyphicon-star-empty"></span>
+							<span class="glyphicon glyphicon-star-empty"></span>
+						</p>
+					</div>
+				</div>
+				<!-- thumbnail -->
+			</div>
+			<!-- col-md-4 -->
+			<div class="col-md-4">
+				<div class="thumbnail" id="iphone">
+					<img src="img/iphone.png">
+					<div class="caption">
+						<h4 class="pull-right">$599.99</h4>
+						<h4>iPhone 5</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod</p>
+					</div>
+					<!-- caption -->
+					<div class="ratings" id="">
+						<p class="pull-right">22 Reviews</p>
+						<p>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+						</p>
+					</div>
+				</div>
+				<!-- thumbnail -->
+			</div>
+			<!-- col-md-4 -->
+		</div>
+		<!-- row -->
+
+	</section>
+	
+	<div class="footer-social-icons">
+		<h4 class="_14 text-center">Follow us on</h4>
+		<ul class="social-icons center-block center" style="margin: auto;">
+			<a href="https://facebook.com" target="_blank" class="social-icon"> <i class="fa fa-facebook"></i></a>
+			<a href="https://twitter.com" target="_blank" class="social-icon"> <i class="fa fa-twitter"></i></a>
+			<a href="https://rss.com" target="_blank" class="social-icon"> <i class="fa fa-rss"></i></a>
+			<a href="https://youtube.com" target="_blank" class="social-icon"> <i class="fa fa-youtube"></i></a>
+			<a href="https://linkedin.com" target="_blank" class="social-icon"> <i class="fa fa-linkedin"></i></a>
+			<a href="https://plus.google.com" target="_blank" class="social-icon"> <i class="fa fa-google-plus"></i></a>
+		</ul>
+	</div>
+
+
+<!-- /container -->
+<div id="mySpecials" role="dialog" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" data-dismiss="modal" class="close btn btn-warning pull-right"><i class="fa fa-times"></i></button>
+				<h4 class="modal-title">Special Message</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Message</label>
+						<div class="col-sm-6">
+							<textarea rows="10" ng-model="message" class="form-control"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-6">
+							<button type="submit" data-dismiss="modal" class="btn btn-default">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>MyStore Copyright &copy; 2017 - Terms &middot; Privacy</p>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script>
+		var i = 0;
+                document.querySelector("#errorclicks1").onclick = () =>{
+                     throw new Error("ERROR" + i++)
+		}
+	</script>
+	<script>
+		var j = 10;
+                document.querySelector("#rageerrorclicks1").onclick = () =>{
+                     throw new Error("ERROR" + j++)
+		}
+	</script>
+	<script>
+		var k = 20;
+                document.querySelector("#deaderror1").onclick = () =>{
+                     throw new Error("ERROR" + k++)
+		}
+</script>
+	<script>
+		var l = 30;
+                document.querySelector("#deadrageerror1").onclick = () =>{
+                     throw new Error("ERROR" + k++)
+		}
+</script>
+	
+</body>
+
+</html>
