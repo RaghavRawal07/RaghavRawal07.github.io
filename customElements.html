@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Elements Heatmap Testing</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .click-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            z-index: 10000;
+        }
+    </style>
+<!-- Start VWO Async SmartCode -->
+<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+<script type='text/javascript' id='vwoCode'>
+window._vwo_code || (function() {
+var account_id = location.search.split('id=')[1] ? location.search.split('id=')[1] : '808235';
+version=2.1,
+settings_tolerance=2000,
+hide_element='body',
+hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;',
+/* DO NOT EDIT BELOW THIS LINE */
+f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={nonce:v&&v.nonce,use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}v&&t.setAttribute('nonce',v.nonce);d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var n=this.getSettings(),i=d.createElement('script'),r=this;t=t||{};if(n){i.textContent=n;d.getElementsByTagName('head')[0].appendChild(i);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200||o.status===304){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var n=this.hide_element(),i=n?n+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=i;else t.appendChild(d.createTextNode(i));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var i=d.createElement('div');i.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';i.setAttribute('id','_vis_opt_path_hides');i.classList.add('_vis_hide_layer');t.parentNode.insertBefore(i,t.nextSibling)}var o=window._vis_opt_url||d.URL,s='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(o)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:s})}else{this.load(s+'&x=true')}}};w._vwo_code=code;code.init();})();
+</script>
+<!-- End VWO Async SmartCode -->
+</head>
+<body>
+    <!-- Click Counter -->
+    <div class="click-counter">
+        <div>Clicks: <span id="clickCount">0</span></div>
+        <div>Last: <span id="lastClick">None</span></div>
+    </div>
+
+    <!-- Custom Elements Website -->
+    <heatmap-header></heatmap-header>
+    <heatmap-hero></heatmap-hero>
+    <heatmap-features></heatmap-features>
+    <heatmap-buttons></heatmap-buttons>
+    <heatmap-zones></heatmap-zones>
+    <heatmap-form></heatmap-form>
+    <heatmap-gallery></heatmap-gallery>
+    <heatmap-footer></heatmap-footer>
+
+    <script>
+        // Global click tracking
+        let clickCount = 0;
+        const clickCountEl = document.getElementById('clickCount');
+        const lastClickEl = document.getElementById('lastClick');
+
+        function trackClick(clickType, event) {
+            clickCount++;
+            clickCountEl.textContent = clickCount;
+            lastClickEl.textContent = clickType;
+            console.log(`Custom Element Click: ${clickType} at (${event.clientX}, ${event.clientY})`);
+        }
+
+        // Heatmap Header Custom Element
+        class HeatmapHeader extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            position: fixed;
+                            top: 0;
+                            width: 100%;
+                            z-index: 1000;
+                        }
+                        .header {
+                            background: rgba(255, 255, 255, 0.95);
+                            backdrop-filter: blur(10px);
+                            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+                        }
+                        .nav {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 1rem 2rem;
+                            max-width: 1200px;
+                            margin: 0 auto;
+                        }
+                        .logo {
+                            font-size: 1.8rem;
+                            font-weight: bold;
+                            color: #667eea;
+                            cursor: pointer;
+                        }
+                        .nav-links {
+                            display: flex;
+                            list-style: none;
+                            gap: 2rem;
+                        }
+                        .nav-link {
+                            color: #333;
+                            text-decoration: none;
+                            padding: 0.5rem 1rem;
+                            border-radius: 5px;
+                            transition: all 0.3s ease;
+                            cursor: pointer;
+                        }
+                        .nav-link:hover {
+                            color: #667eea;
+                            background: rgba(102, 126, 234, 0.1);
+                        }
+                    </style>
+                    <header class="header">
+                        <nav class="nav">
+                            <div class="logo" data-click="custom-logo">CustomElements</div>
+                            <ul class="nav-links">
+                                <li><span class="nav-link" data-click="custom-nav-home">Home</span></li>
+                                <li><span class="nav-link" data-click="custom-nav-features">Features</span></li>
+                                <li><span class="nav-link" data-click="custom-nav-buttons">Buttons</span></li>
+                                <li><span class="nav-link" data-click="custom-nav-zones">Zones</span></li>
+                                <li><span class="nav-link" data-click="custom-nav-forms">Forms</span></li>
+                            </ul>
+                            <heatmap-button type="cta" click-id="custom-header-cta">Get Started</heatmap-button>
+                        </nav>
+                    </header>
+                `;
+
+                this.shadowRoot.addEventListener('click', this.handleClick.bind(this));
+            }
+
+            handleClick(e) {
+                const target = e.target.closest('[data-click]');
+                if (target) {
+                    trackClick(target.getAttribute('data-click'), e);
+                }
+            }
+        }
+
+        // Heatmap Button Custom Element
+        class HeatmapButton extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {
+                const type = this.getAttribute('type') || 'primary';
+                const size = this.getAttribute('size') || 'medium';
+                const clickId = this.getAttribute('click-id') || '';
+
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: inline-block;
+                        }
+                        .btn {
+                            border: none;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            font-family: inherit;
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        .btn-small { padding: 0.5rem 1rem; font-size: 0.9rem; }
+                        .btn-medium { padding: 0.8rem 1.5rem; font-size: 1rem; }
+                        .btn-large { padding: 1.2rem 2.5rem; font-size: 1.2rem; }
+                        
+                        .btn-primary { background: #3498db; color: white; }
+                        .btn-secondary { background: transparent; color: white; border: 2px solid white; }
+                        .btn-cta { 
+                            background: linear-gradient(45deg, #667eea, #764ba2); 
+                            color: white; 
+                            border-radius: 25px;
+                            padding: 0.8rem 1.5rem;
+                        }
+                        .btn-test {
+                            background: rgba(255, 255, 255, 0.2);
+                            color: white;
+                            border: 2px solid rgba(255, 255, 255, 0.3);
+                        }
+                        
+                        .btn:hover {
+                            transform: translateY(-2px);
+                            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                        }
+                        .btn-test:hover {
+                            background: white;
+                            color: #f5576c;
+                            transform: scale(1.05);
+                        }
+                        .btn:active {
+                            transform: scale(0.95);
+                        }
+                    </style>
+                    <button class="btn btn-${size} btn-${type}" data-click="${clickId}">
+                        <slot></slot>
+                    </button>
+                `;
+
+                const button = this.shadowRoot.querySelector('button');
+                button.addEventListener('click', (e) => {
+                    if (clickId) {
+                        trackClick(clickId, e);
+                    }
+                    this.addRipple(e);
+                });
+            }
+
+            addRipple(e) {
+                const button = this.shadowRoot.querySelector('button');
+                const ripple = document.createElement('span');
+                const rect = button.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.6);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    left: ${x}px;
+                    top: ${y}px;
+                    width: ${size}px;
+                    height: ${size}px;
+                    pointer-events: none;
+                `;
+                
+                button.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            }
+        }
+
+        // Heatmap Hero Custom Element
+        class HeatmapHero extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            height: 100vh;
+                            color: white;
+                        }
+                        .hero {
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;
+                            padding: 0 2rem;
+                        }
+                        .hero-content h1 {
+                            font-size: 3.5rem;
+                            margin-bottom: 1rem;
+                            animation: fadeInUp 1s ease forwards;
+                        }
+                        .hero-content p {
+                            font-size: 1.2rem;
+                            margin-bottom: 2rem;
+                            animation: fadeInUp 1s ease 0.3s forwards;
+                        }
+                        .hero-buttons {
+                            display: flex;
+                            gap: 1rem;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            animation: fadeInUp 1s ease 0.6s forwards;
+                        }
+                        @keyframes fadeInUp {
+                            from { opacity: 0; transform: translateY(30px); }
+                            to { opacity: 1; transform: translateY(0); }
+                        }
+                    </style>
+                    <section class="hero">
+                        <div class="hero-content">
+                            <h1>Custom Elements Heatmap</h1>
+                            <p>Test true custom web components with shadow DOM encapsulation</p>
+                            <div class="hero-buttons">
+                                <heatmap-button type="primary" click-id="custom-hero-start">Start Testing</heatmap-button>
+                                <heatmap-button type="secondary" click-id="custom-hero-learn">Learn More</heatmap-button>
+                            </div>
+                        </div>
+                    </section>
+                `;
+            }
+        }
+
+        // Heatmap Feature Card Custom Element
+        class HeatmapCard extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {
+                const icon = this.getAttribute('icon') || '🔧';
+                const title = this.getAttribute('title') || 'Feature';
+                const clickId = this.getAttribute('click-id') || '';
+
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                        }
+                        .card {
+                            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                            padding: 2rem;
+                            border-radius: 15px;
+                            text-align: center;
+                            transition: transform 0.3s ease;
+                            cursor: pointer;
+                            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                            height: 100%;
+                        }
+                        .card:hover {
+                            transform: translateY(-10px);
+                            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+                        }
+                        .icon {
+                            font-size: 3rem;
+                            margin-bottom: 1rem;
+                            display: block;
+                        }
+                        .card h3 {
+                            font-size: 1.5rem;
+                            margin-bottom: 1rem;
+                            color: #333;
+                        }
+                        .card p {
+                            color: #666;
+                            line-height: 1.6;
+                        }
+                    </style>
+                    <div class="card" data-click="${clickId}">
+                        <span class="icon">${icon}</span>
+                        <h3>${title}</h3>
+                        <p><slot></slot></p>
+                    </div>
+                `;
+
+                this.shadowRoot.addEventListener('click', (e) => {
+                    if (clickId) {
+                        trackClick(clickId, e);
+                    }
+                });
+            }
+        }
+
+        // Heatmap Features Section Custom Element
+        class HeatmapFeatures extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            padding: 5rem 0;
+                            background: white;
+                        }
+                        .features {
+                            max-width: 1200px;
+                            margin: 0 auto;
+                            padding: 0 2rem;
+                        }
+                        .title {
+                            text-align: center;
+                            font-size: 2.5rem;
+                            margin-bottom: 3rem;
+                            color: #333;
+                        }
+                        .grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                            gap: 2rem;
+                        }
+                    </style>
+                    <section class="features">
+                        <h2 class="title">Custom Element Features</h2>
+                        <div class="grid">
+                            <heatmap-card icon="🔧" title="Web Components" click-id="custom-feature-components">
+                                True custom elements with shadow DOM encapsulation and reusability
+                            </heatmap-card>
+                            <heatmap-card icon="🎯" title="Click Tracking" click-id="custom-feature-tracking">
+                                Advanced click tracking with custom element integration
+                            </heatmap-card>
+                            <heatmap-card icon="🔒" title="Encapsulation" click-id="custom-feature-encapsulation">
+                                Shadow DOM provides style and behavior encapsulation
+                            </heatmap-card>
+                            <heatmap-card icon="⚡" title="Performance" click-id="custom-feature-performance">
+                                Optimized custom elements for better performance
+                            </heatmap-card>
+                            <heatmap-card icon="🧩" title="Reusable" click-id="custom-feature-reusable">
+                                Modular components that can be reused across applications
+                            </heatmap-card>
+                            <heatmap-card icon="📊" title="Analytics Ready" click-id="custom-feature-analytics">
+                                Built-in analytics and heatmap tracking capabilities
+                            </heatmap-card>
+                        </div>
+                    </section>
+                `;
+            }
+        }
+
+        // Heatmap Buttons Section Custom Element
+        class HeatmapButtons extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            padding: 5rem 0;
+                            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+                            color: white;
+                        }
+                        .section {
+                            max-width: 1200px;
+                            margin: 0 auto;
+                            padding: 0 2rem;
+                            text-align: center;
+                        }
+                        .title {
+                            font-size: 2.5rem;
+                            margin-bottom: 1rem;
+                        }
+                        .subtitle {
+                            font-size: 1.2rem;
+                            margin-bottom: 3rem;
+                        }
+                        .button-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                            gap: 1.5rem;
+                            margin-top: 2rem;
+                        }
+                    </style>
+                    <section class="section">
+                        <h2 class="title">Custom Button Testing</h2>
+                        <p class="subtitle">Test different custom button components</p>
+                        <div class="button-grid">
+                            <heatmap-button type="test" size="small" click-id="custom-btn-small-1">Small Custom</heatmap-button>
+                            <heatmap-button type="test" size="medium" click-id="custom-btn-medium-1">Medium Custom</heatmap-button>
+                            <heatmap-button type="test" size="large" click-id="custom-btn-large-1">Large Custom</heatmap-button>
+                            <heatmap-button type="test" size="small" click-id="custom-btn-small-2">Tiny</heatmap-button>
+                            <heatmap-button type="test" size="medium" click-id="custom-btn-medium-2">Regular</heatmap-button>
+                            <heatmap-button type="test" size="large" click-id="custom-btn-large-2">Big Custom</heatmap-button>
+                            <heatmap-button type="test" size="small" click-id="custom-btn-small-3">Mini</heatmap-button>
+                            <heatmap-button type="test" size="medium" click-id="custom-btn-medium-3">Standard</heatmap-button>
+                            <heatmap-button type="test" size="large" click-id="custom-btn-large-3">Jumbo Custom</heatmap-button>
+                        </div>
+                    </section>
+                `;
+            }
+        }
+
+        // Heatmap Zone Custom Element
+        class HeatmapZone extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {
+                const color = this.getAttribute('color') || 'blue';
+                const clickId = this.getAttribute('click-id') || '';
+
+                const colorMap = {
+                    'red': 'linear-gradient(45deg, #ff6b6b, #ee5a24)',
+                    'green': 'linear-gradient(45deg, #4ecdc4, #44a08d)',
+                    'blue': 'linear-gradient(45deg, #45b7d1, #96c93d)',
+                    'yellow': 'linear-gradient(45deg, #f9ca24, #f0932b)',
+                    'purple': 'linear-gradient(45deg, #eb4d4b, #6639a6)',
+                    'violet': 'linear-gradient(45deg, #6c5ce7, #a29bfe)'
+                };
+
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                        }
+                        .zone {
+                            height: 150px;
+                            border-radius: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: white;
+                            font-weight: bold;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            background: ${colorMap[color] || colorMap.blue};
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        .zone:hover {
+                            transform: scale(1.05) rotate(2deg);
+                            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                        }
+                        .zone::before {
+                            content: '';
+                            position: absolute;
+                            top: -50%;
+                            left: -50%;
+                            width: 200%;
+                            height: 200%;
+                            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+                            transform: rotate(45deg);
+                            transition: all 0.6s;
+                            opacity: 0;
+                        }
+                        .zone:hover::before {
+                            animation: shine 0.6s ease-in-out;
+                            opacity: 1;
+                        }
+                        @keyframes shine {
+                            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+                            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+                        }
+                    </style>
+                    <div class="zone" data-click="${clickId}">
+                        <slot></slot>
+                    </div>
+                `;
+
+                this.shadowRoot.addEventListener('click', (e) => {
+                    if (clickId) {
+                        trackClick(clickId, e);
+                    }
+                    this.flashColor();
+                });
+            }
+
+            flashColor() {
+                const zone = this.shadowRoot.querySelector('.zone');
+                const originalBackground = zone.style.background;
+                zone.style.background = '#fff';
+                setTimeout(() => {
+                    zone.style.background = originalBackground;
+                }, 200);
+            }
+        }
+
+        // Heatmap Zones Section Custom Element
+        class HeatmapZones extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            padding: 5rem 0;
+                            background: white;
+                        }
+                        .section {
+                            max-width: 1200px;
+                            margin: 0 auto;
+                            padding: 0 2rem;
+                        }
+                        .title {
+                            text-align: center;
+                            font-size: 2.5rem;
+                            margin-bottom: 1rem;
+                            color: #333;
+                        }
+                        .subtitle {
+                            text-align: center;
+                            font-size: 1.1rem;
+                            margin-bottom: 3rem;
+                            color: #666;
+                        }
+                        .zones-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                            gap: 1.5rem;
+                        }
+                    </style>
+                    <section class="section">
+                        <h2 class="title">Custom Click Zones</h2>
+                        <p class="subtitle">Test different colored custom zone components</p>
+                        <div class="zones-grid">
+                            <heatmap-zone color="red" click-id="custom-zone-red">Red Custom Zone</heatmap-zone>
+                            <heatmap-zone color="green" click-id="custom-zone-green">Green Custom Zone</heatmap-zone>
+                            <heatmap-zone color="blue" click-id="custom-zone-blue">Blue Custom Zone</heatmap-zone>
+                            <heatmap-zone color="yellow" click-id="custom-zone-yellow">Yellow Custom Zone</heatmap-zone>
+                            <heatmap-zone color="purple" click-id="custom-zone-purple">Purple Custom Zone</heatmap-zone>
+                            <heatmap-zone color="violet" click-id="custom-zone-violet">Violet Custom Zone</heatmap-zone>
+                        </div>
+                    </section>
+                `;
+            }
+        }
+
+        // Heatmap Form Custom Element
+        class HeatmapForm extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            padding: 5rem 0;
+                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                            color: white;
+                        }
+                        .section {
+                            max-width: 600px;
+                            margin: 0 auto;
+                            padding: 0 2rem;
+                        }
+                        .title {
+                            text-align: center;
+                            font-size: 2.5rem;
+                            margin-bottom: 3rem;
+                        }
+                        .form-container {
+                            background: rgba(255, 255, 255, 0.1);
+                            padding: 2rem;
+                            border-radius: 15px;
+                            backdrop-filter: blur(10px);
+                        }
+                        .form-group {
+                            margin-bottom: 1.5rem;
+                        }
+                        .form-group label {
+                            display: block;
+                            margin-bottom: 0.5rem;
+                            font-weight: 600;
+                        }
+                        .form-input {
+                            width: 100%;
+                            padding: 0.8rem;
+                            border: none;
+                            border-radius: 8px;
+                            background: rgba(255, 255, 255, 0.9);
+                            color: #333;
+                            font-size: 1rem;
+                            transition: all 0.3s ease;
+                        }
+                        .form-input:focus {
+                            outline: none;
+                            box-shadow: 0 0 0 2px #667eea;
+                            background: white;
+                        }
+                        textarea.form-input {
+                            height: 100px;
+                            resize: vertical;
+                            font-family: inherit;
+                        }
+                        .checkbox-group {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 1rem;
+                        }
+                        .checkbox-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            cursor: pointer;
+                        }
+                        .form-buttons {
+                            display: flex;
+                            gap: 1rem;
+                            margin-top: 2rem;
+                        }
+                    </style>
+                    <section class="section">
+                        <h2 class="title">Custom Form Testing</h2>
+                        <div class="form-container">
+                            <form id="customForm">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" class="form-input" placeholder="Enter name" data-click="custom-input-name">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-input" placeholder="Enter email" data-click="custom-input-email">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Message</label>
+                                    <textarea class="form-input" placeholder="Your message" data-click="custom-textarea-message"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Interests</label>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="web" data-click="custom-checkbox-web">
+                                            <label for="web">Web Components</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="design" data-click="custom-checkbox-design">
+                                            <label for="design">Custom Design</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-buttons">
+                                    <heatmap-button type="primary" click-id="custom-form-submit">Submit Custom Form</heatmap-button>
+                                    <heatmap-button type="secondary" click-id="custom-form-reset">Reset</heatmap-button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                `;
+
+                this.shadowRoot.addEventListener('click', this.handleClick.bind(this));
+                
+                const form = this.shadowRoot.getElementById('customForm');
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Custom form submitted! (Test only)');
+                });
+            }
+
+            handleClick(e) {
+                const target = e.target.closest('[data-click]');
+                if (target) {
+                    trackClick(target.getAttribute('data-click'), e);
+                }
+            }
+        }
+
+        // Heatmap Gallery Custom Element
+        class HeatmapGallery extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            padding: 5rem 0;
+                            background: #f8f9fa;
+                        }
+                        .section {
+                            max-width: 1200px;
+                            margin: 0 auto;
+                            padding: 0 2rem;
+                        }
+                        .title {
+                            text-align: center;
+                            font-size: 2.5rem;
+                            margin-bottom: 3rem;
+                            color: #333;
+                        }
+                        .gallery-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                            gap: 1.5rem;
+                        }
+                        .gallery-item {
+                            height: 150px;
+                            background: linear-gradient(45deg, #667eea, #764ba2);
+                            border-radius: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: white;
+                            font-weight: bold;
+                            cursor: pointer;
+                            transition: transform 0.3s ease;
+                        }
+                        .gallery-item:hover {
+                            transform: scale(1.05);
+                            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                        }
+                    </style>
+                    <section class="section">
+                        <h2 class="title">Custom Gallery</h2>
+                        <div class="gallery-grid">
+                            <div class="gallery-item" data-click="custom-gallery-1">Custom Item 1</div>
+                            <div class="gallery-item" data-click="custom-gallery-2">Custom Item 2</div>
+                            <div class="gallery-item" data-click="custom-gallery-3">Custom Item 3</div>
+                            <div class="gallery-item" data-click="custom-gallery-4">Custom Item 4</div>
+                            <div class="gallery-item" data-click="custom-gallery-5">Custom Item 5</div>
+                            <div class="gallery-item" data-click="custom-gallery-6">Custom Item 6</div>
+                        </div>
+                    </section>
+                `;
+
+                this.shadowRoot.addEventListener('click', this.handleClick.bind(this));
+            }
+
+            handleClick(e) {
+                const target = e.target.closest('[data-click]');
+                if (target) {
+                    trackClick(target.getAttribute('data-click'), e);
+                }
+            }
+        }
+
+        // Heatmap Footer Custom Element
+        class HeatmapFooter extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            background: #2c3e50;
+                            color: white;
+                            padding: 3rem 0 1rem;
+                        }
+                        .footer-content {
+                            max-width: 1200px;
+                            margin: 0 auto;
+                            padding: 0 2rem;
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                            gap: 2rem;
+                        }
+                        .footer-section h3 {
+                            margin-bottom: 1rem;
+                            color: #667eea;
+                        }
+                        .footer-section ul {
+                            list-style: none;
+                        }
+                        .footer-section ul li {
+                            margin-bottom: 0.5rem;
+                        }
+                        .footer-link {
+                            color: #bdc3c7;
+                            text-decoration: none;
+                            transition: color 0.3s ease;
+                            cursor: pointer;
+                        }
+                        .footer-link:hover {
+                            color: #667eea;
+                        }
+                        .social-icons {
+                            display: flex;
+                            gap: 1rem;
+                            margin-top: 1rem;
+                        }
+                        .social-icon {
+                            width: 40px;
+                            height: 40px;
+                            background: #667eea;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: white;
+                            cursor: pointer;
+                            transition: transform 0.3s ease;
+                        }
+                        .social-icon:hover {
+                            transform: translateY(-3px);
+                            background: #764ba2;
+                        }
+                        .footer-bottom {
+                            text-align: center;
+                            padding-top: 2rem;
+                            margin-top: 2rem;
+                            border-top: 1px solid #34495e;
+                            color: #bdc3c7;
+                        }
+                    </style>
+                    <footer>
+                        <div class="footer-content">
+                            <div class="footer-section">
+                                <h3>Custom Links</h3>
+                                <ul>
+                                    <li><span class="footer-link" data-click="custom-footer-home">Home</span></li>
+                                    <li><span class="footer-link" data-click="custom-footer-about">About</span></li>
+                                    <li><span class="footer-link" data-click="custom-footer-contact">Contact</span></li>
+                                </ul>
+                            </div>
+                            <div class="footer-section">
+                                <h3>Components</h3>
+                                <ul>
+                                    <li><span class="footer-link" data-click="custom-footer-buttons">Custom Buttons</span></li>
+                                    <li><span class="footer-link" data-click="custom-footer-zones">Custom Zones</span></li>
+                                    <li><span class="footer-link" data-click="custom-footer-forms">Custom Forms</span></li>
+                                </ul>
+                            </div>
+                            <div class="footer-section">
+                                <h3>Connect</h3>
+                                <div class="social-icons">
+                                    <div class="social-icon" data-click="custom-social-twitter">T</div>
+                                    <div class="social-icon" data-click="custom-social-github">G</div>
+                                    <div class="social-icon" data-click="custom-social-linkedin">L</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <p>&copy; 2024 Custom Elements Heatmap. Built with Web Components API.</p>
+                        </div>
+                    </footer>
+                `;
+
+                this.shadowRoot.addEventListener('click', this.handleClick.bind(this));
+            }
+
+            handleClick(e) {
+                const target = e.target.closest('[data-click]');
+                if (target) {
+                    trackClick(target.getAttribute('data-click'), e);
+                }
+            }
+        }
+
+        // Register all custom elements
+        customElements.define('heatmap-header', HeatmapHeader);
+        customElements.define('heatmap-button', HeatmapButton);
+        customElements.define('heatmap-hero', HeatmapHero);
+        customElements.define('heatmap-card', HeatmapCard);
+        customElements.define('heatmap-features', HeatmapFeatures);
+        customElements.define('heatmap-buttons', HeatmapButtons);
+        customElements.define('heatmap-zone', HeatmapZone);
+        customElements.define('heatmap-zones', HeatmapZones);
+        customElements.define('heatmap-form', HeatmapForm);
+        customElements.define('heatmap-gallery', HeatmapGallery);
+        customElements.define('heatmap-footer', HeatmapFooter);
+
+        // Add global styles for animations
+        const globalStyle = document.createElement('style');
+        globalStyle.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(globalStyle);
+
+        console.log('✅ All custom elements registered successfully!');
+        console.log('🎯 Custom elements with shadow DOM are ready for heatmap testing');
+    </script>
+</body>
+</html>
