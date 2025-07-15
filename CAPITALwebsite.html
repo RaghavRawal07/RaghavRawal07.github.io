@@ -14,6 +14,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title> Login Page </title>
 
+    <script>
+  window.VWO.push(['onSurveyShown', function (data) {
+    console.log("onSurveyShown")
+}]);
+
+window.VWO.push(['onSurveyAnswerSubmitted', function (data) {
+    console.log("onSurveyAnswerSubmitted")
+}]);
+
+window.VWO.push(['onSurveyCompleted', function (data) {
+    console.log("onSurveyCompleted")
+}]);
+
+window.VWO.push(['onSurveyClosed', function (data) {
+    console.log("onSurveyClosed")
+}]);
+
+window.VWO.push(['onSurveyMinimized', function (data) {
+    console.log("onSurveyMinimized")
+}]);
+    </script>
+
 <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
     <script>
