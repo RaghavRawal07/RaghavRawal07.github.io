@@ -20,7 +20,9 @@
         //var _vwo_clicks = 200000; //this will track first 10 clicks
 	</script>
 
-	<script> window.VWO.push(['onSurveyShown', function (data) {
+	<script> 
+		window.VWO = window.VWO || [];
+		window.VWO.push(['onSurveyShown', function (data) {
     console.log("onSurveyShown")
 }]);
 
