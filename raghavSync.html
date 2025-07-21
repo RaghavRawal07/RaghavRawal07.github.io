@@ -62,13 +62,13 @@ window.VWO.push(['survey.setThankyouTimeout', 10000]);
 </script>  -->
     
 <!-- Start VWO Sync SmartCode -->
-<script src="https://dev.visualwebsiteoptimizer.com/lib/808235.js" id='vwoCode'>
-</script>
 <script>
-     _vwo_pc_custom = {
-            a: 100,
-            t: 100
-        };
+  var account_id = location.search.split('id=')[1] ? location.search.split('id=')[1] : '808235';
+  var script = document.createElement('script');
+  script.referrerPolicy = "no-referrer-when-downgrade";
+  script.src = "https://dev.visualwebsiteoptimizer.com/lib/" + account_id + ".js";
+  script.id = "vwoCode";
+  document.head.appendChild(script);
 </script>
 <!-- End VWO SmartCode -->
     
