@@ -20,6 +20,28 @@
         //var _vwo_clicks = 200000; //this will track first 10 clicks
 	</script>
 
+	<script> window.VWO.push(['onSurveyShown', function (data) {
+    console.log("onSurveyShown")
+}]);
+
+window.VWO.push(['onSurveyAnswerSubmitted', function (data) {
+    console.log("onSurveyAnswerSubmitted")
+}]);
+
+window.VWO.push(['onSurveyCompleted', function (data) {
+    console.log("onSurveyCompleted")
+}]);
+
+window.VWO.push(['onSurveyClosed', function (data) {
+    console.log("onSurveyClosed")
+}]);
+
+window.VWO.push(['onSurveyMinimized', function (data) {
+    console.log("onSurveyMinimized")
+}]);
+
+	</script>
+
  <!-- Start VWO SmartCode --> 
 <script referrerPolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/lib/31000283.js" id="vwoCode"></script> 
 <!-- End VWO SmartCode -->
