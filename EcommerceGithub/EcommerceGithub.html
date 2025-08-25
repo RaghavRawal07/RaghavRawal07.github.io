@@ -19,13 +19,7 @@
 	<script type='text/javascript'>
         //var _vwo_clicks = 200000; //this will track first 10 clicks
 	</script>
-<!-- 
-	<script>
-        window._vwo_pc_custom = {
-            't': 100, //track
-            'a': 100 //analyze
-        };
-	</script> -->
+
 <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
 <script type='text/javascript' id='vwoCode'>
@@ -314,152 +308,415 @@ f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+
 			</div>
 		</div>
 		</div>
-	<section id="products" class="">
-		<div class="row">
-			<div class="col-md-4">
-				<div class="thumbnail" id="sg5">
-					<img>
-					<div class="caption">
-						<h4 class="pull-right">$699.99</h4>
-						<h4>Samsung Galaxy S5</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod</p>
-					</div>
-					<!-- caption -->
-					<div class="ratings" id="">
-						<p class="pull-right">15 Reviews</p>
-						<p>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-						</p>
-					</div>
-				</div>
-				<!-- thumbnail -->
-			</div>
-			<!-- col-md-4 -->
-			<div class="col-md-4">
-				<div class="thumbnail" id="xbox">
-					<img>
-					<div class="caption">
-						<h4 class="pull-right">$399.99</h4>
-						<h4>Xbox One</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod</p>
-					</div>
-					<!-- caption -->
-					<div class="ratings" id="">
-						<p class="pull-right">8 Reviews</p>
-						<p>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star-empty"></span>
-						</p>
+	<section id="Clicks for Campaigns" class="text-center">
+        <H2 id="clicksForCampaigns" class="text-center mb-4">Clicks for Campaigns</H2>
+		<div class="container">
+			<!-- Row 1: Control Converted and Control Not Converted -->
+			<div class="row mb-4">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Test Campaign Control Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickTestCampaign">Normal Click</h5>
+								<input id="normalClickTestCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickTestCampaign">Rage Clicks</h5>
+								<input id="rageClickTestCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickTestCampaignControlConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickTestCampaign">Error Click</h5>
+								<input id="errorClickTestCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
 					</div>
 				</div>
-				<!-- thumbnail -->
-			</div>
-			<!-- col-md-4 -->
-			<div class="col-md-4">
-				<div class="thumbnail" id="ps4">
-					<img>
-					<div class="caption">
-						<h4 class="pull-right">$699.99</h4>
-						<h4>Playstation 4</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod</p>
-					</div>
-					<!-- caption -->
-					<div class="ratings" id="">
-						<p class="pull-right">4 Reviews</p>
-						<p>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-						</p>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Test Campaign Control Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickTestCampaign">Normal Click</h5>
+								<input id="normalClickTestCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickTestCampaign">Rage Clicks</h5>
+								<input id="rageClickTestCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickTestCampaignControlNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickTestCampaign">Error Click</h5>
+								<input id="errorClickTestCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
 					</div>
 				</div>
-				<!-- thumbnail -->
 			</div>
-			<!-- col-md-4 -->
+			
+			<!-- Row 2: Variation Converted and Variation Not Converted -->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Test Campaign Variation Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickTestCampaign">Normal Click</h5>
+								<input id="normalClickTestCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickTestCampaign">Rage Clicks</h5>
+								<input id="rageClickTestCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickTestCampaignVariationConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickTestCampaign">Error Click</h5>
+								<input id="errorClickTestCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Test Campaign Variation Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickTestCampaign">Normal Click</h5>
+								<input id="normalClickTestCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickTestCampaign">Rage Clicks</h5>
+								<input id="rageClickTestCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickTestCampaignVariationNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickTestCampaign">Error Click</h5>
+								<input id="errorClickTestCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- row -->
-		<div class="row">
-			<div class="col-md-4">
-				<div class="thumbnail" id="smartTv">
-					<img>
-					<div class="caption">
-						<h4 class="pull-right">$599.99</h4>
-						<h4>Vizio Smart TV</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod</p>
-					</div>
-					<!-- caption -->
-					<div class="ratings" id="">
-						<p class="pull-right">12 Reviews</p>
-						<p>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star-empty"></span>
-						</p>
-					</div>
-				</div>
-				<!-- thumbnail -->
-			</div>
-			<!-- col-md-4 -->
-			<div class="col-md-4">
-				<div class="thumbnail" id="msSurface">
-					<img>
-					<div class="caption">
-						<h4 class="pull-right">$499.99</h4>
-						<h4>Microsoft Surface</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod</p>
-					</div>
-					<!-- caption -->
-					<div class="ratings" id="">
-						<p class="pull-right">9 Reviews</p>
-						<p>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star-empty"></span>
-							<span class="glyphicon glyphicon-star-empty"></span>
-							<span class="glyphicon glyphicon-star-empty"></span>
-						</p>
-					</div>
-				</div>
-				<!-- thumbnail -->
-			</div>
-			<!-- col-md-4 -->
-			<div class="col-md-4">
-				<div class="thumbnail" id="iphone">
-					<img>
-					<div class="caption">
-						<h4 class="pull-right">$599.99</h4>
-						<h4>iPhone 5</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod</p>
-					</div>
-					<!-- caption -->
-					<div class="ratings" id="">
-						<p class="pull-right">22 Reviews</p>
-						<p>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-							<span class="glyphicon glyphicon-star"></span>
-						</p>
-					</div>
-				</div>
-				<!-- thumbnail -->
-			</div>
-			<!-- col-md-4 -->
-		</div>
-		<!-- row -->
+		<!-- container -->
+	</section>
 
+	<!-- Multivariate Campaign Section -->
+	<section id="Clicks for Multivariate Campaigns" class="text-center">
+		<H2 id="clicksForMultivariateCampaigns" class="text-center mb-4">Clicks for Multivariate Campaigns</H2>
+		<div class="container">
+			<!-- Row 1: Control Converted and Control Not Converted -->
+			<div class="row mb-4">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Multivariate Campaign Control Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickMultivariateCampaign">Normal Click</h5>
+								<input id="normalClickMultivariateCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickMultivariateCampaign">Rage Clicks</h5>
+								<input id="rageClickMultivariateCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickMultivariateCampaignControlConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickMultivariateCampaign">Error Click</h5>
+								<input id="errorClickMultivariateCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Multivariate Campaign Control Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickMultivariateCampaign">Normal Click</h5>
+								<input id="normalClickMultivariateCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickMultivariateCampaign">Rage Clicks</h5>
+								<input id="rageClickMultivariateCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickMultivariateCampaignControlNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickMultivariateCampaign">Error Click</h5>
+								<input id="errorClickMultivariateCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Row 2: Variation Converted and Variation Not Converted -->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Multivariate Campaign Variation Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickMultivariateCampaign">Normal Click</h5>
+								<input id="normalClickMultivariateCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickMultivariateCampaign">Rage Clicks</h5>
+								<input id="rageClickMultivariateCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickMultivariateCampaignVariationConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickMultivariateCampaign">Error Click</h5>
+								<input id="errorClickMultivariateCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Multivariate Campaign Variation Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickMultivariateCampaign">Normal Click</h5>
+								<input id="normalClickMultivariateCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickMultivariateCampaign">Rage Clicks</h5>
+								<input id="rageClickMultivariateCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickMultivariateCampaignVariationNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickMultivariateCampaign">Error Click</h5>
+								<input id="errorClickMultivariateCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- container -->
+	</section>
+
+	<!-- Split Campaign Section -->
+	<section id="Clicks for Split Campaigns" class="text-center">
+		<H2 id="clicksForSplitCampaigns" class="text-center mb-4">Clicks for Split Campaigns</H2>
+		<div class="container">
+			<!-- Row 1: Control Converted and Control Not Converted -->
+			<div class="row mb-4">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Split Campaign Control Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickSplitCampaign">Normal Click</h5>
+								<input id="normalClickSplitCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickSplitCampaign">Rage Clicks</h5>
+								<input id="rageClickSplitCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickSplitCampaignControlConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickSplitCampaign">Error Click</h5>
+								<input id="errorClickSplitCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Split Campaign Control Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickSplitCampaign">Normal Click</h5>
+								<input id="normalClickSplitCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickSplitCampaign">Rage Clicks</h5>
+								<input id="rageClickSplitCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickSplitCampaignControlNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickSplitCampaign">Error Click</h5>
+								<input id="errorClickSplitCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Row 2: Variation Converted and Variation Not Converted -->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Split Campaign Variation Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickSplitCampaign">Normal Click</h5>
+								<input id="normalClickSplitCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickSplitCampaign">Rage Clicks</h5>
+								<input id="rageClickSplitCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickSplitCampaignVariationConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickSplitCampaign">Error Click</h5>
+								<input id="errorClickSplitCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Split Campaign Variation Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickSplitCampaign">Normal Click</h5>
+								<input id="normalClickSplitCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickSplitCampaign">Rage Clicks</h5>
+								<input id="rageClickSplitCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickSplitCampaignVariationNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickSplitCampaign">Error Click</h5>
+								<input id="errorClickSplitCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- container -->
+	</section>
+
+	<!-- Personalize Campaign Section -->
+	<section id="Clicks for Personalize Campaigns" class="text-center">
+		<H2 id="clicksForPersonalizeCampaigns" class="text-center mb-4">Clicks for Personalize Campaigns</H2>
+		<div class="container">
+			<!-- Row 1: Control Converted and Control Not Converted -->
+			<div class="row mb-4">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Personalize Campaign Control Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickPersonalizeCampaign">Normal Click</h5>
+								<input id="normalClickPersonalizeCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickPersonalizeCampaign">Rage Clicks</h5>
+								<input id="rageClickPersonalizeCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickPersonalizeCampaignControlConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickPersonalizeCampaign">Error Click</h5>
+								<input id="errorClickPersonalizeCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Personalize Campaign Control Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickPersonalizeCampaign">Normal Click</h5>
+								<input id="normalClickPersonalizeCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickPersonalizeCampaign">Rage Clicks</h5>
+								<input id="rageClickPersonalizeCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickPersonalizeCampaignControlNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickPersonalizeCampaign">Error Click</h5>
+								<input id="errorClickPersonalizeCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Row 2: Variation Converted and Variation Not Converted -->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Personalize Campaign Variation Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickPersonalizeCampaign">Normal Click</h5>
+								<input id="normalClickPersonalizeCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickPersonalizeCampaign">Rage Clicks</h5>
+								<input id="rageClickPersonalizeCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickPersonalizeCampaignVariationConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickPersonalizeCampaign">Error Click</h5>
+								<input id="errorClickPersonalizeCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Personalize Campaign Variation Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickPersonalizeCampaign">Normal Click</h5>
+								<input id="normalClickPersonalizeCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickPersonalizeCampaign">Rage Clicks</h5>
+								<input id="rageClickPersonalizeCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickPersonalizeCampaignVariationNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickPersonalizeCampaign">Error Click</h5>
+								<input id="errorClickPersonalizeCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- container -->
 	</section>
 	
 	<div class="footer-social-icons">
@@ -510,28 +767,183 @@ f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script>
-		var i = 0;
-                document.querySelector("#errorclicks1").onclick = () =>{
-                     throw new Error("ERROR" + i++)
+	// Refactored Error Click Handlers for All Campaign Types
+	
+	// Define all campaign input IDs organized by type and campaign
+	const campaignInputIds = {
+		// Test Campaign IDs
+		test: {
+			normal: [
+				"normalClickTestCampaignControlConvertedClicks",
+				"normalClickTestCampaignControlNotConvertedClicks", 
+				"normalClickTestCampaignVariationConvertedClicks",
+				"normalClickTestCampaignVariationNotConvertedClicks"
+			],
+			rage: [
+				"rageClickTestCampaignControlConvertedClicks",
+				"rageClickTestCampaignControlNotConvertedClicks",
+				"rageClickTestCampaignVariationConvertedClicks", 
+				"rageClickTestCampaignVariationNotConvertedClicks"
+			],
+			error: [
+				"errorClickTestCampaignControlConvertedClicks",
+				"errorClickTestCampaignControlNotConvertedClicks",
+				"errorClickTestCampaignVariationConvertedClicks",
+				"errorClickTestCampaignVariationNotConvertedClicks"
+			]
+		},
+		
+		// Multivariate Campaign IDs
+		multivariate: {
+			normal: [
+				"normalClickMultivariateCampaignControlConvertedClicks",
+				"normalClickMultivariateCampaignControlNotConvertedClicks",
+				"normalClickMultivariateCampaignVariationConvertedClicks",
+				"normalClickMultivariateCampaignVariationNotConvertedClicks"
+			],
+			rage: [
+				"rageClickMultivariateCampaignControlConvertedClicks",
+				"rageClickMultivariateCampaignControlNotConvertedClicks",
+				"rageClickMultivariateCampaignVariationConvertedClicks",
+				"rageClickMultivariateCampaignVariationNotConvertedClicks"
+			],
+			error: [
+				"errorClickMultivariateCampaignControlConvertedClicks",
+				"errorClickMultivariateCampaignControlNotConvertedClicks",
+				"errorClickMultivariateCampaignVariationConvertedClicks",
+				"errorClickMultivariateCampaignVariationNotConvertedClicks"
+			]
+		},
+		
+		// Split Campaign IDs
+		split: {
+			normal: [
+				"normalClickSplitCampaignControlConvertedClicks",
+				"normalClickSplitCampaignControlNotConvertedClicks",
+				"normalClickSplitCampaignVariationConvertedClicks",
+				"normalClickSplitCampaignVariationNotConvertedClicks"
+			],
+			rage: [
+				"rageClickSplitCampaignControlConvertedClicks",
+				"rageClickSplitCampaignControlNotConvertedClicks",
+				"rageClickSplitCampaignVariationConvertedClicks",
+				"rageClickSplitCampaignVariationNotConvertedClicks"
+			],
+			error: [
+				"errorClickSplitCampaignControlConvertedClicks",
+				"errorClickSplitCampaignControlNotConvertedClicks",
+				"errorClickSplitCampaignVariationConvertedClicks",
+				"errorClickSplitCampaignVariationNotConvertedClicks"
+			]
+		},
+		
+		// Personalize Campaign IDs
+		personalize: {
+			normal: [
+				"normalClickPersonalizeCampaignControlConvertedClicks",
+				"normalClickPersonalizeCampaignControlNotConvertedClicks",
+				"normalClickPersonalizeCampaignVariationConvertedClicks",
+				"normalClickPersonalizeCampaignVariationNotConvertedClicks"
+			],
+			rage: [
+				"rageClickPersonalizeCampaignControlConvertedClicks",
+				"rageClickPersonalizeCampaignControlNotConvertedClicks",
+				"rageClickPersonalizeCampaignVariationConvertedClicks",
+				"rageClickPersonalizeCampaignVariationNotConvertedClicks"
+			],
+			error: [
+				"errorClickPersonalizeCampaignControlConvertedClicks",
+				"errorClickPersonalizeCampaignControlNotConvertedClicks",
+				"errorClickPersonalizeCampaignVariationConvertedClicks",
+				"errorClickPersonalizeCampaignVariationNotConvertedClicks"
+			]
 		}
-	</script>
-	<script>
-		var j = 10;
-                document.querySelector("#rageerrorclicks1").onclick = () =>{
-                     throw new Error("ERROR" + j++)
+	};
+	
+	// Error counters for different click types
+	const errorCounters = {
+		normal: 1000,
+		rage: 2000,
+		error: 3000,
+		dead: 4000
+	};
+	
+	// Function to create error handlers for different click types
+	function createErrorHandler(campaignType, clickType, inputId) {
+		return () => {
+			const errorCode = errorCounters[clickType]++;
+			const errorMessage = `${clickType.toUpperCase()}_CLICK_ERROR_${errorCode}`;
+			const errorDetails = `Campaign: ${campaignType}, Type: ${clickType}, Input: ${inputId}`;
+			
+			// Log error details for debugging
+			console.log(`Error triggered: ${errorMessage} - ${errorDetails}`);
+			
+			// Throw the actual error
+			throw new Error(`${errorMessage} - ${errorDetails}`);
+		};
+	}
+	
+	// Initialize error handlers for all campaign inputs
+	function initializeCampaignErrorHandlers() {
+		let totalHandlers = 0;
+		
+		Object.keys(campaignInputIds).forEach(campaignType => {
+			const campaign = campaignInputIds[campaignType];
+			
+			Object.keys(campaign).forEach(clickType => {
+				campaign[clickType].forEach(inputId => {
+					const element = document.querySelector(`#${inputId}`);
+					if (element) {
+						element.onclick = createErrorHandler(campaignType, clickType, inputId);
+						totalHandlers++;
+					}
+				});
+			});
+		});
+		
+		return totalHandlers;
+	}
+	
+	// Additional utility functions for error handling
+	const ErrorUtils = {
+		// Get all inputs for a specific campaign type
+		getCampaignInputs: function(campaignType) {
+			return campaignInputIds[campaignType] || {};
+		},
+		
+		// Get all inputs of a specific click type across all campaigns
+		getClickTypeInputs: function(clickType) {
+			const inputs = [];
+			Object.keys(campaignInputIds).forEach(campaign => {
+				if (campaignInputIds[campaign][clickType]) {
+					inputs.push(...campaignInputIds[campaign][clickType]);
+				}
+			});
+			return inputs;
+		},
+		
+		// Simulate error for testing
+		simulateError: function(campaignType, clickType, index = 0) {
+			const inputs = campaignInputIds[campaignType]?.[clickType];
+			if (inputs && inputs[index]) {
+				const element = document.querySelector(`#${inputs[index]}`);
+				if (element && element.onclick) {
+					element.onclick();
+				}
+			}
 		}
-	</script>
-	<script>
-		var k = 20;
-                document.querySelector("#deaderror1").onclick = () =>{
-                     throw new Error("ERROR" + k++)
-		}
-</script>
-	<script>
-		var l = 30;
-                document.querySelector("#deadrageerror1").onclick = () =>{
-                     throw new Error("ERROR" + k++)
-		}
+	};
+	
+	// Initialize all handlers when DOM is loaded
+	document.addEventListener('DOMContentLoaded', function() {
+		const totalHandlers = initializeCampaignErrorHandlers();
+		console.log(`Campaign error handlers initialized for ${totalHandlers} input elements`);
+		console.log('Available campaigns:', Object.keys(campaignInputIds));
+		console.log('ErrorUtils available globally for testing');
+		
+		// Make ErrorUtils available globally for console testing
+		window.ErrorUtils = ErrorUtils;
+	});
 </script>
 	
 </body>
