@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Web Technologies Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Modern Web Technologies Demo</h1>
+        <p>Exploring Shadow DOM, Canvas, Base64 Images, Animations, and Lazy Loading</p>
+    </header>
+
+    <main>
+        <!-- Shadow DOM Section -->
+        <section id="shadow-dom" class="section">
+            <h2>Shadow DOM - Encapsulated Web Components</h2>
+            <p>Shadow DOM provides encapsulation for DOM and CSS, allowing you to create isolated components with their own styling that doesn't leak out or get affected by external styles.</p>
+            
+            <div class="shadow-demo">
+                <h3>Shadow DOM Component Example</h3>
+                <div id="shadow-host"></div>
+                <button onclick="createShadowComponent()">Create Shadow Component</button>
+            </div>
+        </section>
+
+        <!-- Canvas Element Section -->
+        <section id="canvas" class="section">
+            <h2>Canvas Element - Dynamic Graphics Rendering</h2>
+            <p>HTML5 Canvas provides a powerful way to draw graphics, animations, and interactive content using JavaScript. It's perfect for games, data visualizations, and custom graphics.</p>
+            
+            <div class="canvas-demo">
+                <h3>Interactive Canvas Drawing</h3>
+                <canvas id="drawing-canvas" width="600" height="300"></canvas>
+                <div class="canvas-controls">
+                    <button onclick="clearCanvas()">Clear Canvas</button>
+                    <button onclick="drawRandomShapes()">Draw Random Shapes</button>
+                    <button onclick="startAnimation()">Start Animation</button>
+                    <button onclick="stopAnimation()">Stop Animation</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Base64 Image Section -->
+        <section id="base64-image" class="section">
+            <h2>Base64 Images - Embedded Image Data</h2>
+            <p>Base64 encoding allows you to embed images directly into HTML or CSS as text, eliminating the need for separate image files. This is useful for small images, icons, or when you want to reduce HTTP requests.</p>
+            
+            <div class="base64-demo">
+                <h3>Base64 Encoded Images</h3>
+                <div class="image-gallery">
+                    <div class="image-item">
+                        <h4>Small Icon (Base64)</h4>
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzIiIGZpbGw9IiM0QkE1RjYiLz4KPHBhdGggZD0iTTI0IDI0SDQwVjQwSDI0VjI0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+" alt="Base64 Icon">
+                    </div>
+                    <div class="image-item">
+                        <h4>Gradient Background (Base64)</h4>
+                        <div class="gradient-box" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDIwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjRkY2QjAwIi8+CjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjRkY0MDAwIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI0ZGMDAwMCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJ1cmwoI2dyYWQpIi8+Cjwvc3ZnPg==')"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animations Section -->
+        <section id="animations" class="section">
+            <h2>CSS Animations - Dynamic Visual Effects</h2>
+            <p>CSS animations bring life to web pages with smooth transitions, keyframe animations, and interactive effects. They enhance user experience and provide visual feedback.</p>
+            
+            <div class="animations-demo">
+                <h3>Animation Examples</h3>
+                <div class="animation-grid">
+                    <div class="animation-item">
+                        <h4>Bounce Animation</h4>
+                        <div class="bounce-box"></div>
+                    </div>
+                    <div class="animation-item">
+                        <h4>Rotate Animation</h4>
+                        <div class="rotate-box"></div>
+                    </div>
+                    <div class="animation-item">
+                        <h4>Pulse Animation</h4>
+                        <div class="pulse-box"></div>
+                    </div>
+                    <div class="animation-item">
+                        <h4>Slide Animation</h4>
+                        <div class="slide-box"></div>
+                    </div>
+                </div>
+                <button onclick="triggerAnimations()">Trigger All Animations</button>
+            </div>
+        </section>
+
+        <!-- Lazy Loading Section -->
+        <section id="lazy-loading" class="section">
+            <h2>Lazy Loading - Performance Optimization</h2>
+            <p>Lazy loading delays the loading of non-critical resources until they're needed, improving page load times and reducing bandwidth usage. This is especially important for images and other media content.</p>
+            
+            <div class="lazy-loading-demo">
+                <h3>Lazy Loading Images</h3>
+                <p>Scroll down to see images load as they come into view:</p>
+                <div class="lazy-images">
+                    <div class="lazy-image-container">
+                        <img data-src="https://picsum.photos/400/300?random=1" alt="Lazy loaded image 1" class="lazy-image">
+                        <div class="loading-placeholder">Loading...</div>
+                    </div>
+                    <div class="lazy-image-container">
+                        <img data-src="https://picsum.photos/400/300?random=2" alt="Lazy loaded image 2" class="lazy-image">
+                        <div class="loading-placeholder">Loading...</div>
+                    </div>
+                    <div class="lazy-image-container">
+                        <img data-src="https://picsum.photos/400/300?random=3" alt="Lazy loaded image 3" class="lazy-image">
+                        <div class="loading-placeholder">Loading...</div>
+                    </div>
+                    <div class="lazy-image-container">
+                        <img data-src="https://picsum.photos/400/300?random=4" alt="Lazy loaded image 4" class="lazy-image">
+                        <div class="loading-placeholder">Loading...</div>
+                    </div>
+                    <div class="lazy-image-container">
+                        <img data-src="https://picsum.photos/400/300?random=5" alt="Lazy loaded image 5" class="lazy-image">
+                        <div class="loading-placeholder">Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Modern Web Technologies Demo. Built with HTML5, CSS3, and JavaScript.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
