@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Version - Advanced Web Technologies</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 120px;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background: linear-gradient(45deg, transparent, transparent);
+        }
+
+        nav a:hover {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styles */
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* Sticky Elements Section */
+        .sticky-demo {
+            position: relative;
+            height: 400px;
+            overflow-y: auto;
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            background: #f8f9fa;
+            margin: 2rem 0;
+        }
+
+        .sticky-content {
+            height: 800px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .sticky-element {
+            position: sticky;
+            top: 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            z-index: 10;
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 200px;
+            width: 200px;
+            height: 150px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            float: right;
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .content-block {
+            background: white;
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* CSS insertRule Section */
+        .insertrule-demo {
+            text-align: center;
+        }
+
+        .dynamic-styles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .dynamic-box {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .controls button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .controls button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Blob Assets Section */
+        .blob-demo {
+            text-align: center;
+        }
+
+        .blob-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .blob-example {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .blob-example h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .file-input {
+            margin: 1rem 0;
+            padding: 0.5rem;
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .blob-output {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .download-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .download-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Lightning Web Component Section */
+        .lwc-demo {
+            text-align: center;
+        }
+
+        .lwc-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .lwc-example {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .lwc-example h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .lwc-component {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .lwc-component h5 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .lwc-button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .lwc-button:hover {
+            background: #1565c0;
+        }
+
+        .lwc-input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            color: #666;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                top: 100px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .sticky-demo {
+                height: 300px;
+            }
+            
+            .sticky-sidebar {
+                position: static;
+                float: none;
+                width: 100%;
+                margin: 1rem 0;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Utility Classes */
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+        <!-- Start VWO Async SmartCode -->
+<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+<script type='text/javascript' id='vwoCode'>
+window._vwo_code || (function() {
+var account_id = location.search.split('id=')[1] ? location.search.split('id=')[1] : '808235';
+version=2.1,
+settings_tolerance=2000,
+hide_element='body',
+hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;',
+/* DO NOT EDIT BELOW THIS LINE */
+f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={nonce:v&&v.nonce,use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}v&&t.setAttribute('nonce',v.nonce);d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var n=this.getSettings(),i=d.createElement('script'),r=this;t=t||{};if(n){i.textContent=n;d.getElementsByTagName('head')[0].appendChild(i);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200||o.status===304){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var n=this.hide_element(),i=n?n+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=i;else t.appendChild(d.createTextNode(i));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var i=d.createElement('div');i.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';i.setAttribute('id','_vis_opt_path_hides');i.classList.add('_vis_hide_layer');t.parentNode.insertBefore(i,t.nextSibling)}var o=window._vis_opt_url||d.URL,s='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(o)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:s})}else{this.load(s+'&x=true')}}};w._vwo_code=code;code.init();})();
+</script>
+<!-- End VWO Async SmartCode -->
+</head>
+<body>
+    <header>
+        <h1>Past Version</h1>
+        <p>Advanced Web Technologies - Sticky Elements, CSS insertRule, Blob Assets, and Lightning Web Components</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#sticky-elements">Sticky Elements</a></li>
+            <li><a href="#css-insertrule">CSS insertRule</a></li>
+            <li><a href="#blob-assets">Blob Assets</a></li>
+            <li><a href="#lwc-components">Lightning Web Components</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Sticky Elements Section -->
+        <section id="sticky-elements" class="section">
+            <h2>Sticky Elements - Advanced Positioning</h2>
+            <p>CSS sticky positioning creates elements that stick to a specific position during scrolling. They behave like relatively positioned elements until they reach a threshold, then become fixed. This is perfect for navigation bars, sidebars, and table headers.</p>
+            
+            <div class="sticky-demo">
+                <div class="sticky-content">
+                    <div class="sticky-element">
+                        🔗 I'm a sticky header - I stick to the top when you scroll!
+                    </div>
+                    
+                    <div class="sticky-sidebar">
+                        📌 Sticky Sidebar
+                    </div>
+                    
+                    <div class="content-block">
+                        <h4>Content Block 1</h4>
+                        <p>This is some content that you can scroll through. The sticky elements will remain in their designated positions as you scroll through this container.</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h4>Content Block 2</h4>
+                        <p>Notice how the sticky header stays at the top and the sidebar stays in position as you scroll. This is the power of CSS sticky positioning.</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h4>Content Block 3</h4>
+                        <p>Sticky positioning is supported in all modern browsers and provides a smooth scrolling experience without JavaScript.</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h4>Content Block 4</h4>
+                        <p>You can combine sticky positioning with other CSS properties like z-index, backdrop-filter, and transforms for advanced effects.</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h4>Content Block 5</h4>
+                        <p>This is the last content block. Keep scrolling to see how the sticky elements behave at the end of the container.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p><strong>Key Features:</strong> Sticky positioning combines the best of relative and fixed positioning, automatically switching between them based on scroll position.</p>
+        </section>
+
+        <!-- CSS insertRule Section -->
+        <section id="css-insertrule" class="section">
+            <h2>CSS insertRule - Dynamic Stylesheet Management</h2>
+            <p>The insertRule() method allows you to dynamically add CSS rules to stylesheets at runtime. This is powerful for creating themes, responsive designs, and interactive styling that can't be achieved with static CSS alone.</p>
+            
+            <div class="insertrule-demo">
+                <h3>Dynamic Style Generation</h3>
+                <p>Click the buttons below to dynamically insert CSS rules and see the boxes change:</p>
+                
+                <div class="dynamic-styles-container">
+                    <div class="dynamic-box" id="box1">Box 1</div>
+                    <div class="dynamic-box" id="box2">Box 2</div>
+                    <div class="dynamic-box" id="box3">Box 3</div>
+                    <div class="dynamic-box" id="box4">Box 4</div>
+                </div>
+                
+                <div class="controls">
+                    <button onclick="addRandomColors()">Add Random Colors</button>
+                    <button onclick="addHoverEffects()">Add Hover Effects</button>
+                    <button onclick="addAnimations()">Add Animations</button>
+                    <button onclick="addMediaQueries()">Add Media Queries</button>
+                    <button onclick="clearDynamicStyles()">Clear All Styles</button>
+                </div>
+                
+                <div id="css-output" class="code-block" style="text-align: left; margin-top: 2rem;">
+                    <strong>Generated CSS Rules:</strong><br>
+                    <span id="generated-css">/* Dynamic CSS rules will appear here */</span>
+                </div>
+            </div>
+            
+            <p><strong>Use Cases:</strong> Theme switching, responsive design adjustments, user customization, A/B testing, and dynamic component styling.</p>
+        </section>
+
+        <!-- Blob Assets Section -->
+        <section id="blob-assets" class="section">
+            <h2>Blob Assets - File Handling and Data URLs</h2>
+            <p>Blob objects represent raw data that can be read as text or binary data. They're essential for file uploads, downloads, image processing, and creating downloadable content dynamically in web applications.</p>
+            
+            <div class="blob-demo">
+                <h3>Blob Examples and Use Cases</h3>
+                
+                <div class="blob-examples">
+                    <div class="blob-example">
+                        <h4>File Upload & Preview</h4>
+                        <input type="file" id="file-input" class="file-input" accept="image/*" onchange="handleFileUpload(event)">
+                        <div id="file-preview" class="blob-output">
+                            <p>Select an image file to see preview</p>
+                        </div>
+                    </div>
+                    
+                    <div class="blob-example">
+                        <h4>Dynamic File Creation</h4>
+                        <button onclick="createTextBlob()">Create Text File</button>
+                        <button onclick="createJSONBlob()">Create JSON File</button>
+                        <button onclick="createCSVBlob()">Create CSV File</button>
+                        <div id="download-area" class="blob-output">
+                            <p>Click buttons above to generate downloadable files</p>
+                        </div>
+                    </div>
+                    
+                    <div class="blob-example">
+                        <h4>Image Processing</h4>
+                        <button onclick="createCanvas()">Create Canvas Image</button>
+                        <button onclick="processImage()">Process Uploaded Image</button>
+                        <div id="canvas-area" class="blob-output">
+                            <p>Generate or process images using Blob</p>
+                        </div>
+                    </div>
+                    
+                    <div class="blob-example">
+                        <h4>Data URL Conversion</h4>
+                        <textarea id="text-input" placeholder="Enter text to convert to data URL" style="width: 100%; height: 60px; margin-bottom: 1rem;"></textarea>
+                        <button onclick="convertToDataURL()">Convert to Data URL</button>
+                        <div id="dataurl-output" class="blob-output">
+                            <p>Data URL will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p><strong>Key Features:</strong> File I/O operations, image manipulation, data serialization, and creating downloadable content without server interaction.</p>
+        </section>
+
+        <!-- Lightning Web Component Section -->
+        <section id="lwc-components" class="section">
+            <h2>Lightning Web Components - Salesforce Modern Development</h2>
+            <p>Lightning Web Components (LWC) is Salesforce's modern programming model for building lightning components. It leverages web standards like Custom Elements, Templates, Decorators, ES6+ modules, and Shadow DOM.</p>
+            
+            <div class="lwc-demo">
+                <h3>LWC Architecture and Examples</h3>
+                
+                <div class="lwc-examples">
+                    <div class="lwc-example">
+                        <h4>Basic LWC Component Structure</h4>
+                        <div class="code-block">
+// helloWorld.js
+import { LightningElement, track } from 'lwc';
+
+export default class HelloWorld extends LightningElement {
+    @track greeting = 'Hello';
+    @track name = 'World';
+    
+    handleNameChange(event) {
+        this.name = event.target.value;
+    }
+    
+    get displayMessage() {
+        return `${this.greeting}, ${this.name}!`;
+    }
+}
+                        </div>
+                        
+                        <div class="code-block">
+&lt;!-- helloWorld.html --&gt;
+&lt;template&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;{displayMessage}&lt;/h1&gt;
+        &lt;lightning-input
+            label="Enter your name"
+            value={name}
+            onchange={handleNameChange}&gt;
+        &lt;/lightning-input&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+                        </div>
+                    </div>
+                    
+                    <div class="lwc-example">
+                        <h4>Interactive LWC Simulation</h4>
+                        <div class="lwc-component">
+                            <h5>Hello World Component</h5>
+                            <p id="lwc-message">Hello, World!</p>
+                            <input type="text" class="lwc-input" id="lwc-name" placeholder="Enter your name" oninput="updateLWCMessage()">
+                            <button class="lwc-button" onclick="resetLWCMessage()">Reset</button>
+                        </div>
+                        
+                        <div class="lwc-component">
+                            <h5>Counter Component</h5>
+                            <p>Count: <span id="lwc-counter">0</span></p>
+                            <button class="lwc-button" onclick="incrementCounter()">+</button>
+                            <button class="lwc-button" onclick="decrementCounter()">-</button>
+                            <button class="lwc-button" onclick="resetCounter()">Reset</button>
+                        </div>
+                    </div>
+                    
+                    <div class="lwc-example">
+                        <h4>LWC Lifecycle Hooks</h4>
+                        <div class="code-block">
+import { LightningElement } from 'lwc';
+
+export default class LifecycleExample extends LightningElement {
+    connectedCallback() {
+        // Component inserted into DOM
+        console.log('Component connected');
+    }
+    
+    renderedCallback() {
+        // After component renders
+        console.log('Component rendered');
+    }
+    
+    disconnectedCallback() {
+        // Component removed from DOM
+        console.log('Component disconnected');
+    }
+    
+    errorCallback(error, stack) {
+        // Error boundary
+        console.error('Component error:', error);
+    }
+}
+                        </div>
+                    </div>
+                    
+                    <div class="lwc-example">
+                        <h4>LWC Data Binding & Events</h4>
+                        <div class="code-block">
+// Parent Component
+import { LightningElement, track } from 'lwc';
+
+export default class ParentComponent extends LightningElement {
+    @track items = ['Apple', 'Banana', 'Orange'];
+    
+    handleItemSelect(event) {
+        const selectedItem = event.detail.item;
+        console.log('Selected:', selectedItem);
+    }
+}
+                        </div>
+                        
+                        <div class="code-block">
+// Child Component
+import { LightningElement, api } from 'lwc';
+
+export default class ChildComponent extends LightningElement {
+    @api items = [];
+    
+    handleClick(event) {
+        const item = event.target.dataset.item;
+        const selectEvent = new CustomEvent('itemselect', {
+            detail: { item }
+        });
+        this.dispatchEvent(selectEvent);
+    }
+}
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; text-align: left;">
+                    <h4>Key LWC Concepts:</h4>
+                    <ul style="margin-left: 2rem; margin-top: 1rem;">
+                        <li><strong>@track:</strong> Makes properties reactive</li>
+                        <li><strong>@api:</strong> Exposes public properties</li>
+                        <li><strong>@wire:</strong> Connects to Salesforce data</li>
+                        <li><strong>Custom Events:</strong> Component communication</li>
+                        <li><strong>Lightning Data Service:</strong> Cached data access</li>
+                        <li><strong>Apex Integration:</strong> Server-side logic</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p><strong>Benefits:</strong> Modern web standards, better performance, smaller bundle size, improved developer experience, and seamless Salesforce integration.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Past Version - Advanced Web Technologies Demo. Built with HTML5, CSS3, and JavaScript.</p>
+    </footer>
+
+    <script>
+        // Dynamic stylesheet for insertRule demonstrations
+        let dynamicStyleSheet;
+        let ruleCounter = 0;
+        let generatedRules = [];
+
+        // Initialize dynamic stylesheet
+        function initDynamicStyleSheet() {
+            const style = document.createElement('style');
+            style.id = 'dynamic-styles';
+            document.head.appendChild(style);
+            dynamicStyleSheet = style.sheet;
+        }
+
+        // CSS insertRule functions
+        function addRandomColors() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#f0932b', '#eb4d4b', '#6c5ce7', '#a29bfe'];
+            
+            for (let i = 1; i <= 4; i++) {
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const rule = `#box${i} { background: ${color} !important; }`;
+                dynamicStyleSheet.insertRule(rule, ruleCounter++);
+                generatedRules.push(rule);
+            }
+            
+            updateCSSOutput();
+        }
+
+        function addHoverEffects() {
+            const hoverRules = [
+                '#box1:hover { transform: scale(1.2) rotate(15deg) !important; }',
+                '#box2:hover { transform: translateY(-10px) !important; box-shadow: 0 10px 20px rgba(0,0,0,0.3) !important; }',
+                '#box3:hover { border-radius: 50% !important; }',
+                '#box4:hover { transform: skew(15deg) !important; }'
+            ];
+            
+            hoverRules.forEach(rule => {
+                dynamicStyleSheet.insertRule(rule, ruleCounter++);
+                generatedRules.push(rule);
+            });
+            
+            updateCSSOutput();
+        }
+
+        function addAnimations() {
+            const animationRules = [
+                '@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }',
+                '#box1 { animation: pulse 2s infinite !important; }',
+                '@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }',
+                '#box2 { animation: rotate 3s linear infinite !important; }',
+                '@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-20px); } 60% { transform: translateY(-10px); } }',
+                '#box3 { animation: bounce 2s infinite !important; }'
+            ];
+            
+            animationRules.forEach(rule => {
+                dynamicStyleSheet.insertRule(rule, ruleCounter++);
+                generatedRules.push(rule);
+            });
+            
+            updateCSSOutput();
+        }
+
+        function addMediaQueries() {
+            const mediaRules = [
+                '@media (max-width: 768px) { .dynamic-box { width: 80px !important; height: 80px !important; font-size: 0.8rem !important; } }',
+                '@media (min-width: 1200px) { .dynamic-box { width: 120px !important; height: 120px !important; } }'
+            ];
+            
+            mediaRules.forEach(rule => {
+                dynamicStyleSheet.insertRule(rule, ruleCounter++);
+                generatedRules.push(rule);
+            });
+            
+            updateCSSOutput();
+        }
+
+        function clearDynamicStyles() {
+            // Remove all rules
+            while (dynamicStyleSheet.cssRules.length > 0) {
+                dynamicStyleSheet.deleteRule(0);
+            }
+            ruleCounter = 0;
+            generatedRules = [];
+            updateCSSOutput();
+        }
+
+        function updateCSSOutput() {
+            const output = document.getElementById('generated-css');
+            output.innerHTML = generatedRules.length > 0 
+                ? generatedRules.join('<br>') 
+                : '/* Dynamic CSS rules will appear here */';
+        }
+
+        // Blob Assets functions
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('file-preview');
+                    preview.innerHTML = `
+                        <img src="${e.target.result}" style="max-width: 100%; max-height: 200px; border-radius: 8px;">
+                        <p>File: ${file.name} (${(file.size / 1024).toFixed(2)} KB)</p>
+                        <p>Type: ${file.type}</p>
+                    `;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function createTextBlob() {
+            const content = `Hello, World!
+This is a dynamically created text file.
+Created at: ${new Date().toLocaleString()}
+
+This file was generated using JavaScript Blob API.
+You can download it and open it in any text editor.`;
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            
+            const downloadArea = document.getElementById('download-area');
+            downloadArea.innerHTML = `
+                <p>Text file created successfully!</p>
+                <a href="${url}" download="sample.txt" class="download-link">Download Text File</a>
+            `;
+        }
+
+        function createJSONBlob() {
+            const data = {
+                name: "Sample Data",
+                timestamp: new Date().toISOString(),
+                items: ["item1", "item2", "item3"],
+                metadata: {
+                    version: "1.0",
+                    author: "Blob Demo"
+                }
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const downloadArea = document.getElementById('download-area');
+            downloadArea.innerHTML = `
+                <p>JSON file created successfully!</p>
+                <a href="${url}" download="data.json" class="download-link">Download JSON File</a>
+            `;
+        }
+
+        function createCSVBlob() {
+            const csvContent = `Name,Age,City
+John Doe,30,New York
+Jane Smith,25,Los Angeles
+Bob Johnson,35,Chicago
+Alice Brown,28,Houston`;
+
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            
+            const downloadArea = document.getElementById('download-area');
+            downloadArea.innerHTML = `
+                <p>CSV file created successfully!</p>
+                <a href="${url}" download="data.csv" class="download-link">Download CSV File</a>
+            `;
+        }
+
+        function createCanvas() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 300;
+            canvas.height = 200;
+            const ctx = canvas.getContext('2d');
+            
+            // Create a gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 300, 200);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 300, 200);
+            
+            // Add text
+            ctx.fillStyle = 'white';
+            ctx.font = '24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Generated Image', 150, 100);
+            ctx.font = '16px Arial';
+            ctx.fillText(new Date().toLocaleString(), 150, 130);
+            
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const canvasArea = document.getElementById('canvas-area');
+                canvasArea.innerHTML = `
+                    <img src="${url}" style="max-width: 100%; border-radius: 8px;">
+                    <br>
+                    <a href="${url}" download="generated-image.png" class="download-link">Download Image</a>
+                `;
+            });
+        }
+
+        function processImage() {
+            const fileInput = document.getElementById('file-input');
+            if (fileInput.files.length === 0) {
+                alert('Please upload an image first!');
+                return;
+            }
+            
+            const file = fileInput.files[0];
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                
+                // Apply a filter effect
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const data = imageData.data;
+                
+                // Convert to grayscale
+                for (let i = 0; i < data.length; i += 4) {
+                    const gray = data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114;
+                    data[i] = gray;
+                    data[i + 1] = gray;
+                    data[i + 2] = gray;
+                }
+                
+                ctx.putImageData(imageData, 0, 0);
+                
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const canvasArea = document.getElementById('canvas-area');
+                    canvasArea.innerHTML = `
+                        <p>Image processed (converted to grayscale)</p>
+                        <img src="${url}" style="max-width: 100%; border-radius: 8px;">
+                        <br>
+                        <a href="${url}" download="processed-image.png" class="download-link">Download Processed Image</a>
+                    `;
+                });
+            };
+            
+            img.src = URL.createObjectURL(file);
+        }
+
+        function convertToDataURL() {
+            const textInput = document.getElementById('text-input');
+            const text = textInput.value || 'Sample text content';
+            
+            const blob = new Blob([text], { type: 'text/plain' });
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                const dataURL = e.target.result;
+                const output = document.getElementById('dataurl-output');
+                output.innerHTML = `
+                    <p><strong>Data URL:</strong></p>
+                    <textarea readonly style="width: 100%; height: 100px; font-family: monospace; font-size: 0.8rem;">${dataURL}</textarea>
+                    <br>
+                    <a href="${dataURL}" download="data.txt" class="download-link">Download as File</a>
+                `;
+            };
+            
+            reader.readAsDataURL(blob);
+        }
+
+        // Lightning Web Component simulation functions
+        let lwcCounter = 0;
+
+        function updateLWCMessage() {
+            const nameInput = document.getElementById('lwc-name');
+            const message = document.getElementById('lwc-message');
+            const name = nameInput.value || 'World';
+            message.textContent = `Hello, ${name}!`;
+        }
+
+        function resetLWCMessage() {
+            document.getElementById('lwc-name').value = '';
+            document.getElementById('lwc-message').textContent = 'Hello, World!';
+        }
+
+        function incrementCounter() {
+            lwcCounter++;
+            document.getElementById('lwc-counter').textContent = lwcCounter;
+        }
+
+        function decrementCounter() {
+            lwcCounter--;
+            document.getElementById('lwc-counter').textContent = lwcCounter;
+        }
+
+        function resetCounter() {
+            lwcCounter = 0;
+            document.getElementById('lwc-counter').textContent = lwcCounter;
+        }
+
+        // Utility function to add fade-in animation to sections
+        function addFadeInAnimation() {
+            const sections = document.querySelectorAll('.section');
+            
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        function initSmoothScrolling() {
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initDynamicStyleSheet();
+            addFadeInAnimation();
+            initSmoothScrolling();
+            
+            console.log('Past Version - Advanced Web Technologies Demo initialized!');
+            console.log('Features available:');
+            console.log('- Sticky Elements: Scroll within the demo container');
+            console.log('- CSS insertRule: Use the control buttons');
+            console.log('- Blob Assets: Upload files and create downloads');
+            console.log('- Lightning Web Components: Interactive examples');
+        });
+    </script>
+</body>
+</html>
