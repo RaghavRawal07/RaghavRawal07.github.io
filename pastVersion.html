@@ -567,6 +567,7 @@ f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+
                         <button onclick="createTextBlob()">Create Text File</button>
                         <button onclick="createJSONBlob()">Create JSON File</button>
                         <button onclick="createCSVBlob()">Create CSV File</button>
+                        <button onclick="createStylesheetBlob()">Create & Apply CSS</button>
                         <div id="download-area" class="blob-output">
                             <p>Click buttons above to generate downloadable files</p>
                         </div>
@@ -906,6 +907,110 @@ Alice Brown,28,Houston`;
                 <p>CSV file created successfully!</p>
                 <a href="${url}" download="data.csv" class="download-link">Download CSV File</a>
             `;
+        }
+
+        function createStylesheetBlob() {
+            // Create dynamic CSS content
+            const cssContent = `/* Dynamic CSS created with Blob API */
+.blob-styled-element {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    animation: blobPulse 2s infinite;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+}
+
+@keyframes blobPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.blob-styled-element:hover {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5);
+}
+
+/* Style the download area when CSS is applied */
+#download-area.css-applied {
+    border: 3px solid #4ecdc4;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+}
+
+/* Additional dynamic styles */
+.dynamic-box.blob-enhanced {
+    border: 3px solid #ff6b6b !important;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5) !important;
+}`;
+
+            // Create blob from CSS content
+            const blob = new Blob([cssContent], { type: 'text/css' });
+            const url = URL.createObjectURL(blob);
+            
+            // Create and apply stylesheet link
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = url;
+            link.id = 'blob-stylesheet';
+            
+            // Remove existing blob stylesheet if any
+            const existingLink = document.getElementById('blob-stylesheet');
+            if (existingLink) {
+                existingLink.remove();
+            }
+            
+            // Add the new stylesheet to head
+            document.head.appendChild(link);
+            
+            // Update the download area with success message and demo
+            const downloadArea = document.getElementById('download-area');
+            downloadArea.classList.add('css-applied');
+            downloadArea.innerHTML = `
+                <div class="blob-styled-element">
+                    🎨 CSS Stylesheet Applied Successfully!
+                    <br>This element is styled using CSS from a Blob URL
+                </div>
+                <p>✅ Stylesheet created and applied to the page!</p>
+                <a href="${url}" download="dynamic-styles.css" class="download-link">Download CSS File</a>
+                <button onclick="removeBlobStylesheet()" style="margin-left: 10px; background: #e74c3c; color: white; border: none; padding: 8px 16px; border-radius: 15px; cursor: pointer;">Remove Styles</button>
+            `;
+            
+            // Also apply styles to existing dynamic boxes
+            const dynamicBoxes = document.querySelectorAll('.dynamic-box');
+            dynamicBoxes.forEach((box, index) => {
+                if (index % 2 === 0) {
+                    box.classList.add('blob-enhanced');
+                }
+            });
+            
+            console.log('Blob stylesheet created and applied:', url);
+        }
+
+        function removeBlobStylesheet() {
+            const link = document.getElementById('blob-stylesheet');
+            if (link) {
+                link.remove();
+                
+                // Remove applied classes
+                const downloadArea = document.getElementById('download-area');
+                downloadArea.classList.remove('css-applied');
+                downloadArea.innerHTML = `
+                    <p>✅ Blob stylesheet removed successfully!</p>
+                    <button onclick="createStylesheetBlob()" style="background: #667eea; color: white; border: none; padding: 8px 16px; border-radius: 15px; cursor: pointer;">Create CSS Again</button>
+                `;
+                
+                // Remove enhanced classes from dynamic boxes
+                const dynamicBoxes = document.querySelectorAll('.dynamic-box');
+                dynamicBoxes.forEach(box => {
+                    box.classList.remove('blob-enhanced');
+                });
+                
+                console.log('Blob stylesheet removed');
+            }
         }
 
         function createCanvas() {
