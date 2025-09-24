@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multipage Form - Step by Step Registration</title>
+    <link rel="stylesheet" href="form-styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <!-- Navigation Back -->
+        <div class="back-navigation">
+            <a href="index.html" class="back-link">← Back to Main Page</a>
+        </div>
+        
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="step-indicators">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Personal</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Address</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Preferences</div>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Review</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Header -->
+        <div class="form-header">
+            <h1 id="formTitle">Personal Information</h1>
+            <p id="formDescription">Please fill in your basic personal details to continue.</p>
+        </div>
+
+        <!-- Form Steps -->
+        <form id="multipageForm" novalidate>
+            <!-- Step 1: Personal Information -->
+            <div class="form-step active" data-step="1">
+                <div class="input-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <span class="error-message"></span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <span class="error-message"></span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message"></span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <span class="error-message"></span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="birthDate">Date of Birth</label>
+                    <input type="date" id="birthDate" name="birthDate">
+                    <span class="error-message"></span>
+                </div>
+            </div>
+
+            <!-- Step 2: Address Details -->
+            <div class="form-step" data-step="2">
+                <div class="input-group">
+                    <label for="street">Street Address *</label>
+                    <input type="text" id="street" name="street" required>
+                    <span class="error-message"></span>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="city">City *</label>
+                        <input type="text" id="city" name="city" required>
+                        <span class="error-message"></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="state">State/Province *</label>
+                        <select id="state" name="state" required>
+                            <option value="">Select State</option>
+                            <option value="AL">Alabama</option>
+                            <option value="CA">California</option>
+                            <option value="FL">Florida</option>
+                            <option value="NY">New York</option>
+                            <option value="TX">Texas</option>
+                            <!-- Add more states as needed -->
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="zipCode">ZIP/Postal Code *</label>
+                        <input type="text" id="zipCode" name="zipCode" required>
+                        <span class="error-message"></span>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="country">Country *</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select Country</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="AU">Australia</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Preferences -->
+            <div class="form-step" data-step="3">
+                <div class="input-group">
+                    <label>Interests (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interests" value="technology">
+                            <span class="checkmark"></span>
+                            Technology
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interests" value="sports">
+                            <span class="checkmark"></span>
+                            Sports
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interests" value="music">
+                            <span class="checkmark"></span>
+                            Music
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interests" value="travel">
+                            <span class="checkmark"></span>
+                            Travel
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interests" value="cooking">
+                            <span class="checkmark"></span>
+                            Cooking
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="interests" value="reading">
+                            <span class="checkmark"></span>
+                            Reading
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Preferred Communication Method *</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="communication" value="email" required>
+                            <span class="radio-mark"></span>
+                            Email
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="communication" value="phone" required>
+                            <span class="radio-mark"></span>
+                            Phone
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="communication" value="sms" required>
+                            <span class="radio-mark"></span>
+                            SMS
+                        </label>
+                    </div>
+                    <span class="error-message"></span>
+                </div>
+                
+                <div class="input-group">
+                    <label class="checkbox-label newsletter-opt">
+                        <input type="checkbox" name="newsletter" value="yes">
+                        <span class="checkmark"></span>
+                        Subscribe to our newsletter for updates and special offers
+                    </label>
+                </div>
+                
+                <div class="input-group">
+                    <label for="comments">Additional Comments</label>
+                    <textarea id="comments" name="comments" rows="4" placeholder="Tell us anything else you'd like us to know..."></textarea>
+                </div>
+            </div>
+
+            <!-- Step 4: Review & Submit -->
+            <div class="form-step" data-step="4">
+                <div class="review-section">
+                    <h3>Personal Information</h3>
+                    <div class="review-item">
+                        <span class="review-label">Name:</span>
+                        <span class="review-value" id="reviewName"></span>
+                    </div>
+                    <div class="review-item">
+                        <span class="review-label">Email:</span>
+                        <span class="review-value" id="reviewEmail"></span>
+                    </div>
+                    <div class="review-item">
+                        <span class="review-label">Phone:</span>
+                        <span class="review-value" id="reviewPhone"></span>
+                    </div>
+                    <div class="review-item">
+                        <span class="review-label">Birth Date:</span>
+                        <span class="review-value" id="reviewBirthDate"></span>
+                    </div>
+                </div>
+                
+                <div class="review-section">
+                    <h3>Address Details</h3>
+                    <div class="review-item">
+                        <span class="review-label">Address:</span>
+                        <span class="review-value" id="reviewAddress"></span>
+                    </div>
+                </div>
+                
+                <div class="review-section">
+                    <h3>Preferences</h3>
+                    <div class="review-item">
+                        <span class="review-label">Interests:</span>
+                        <span class="review-value" id="reviewInterests"></span>
+                    </div>
+                    <div class="review-item">
+                        <span class="review-label">Communication:</span>
+                        <span class="review-value" id="reviewCommunication"></span>
+                    </div>
+                    <div class="review-item">
+                        <span class="review-label">Newsletter:</span>
+                        <span class="review-value" id="reviewNewsletter"></span>
+                    </div>
+                    <div class="review-item">
+                        <span class="review-label">Comments:</span>
+                        <span class="review-value" id="reviewComments"></span>
+                    </div>
+                </div>
+                
+                <div class="terms-section">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="termsAccepted" required>
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a> *
+                    </label>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="form-navigation">
+                <button type="button" id="prevBtn" class="btn btn-secondary" disabled>Previous</button>
+                <button type="button" id="nextBtn" class="btn btn-primary">Next</button>
+                <button type="submit" id="submitBtn" class="btn btn-success" style="display: none;">Submit</button>
+            </div>
+        </form>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h2>Registration Successful!</h2>
+            <p>Thank you for completing the form. Your information has been submitted successfully.</p>
+            <button type="button" class="btn btn-primary" onclick="resetForm()">Start New Registration</button>
+        </div>
+    </div>
+
+    <script src="form-script.js"></script>
+</body>
+</html>
