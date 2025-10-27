@@ -253,35 +253,41 @@ function triggerAnimations() {
     });
 }
 
-// Lazy Loading Implementation (Optimized for Performance)
+// Lazy Loading Implementation (5 second delay)
 function initLazyLoading() {
     const lazyImages = document.querySelectorAll('.lazy-image');
     
-    // Aggressive preloading: Start loading images 500px before they enter viewport
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                const placeholder = img.nextElementSibling;
-                
-                // Start loading immediately
-                loadImage(img, observer);
+    // Wait 5 seconds before starting to load images
+    setTimeout(() => {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const placeholder = img.nextElementSibling;
+                    
+                    // Start loading immediately
+                    loadImage(img, observer);
+                }
+            });
+        }, {
+            rootMargin: '500px 0px', // Aggressive preloading
+            threshold: 0.01
+        });
+        
+        // Start observing all images
+        lazyImages.forEach(img => {
+            imageObserver.observe(img);
+        });
+        
+        // Load all visible images immediately after 5 seconds
+        lazyImages.forEach(img => {
+            const rect = img.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            if (isVisible) {
+                loadImage(img, imageObserver);
             }
         });
-    }, {
-        rootMargin: '500px 0px', // Increased from 50px to 500px for aggressive preloading
-        threshold: 0.01 // Start as soon as image is near viewport
-    });
-    
-    lazyImages.forEach(img => {
-        imageObserver.observe(img);
-    });
-    
-    // Preload first few images immediately for better perceived performance
-    const firstImages = Array.from(lazyImages).slice(0, 2);
-    firstImages.forEach(img => {
-        loadImage(img, imageObserver);
-    });
+    }, 5000); // 5 second delay
 }
 
 // Separate function for loading images with better error handling
