@@ -253,39 +253,76 @@ function triggerAnimations() {
     });
 }
 
-// Lazy Loading Implementation
+// Lazy Loading Implementation (Optimized for Performance)
 function initLazyLoading() {
     const lazyImages = document.querySelectorAll('.lazy-image');
     
+    // Aggressive preloading: Start loading images 500px before they enter viewport
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
                 const placeholder = img.nextElementSibling;
                 
-                // Create new image element to load the actual image
-                const newImg = new Image();
-                newImg.onload = () => {
-                    img.src = newImg.src;
-                    img.classList.add('loaded');
-                };
-                newImg.onerror = () => {
-                    img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNjY2IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiPkltYWdlIG5vdCBmb3VuZDwvdGV4dD4KPC9zdmc+';
-                    img.classList.add('loaded');
-                };
-                newImg.src = img.dataset.src;
-                
-                observer.unobserve(img);
+                // Start loading immediately
+                loadImage(img, observer);
             }
         });
     }, {
-        rootMargin: '50px 0px',
-        threshold: 0.1
+        rootMargin: '500px 0px', // Increased from 50px to 500px for aggressive preloading
+        threshold: 0.01 // Start as soon as image is near viewport
     });
     
     lazyImages.forEach(img => {
         imageObserver.observe(img);
     });
+    
+    // Preload first few images immediately for better perceived performance
+    const firstImages = Array.from(lazyImages).slice(0, 2);
+    firstImages.forEach(img => {
+        loadImage(img, imageObserver);
+    });
+}
+
+// Separate function for loading images with better error handling
+function loadImage(img, observer) {
+    if (img.dataset.loaded === 'true') return; // Prevent duplicate loading
+    
+    img.dataset.loaded = 'true';
+    
+    // Use native loading="lazy" as fallback and decode for better performance
+    const newImg = new Image();
+    
+    newImg.onload = () => {
+        // Use image decode API for smoother rendering
+        if ('decode' in newImg) {
+            newImg.decode()
+                .then(() => {
+                    img.src = newImg.src;
+                    img.classList.add('loaded');
+                })
+                .catch(() => {
+                    img.src = newImg.src;
+                    img.classList.add('loaded');
+                });
+        } else {
+            img.src = newImg.src;
+            img.classList.add('loaded');
+        }
+    };
+    
+    newImg.onerror = () => {
+        img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjZjhmOWZhIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNjY2IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiPkltYWdlIG5vdCBmb3VuZDwvdGV4dD4KPC9zdmc+';
+        img.classList.add('loaded');
+    };
+    
+    // Set loading priority hint for better browser optimization
+    newImg.loading = 'eager';
+    newImg.src = img.dataset.src;
+    
+    if (observer) {
+        observer.unobserve(img);
+    }
 }
 
 // Utility function to add fade-in animation to sections
