@@ -1,0 +1,894 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Ecommerce Template</title>
+
+	<!-- Custom styles for this template (imports bootstrap from LESS) -->
+	<link href="style.css" rel="stylesheet">
+	<link href="social.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type='text/javascript'>
+        //var _vwo_clicks = 200000; //this will track first 10 clicks
+	</script>
+
+  <!-- Start VWO SmartCode --> 
+<script referrerPolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/lib/808235.js" id="vwoCode"></script> 
+<!-- End VWO SmartCode -->
+
+	<script>
+        function appendQS() {
+            var querystring = window.location.search;
+            $('a.linkUpdate').each(function() {
+                var href = $(this).attr('href');
+                href += querystring;
+                $(this).attr('href', href);
+            });
+        }
+	</script>
+</head>
+
+<body onload="appendQS()">
+
+<div class="container">
+
+	<header>
+		<div class="row">
+			<div class="col-md-4 col-sm-12">
+				<h1 class="logo"><i class="glyphicon glyphicon-tag"></i> Sync Smartcode </h1>
+				<p class="subtext">Bootstrap Ecommerce Template</p>
+			</div>
+			<!-- col-md-4 -->
+			<div class="col-md-8 col-sm-12">
+				<br class="form-inline">
+					<div class="form-group">
+						<label>Email</label>
+						<input id="emailBox" type="email" class="form-control" placeholder="Enter Email">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input id="passwordBox" type="password" class="form-control" placeholder="Enter Password">
+					</div>
+					<div class="form-group">
+						<label>Hint</label>
+						<input id="hint" type="input" class="form-control" placeholder="VWO">
+					</div>
+					<br> </br>
+					<a id="login_Button" class="btn btn-default" style="display: block; margin: 0 auto;">Login</a>
+				</form>
+			</div>
+			<!-- col-md-8 -->
+		</div>
+		<!-- row -->
+	</header>
+
+	<!-- Static navbar -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div id="navbar">
+				<ul class="nav navbar-nav">
+					<p class="navbar-text">Home</p>
+					<p class="navbar-text">What's New</p>
+					<p class="navbar-text">Specials</p>
+					<p class="navbar-text">My Account</p>
+
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+		<!--/.container-fluid -->
+	</nav>
+
+	<!-- Main component for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<!-- Nav tabs -->
+		<ul class="tablist" role="tablist">
+			<li id="featured" role="presentation" class="active"><a href="#featured-item" aria-controls="featured-item" role="tab" data-toggle="tab">Featured Item</a></li>
+			<li id="bestSeller" role="presentation"><a href="#best-seller" aria-controls="best-seller" role="tab" data-toggle="tab">Best Seller</a></li>
+			<li id="summerDiscount" role="presentation"><a href="#discount" aria-controls="discount" role="tab" data-toggle="tab">Summer Discount</a></li>
+			<li id="premium" role="presentation"><a href="#premium" aria-controls="premium" role="tab" data-toggle="tab">Premium Product</a></li>
+			<li id="giftIdea" role="presentation"><a href="#gift-idea" aria-controls="gift-idea" role="tab" data-toggle="tab">Gift Idea</a></li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="featured-item">
+				<div class="tab-text">
+					<h2>Apple iPhone 6</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
+					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
+				</div>
+				<!-- tab-text -->
+				<img class="slide-img"/>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="best-seller">
+				<div class="tab-text">
+					<h2>Xbox One</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
+					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
+				</div>
+				<!-- tab-text -->
+				<img class="slide-img" />
+			</div>
+			<div role="tabpanel" class="tab-pane" id="discount">
+				<div class="tab-text">
+					<h2>Playstation 4</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
+					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
+				</div>
+				<!-- tab-text -->
+				<img class="slide-img"/>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="premium">
+				<div class="tab-text">
+					<h2>Microsoft Surface</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
+					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
+				</div>
+				<!-- tab-text -->
+				<img class="slide-img"/>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="gift-idea">
+				<div class="tab-text">
+					<h2>Vizio Smart TV</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
+					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
+				</div>
+				<!-- tab-text -->
+				<img class="slide-img" />
+			</div>
+		</div>
+	</div>
+	<!-- jumbotron -->
+	<div class="row">
+		<div class="col-md-12 col-centered">
+			<div id="dynamicEle" class="text-center center-block thumbnail tbheight" style=>
+				<div>
+					<h4>DYNAMIC ELEMENT</h4>
+					<h6>Clicking the button more elements are added on the page</h6>
+				</div>
+				<div id="input-container" style="display:flex; padding: auto; justify-content: center;
+">
+				<div id="dynamicInput" style="margin: 5rem;">
+					<h5 id="normal1">Normal Click</h5>
+					<input id="normalclick" type="text" name="myInputs[]">
+				</div>
+				<div id="dynamicInput" style="margin: 5rem;">
+					<h5 id="rage1">Rage Clicks</h5>
+					<input id="rageclicks" type="text" name="myInputs[]">
+				</div>
+				<div style="margin: 5rem;">
+					<h5 id="dead1">Dead Clicks</h5>
+				</div>
+				<div id="dynamicInput" style="margin: 5rem;">
+					<h5 id="error1">Error Click</h5>
+					<input id="errorclicks1" type="text" name="myInputs[]">
+				</div>
+			 </div>
+
+			<div class="col-md-12 col-centered">
+			<div id="dynamicEle" class="text-center center-block thumbnail tbheight" style=>
+
+				<div id="dynamicInput" style="margin: 5rem;">
+					<h5 id="ragedead1">Rage and Dead Clicks</h5>
+				</div>
+				
+				<div id="dynamicInput" style="margin: 5rem;">
+					<h5 id="rageerror1">Rage and Error Clicks</h5>
+					<input id="rageerrorclicks1" type="text" name="myInputs[]">
+				</div>
+				
+				<div style="margin: 5rem;">
+				        <h5 id="deaderror1">Dead and Error Click</h5>
+				</div>
+				<div style="margin: 5rem;">
+				        <h5 id="deadrageerror1">Dead, Rage and Error Clicks</h5>
+				</div>
+			</div>
+				
+				<div>
+					<a id="addDynamic" class="btn btn-default" onClick="addInput('dynamicInput')">Add another text input</a>
+					<!--<input id="addDynamic" type="button" value="Add another text input" class="btn btn-default" onClick="addInput('dynamicInput');">-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row i-am-centered">
+		<div class="col-md-4">
+			<div class="center-block jumbotron text-center center-block thumbnail tbheight">
+				<div>
+					<h4>DYNAMIC ID Text Box</h4>
+					<h6>This is a case where input box id changes every time a page is reloaded</h6>
+				</div>
+				<div id="dynamicID">
+					<input class="dynamicID" type="text" name="myInputs[]">
+					<script>
+                        var div = document.getElementsByClassName('dynamicID');
+                        div[0].setAttribute('id', 'dynamic' + Date.now());
+					</script>
+				</div>
+				<div>
+					<ul>
+						<button class="btn btn-default">Button 1</button>
+						<button class="btn btn-default">Button 2</button>
+						<button class="btn btn-default">Button 3</button>
+						<button class="btn btn-default">Button 4</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="thumbnail tbheight text-center">
+				<div>
+					<h4 id=openModalDialog>Open Modal Dialog</h4>
+				</div>
+				<a id="modal" class="btn btn-default" data-toggle="modal" data-target="#mySpecials"">Click to open Modal</a>
+			<br>
+				<br>
+				<div>
+					<ul>
+						<button class="btn btn-default">Button 1</button>
+						<button class="btn btn-default">Button 2</button>
+						<button class="btn btn-default">Button 3</button>
+						<button class="btn btn-default">Button 4</button>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-4">
+			<div class="thumbnail tbheight jumbotron text-center">
+				<div>
+					<h2 id=heading2>Heading 2 Style</h2>
+					<h6>This has been added so that we have more elements on page</h6>
+				</div>
+				<br>
+				<div>
+					<ul>
+						<button class="btn btn-default">Button 1</button>
+						<button class="btn btn-default">Button 2</button>
+						<button class="btn btn-default">Button 3</button>
+						<button class="btn btn-default">Button 4</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<ul class="list-group">
+				<li id="category-one" href="" class="list-group-item">Category One</li>
+				<li id="category-two" href="" class="list-group-item">Category Two</li>
+				<li id="category-three" href="" class="list-group-item">Category Three</li>
+				<li id="category-four" href="" class="list-group-item">Category Four</li>
+				<li id="category-five" href="" class="list-group-item">Category Five</li>
+			</ul>
+		</div>
+		<div class="col-md-4">
+			<div class="list-group">
+				<div>
+					<h2 id=choose>Choose an option</h2>
+					<p>The form below contains three checkboxes. The last option is disabled:</p>
+					<form>
+						<div class="checkbox">
+							<label><input type="checkbox" value="">Option 1</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="list-group">
+				<div>
+					<h2>Choose a radio button</h2>
+					<p>The form below contains three radio buttons. The last option is disabled:</p>
+					<form>
+						<div class="radio">
+							<label><input type="radio" name="optradio">Option 1</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		</div>
+	<section id="Clicks for Campaigns" class="text-center">
+        <H2 id="clicksForCampaigns" class="text-center mb-4">Clicks for Campaigns</H2>
+		<div class="container">
+			<!-- Row 1: Control Converted and Control Not Converted -->
+			<div class="row mb-4">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Test Campaign Control Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickTestCampaign">Normal Click</h5>
+								<input id="normalClickTestCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickTestCampaign">Rage Clicks</h5>
+								<input id="rageClickTestCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickTestCampaignControlConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickTestCampaign">Error Click</h5>
+								<input id="errorClickTestCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Test Campaign Control Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickTestCampaign">Normal Click</h5>
+								<input id="normalClickTestCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickTestCampaign">Rage Clicks</h5>
+								<input id="rageClickTestCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickTestCampaignControlNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickTestCampaign">Error Click</h5>
+								<input id="errorClickTestCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Row 2: Variation Converted and Variation Not Converted -->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Test Campaign Variation Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickTestCampaign">Normal Click</h5>
+								<input id="normalClickTestCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickTestCampaign">Rage Clicks</h5>
+								<input id="rageClickTestCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickTestCampaignVariationConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickTestCampaign">Error Click</h5>
+								<input id="errorClickTestCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Test Campaign Variation Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickTestCampaign">Normal Click</h5>
+								<input id="normalClickTestCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickTestCampaign">Rage Clicks</h5>
+								<input id="rageClickTestCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickTestCampaignVariationNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickTestCampaign">Error Click</h5>
+								<input id="errorClickTestCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- container -->
+	</section>
+
+	<!-- Multivariate Campaign Section -->
+	<section id="Clicks for Multivariate Campaigns" class="text-center">
+		<H2 id="clicksForMultivariateCampaigns" class="text-center mb-4">Clicks for Multivariate Campaigns</H2>
+		<div class="container">
+			<!-- Row 1: Control Converted and Control Not Converted -->
+			<div class="row mb-4">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Multivariate Campaign Control Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickMultivariateCampaign">Normal Click</h5>
+								<input id="normalClickMultivariateCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickMultivariateCampaign">Rage Clicks</h5>
+								<input id="rageClickMultivariateCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickMultivariateCampaignControlConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickMultivariateCampaign">Error Click</h5>
+								<input id="errorClickMultivariateCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Multivariate Campaign Control Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickMultivariateCampaign">Normal Click</h5>
+								<input id="normalClickMultivariateCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickMultivariateCampaign">Rage Clicks</h5>
+								<input id="rageClickMultivariateCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickMultivariateCampaignControlNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickMultivariateCampaign">Error Click</h5>
+								<input id="errorClickMultivariateCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Row 2: Variation Converted and Variation Not Converted -->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Multivariate Campaign Variation Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickMultivariateCampaign">Normal Click</h5>
+								<input id="normalClickMultivariateCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickMultivariateCampaign">Rage Clicks</h5>
+								<input id="rageClickMultivariateCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickMultivariateCampaignVariationConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickMultivariateCampaign">Error Click</h5>
+								<input id="errorClickMultivariateCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Multivariate Campaign Variation Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickMultivariateCampaign">Normal Click</h5>
+								<input id="normalClickMultivariateCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickMultivariateCampaign">Rage Clicks</h5>
+								<input id="rageClickMultivariateCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickMultivariateCampaignVariationNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickMultivariateCampaign">Error Click</h5>
+								<input id="errorClickMultivariateCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- container -->
+	</section>
+
+	<!-- Split Campaign Section -->
+	<section id="Clicks for Split Campaigns" class="text-center">
+		<H2 id="clicksForSplitCampaigns" class="text-center mb-4">Clicks for Split Campaigns</H2>
+		<div class="container">
+			<!-- Row 1: Control Converted and Control Not Converted -->
+			<div class="row mb-4">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Split Campaign Control Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickSplitCampaign">Normal Click</h5>
+								<input id="normalClickSplitCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickSplitCampaign">Rage Clicks</h5>
+								<input id="rageClickSplitCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickSplitCampaignControlConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickSplitCampaign">Error Click</h5>
+								<input id="errorClickSplitCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Split Campaign Control Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickSplitCampaign">Normal Click</h5>
+								<input id="normalClickSplitCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickSplitCampaign">Rage Clicks</h5>
+								<input id="rageClickSplitCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickSplitCampaignControlNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickSplitCampaign">Error Click</h5>
+								<input id="errorClickSplitCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Row 2: Variation Converted and Variation Not Converted -->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Split Campaign Variation Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickSplitCampaign">Normal Click</h5>
+								<input id="normalClickSplitCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickSplitCampaign">Rage Clicks</h5>
+								<input id="rageClickSplitCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickSplitCampaignVariationConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickSplitCampaign">Error Click</h5>
+								<input id="errorClickSplitCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Split Campaign Variation Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickSplitCampaign">Normal Click</h5>
+								<input id="normalClickSplitCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickSplitCampaign">Rage Clicks</h5>
+								<input id="rageClickSplitCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickSplitCampaignVariationNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickSplitCampaign">Error Click</h5>
+								<input id="errorClickSplitCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- container -->
+	</section>
+
+	<!-- Personalize Campaign Section -->
+	<section id="Clicks for Personalize Campaigns" class="text-center">
+		<H2 id="clicksForPersonalizeCampaigns" class="text-center mb-4">Clicks for Personalize Campaigns</H2>
+		<div class="container">
+			<!-- Row 1: Control Converted and Control Not Converted -->
+			<div class="row mb-4">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Personalize Campaign Control Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickPersonalizeCampaign">Normal Click</h5>
+								<input id="normalClickPersonalizeCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickPersonalizeCampaign">Rage Clicks</h5>
+								<input id="rageClickPersonalizeCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickPersonalizeCampaignControlConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickPersonalizeCampaign">Error Click</h5>
+								<input id="errorClickPersonalizeCampaignControlConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Personalize Campaign Control Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickPersonalizeCampaign">Normal Click</h5>
+								<input id="normalClickPersonalizeCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickPersonalizeCampaign">Rage Clicks</h5>
+								<input id="rageClickPersonalizeCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickPersonalizeCampaignControlNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickPersonalizeCampaign">Error Click</h5>
+								<input id="errorClickPersonalizeCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Row 2: Variation Converted and Variation Not Converted -->
+			<div class="row">
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Personalize Campaign Variation Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickPersonalizeCampaign">Normal Click</h5>
+								<input id="normalClickPersonalizeCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickPersonalizeCampaign">Rage Clicks</h5>
+								<input id="rageClickPersonalizeCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickPersonalizeCampaignVariationConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickPersonalizeCampaign">Error Click</h5>
+								<input id="errorClickPersonalizeCampaignVariationConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="thumbnail">
+						<div class="caption">
+							<h4>Personalize Campaign Variation Not Converted Clicks</h4>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="normalClickPersonalizeCampaign">Normal Click</h5>
+								<input id="normalClickPersonalizeCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="rageClickPersonalizeCampaign">Rage Clicks</h5>
+								<input id="rageClickPersonalizeCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+							<div style="margin: 3rem;">
+								<h5 id="deadClickPersonalizeCampaignVariationNotConvertedClicks">Dead Clicks</h5>
+							</div>
+							<div id="dynamicInput" style="margin: 3rem;">
+								<h5 id="errorClickPersonalizeCampaign">Error Click</h5>
+								<input id="errorClickPersonalizeCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- container -->
+	</section>
+	
+	<div class="footer-social-icons">
+		<h4 class="_14 text-center">Follow us on</h4>
+		<ul class="social-icons center-block center" style="margin: auto;">
+			<a href="https://facebook.com" target="_blank" class="social-icon"> <i class="fa fa-facebook"></i></a>
+			<a href="https://twitter.com" target="_blank" class="social-icon"> <i class="fa fa-twitter"></i></a>
+			<a href="https://rss.com" target="_blank" class="social-icon"> <i class="fa fa-rss"></i></a>
+			<a href="https://youtube.com" target="_blank" class="social-icon"> <i class="fa fa-youtube"></i></a>
+			<a href="https://linkedin.com" target="_blank" class="social-icon"> <i class="fa fa-linkedin"></i></a>
+			<a href="https://plus.google.com" target="_blank" class="social-icon"> <i class="fa fa-google-plus"></i></a>
+		</ul>
+	</div>
+
+
+<!-- /container -->
+<div id="mySpecials" role="dialog" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" data-dismiss="modal" class="close btn btn-warning pull-right"><i class="fa fa-times"></i></button>
+				<h4 class="modal-title">Special Message</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Message</label>
+						<div class="col-sm-6">
+							<textarea rows="10" ng-model="message" class="form-control"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-6">
+							<button type="submit" data-dismiss="modal" class="btn btn-default">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>MyStore Copyright &copy; 2017 - Terms &middot; Privacy</p>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script>
+	// Refactored Error Click Handlers for All Campaign Types
+	
+	// Define all campaign input IDs organized by type and campaign
+	const campaignInputIds = {
+		// Test Campaign IDs
+		test: {
+			error: [
+				"errorClickTestCampaignControlConvertedClicks",
+				"errorClickTestCampaignControlNotConvertedClicks",
+				"errorClickTestCampaignVariationConvertedClicks",
+				"errorClickTestCampaignVariationNotConvertedClicks"
+			]
+		},
+		
+		// Multivariate Campaign IDs
+		multivariate: {
+			error: [
+				"errorClickMultivariateCampaignControlConvertedClicks",
+				"errorClickMultivariateCampaignControlNotConvertedClicks",
+				"errorClickMultivariateCampaignVariationConvertedClicks",
+				"errorClickMultivariateCampaignVariationNotConvertedClicks"
+			]
+		},
+		
+		// Split Campaign IDs
+		split: {
+			error: [
+				"errorClickSplitCampaignControlConvertedClicks",
+				"errorClickSplitCampaignControlNotConvertedClicks",
+				"errorClickSplitCampaignVariationConvertedClicks",
+				"errorClickSplitCampaignVariationNotConvertedClicks"
+			]
+		},
+		
+		// Personalize Campaign IDs
+		personalize: {
+			error: [
+				"errorClickPersonalizeCampaignControlConvertedClicks",
+				"errorClickPersonalizeCampaignControlNotConvertedClicks",
+				"errorClickPersonalizeCampaignVariationConvertedClicks",
+				"errorClickPersonalizeCampaignVariationNotConvertedClicks"
+			]
+		}
+	};
+	
+	// Error counters for different click types
+	const errorCounters = {
+		normal: 1000,
+		rage: 2000,
+		error: 3000,
+		dead: 4000
+	};
+	
+	// Function to create error handlers for different click types
+	function createErrorHandler(campaignType, clickType, inputId) {
+		return () => {
+			const errorCode = errorCounters[clickType]++;
+			const errorMessage = `${clickType.toUpperCase()}_CLICK_ERROR_${errorCode}`;
+			const errorDetails = `Campaign: ${campaignType}, Type: ${clickType}, Input: ${inputId}`;
+			
+			// Log error details for debugging
+			console.log(`Error triggered: ${errorMessage} - ${errorDetails}`);
+			
+			// Throw the actual error
+			throw new Error(`${errorMessage} - ${errorDetails}`);
+		};
+	}
+	
+	// Initialize error handlers for all campaign inputs
+	function initializeCampaignErrorHandlers() {
+		let totalHandlers = 0;
+		
+		Object.keys(campaignInputIds).forEach(campaignType => {
+			const campaign = campaignInputIds[campaignType];
+			
+			Object.keys(campaign).forEach(clickType => {
+				campaign[clickType].forEach(inputId => {
+					const element = document.querySelector(`#${inputId}`);
+					if (element) {
+						element.onclick = createErrorHandler(campaignType, clickType, inputId);
+						totalHandlers++;
+					}
+				});
+			});
+		});
+		
+		return totalHandlers;
+	}
+	
+	// Additional utility functions for error handling
+	const ErrorUtils = {
+		// Get all inputs for a specific campaign type
+		getCampaignInputs: function(campaignType) {
+			return campaignInputIds[campaignType] || {};
+		},
+		
+		// Get all inputs of a specific click type across all campaigns
+		getClickTypeInputs: function(clickType) {
+			const inputs = [];
+			Object.keys(campaignInputIds).forEach(campaign => {
+				if (campaignInputIds[campaign][clickType]) {
+					inputs.push(...campaignInputIds[campaign][clickType]);
+				}
+			});
+			return inputs;
+		},
+		
+		// Simulate error for testing
+		simulateError: function(campaignType, clickType, index = 0) {
+			const inputs = campaignInputIds[campaignType]?.[clickType];
+			if (inputs && inputs[index]) {
+				const element = document.querySelector(`#${inputs[index]}`);
+				if (element && element.onclick) {
+					element.onclick();
+				}
+			}
+		}
+	};
+	
+	// Initialize all handlers when DOM is loaded
+	document.addEventListener('DOMContentLoaded', function() {
+		const totalHandlers = initializeCampaignErrorHandlers();
+		console.log(`Campaign error handlers initialized for ${totalHandlers} input elements`);
+		console.log('Available campaigns:', Object.keys(campaignInputIds));
+		console.log('ErrorUtils available globally for testing');
+		
+		// Make ErrorUtils available globally for console testing
+		window.ErrorUtils = ErrorUtils;
+	});
+</script>
+	
+</body>
+
+</html>
