@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Start VWO Async SmartCode -->
+    <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+    <script type='text/javascript' id='vwoCode'>
+    window._vwo_code || (function() {
+    var account_id = location.search.split('id=')[1] ? location.search.split('id=')[1] : '808235';
+    version=2.1,
+    settings_tolerance=2000,
+    hide_element='body',
+    hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;',
+    /* DO NOT EDIT BELOW THIS LINE */
+    f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={nonce:v&&v.nonce,use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}v&&t.setAttribute('nonce',v.nonce);d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var n=this.getSettings(),i=d.createElement('script'),r=this;t=t||{};if(n){i.textContent=n;d.getElementsByTagName('head')[0].appendChild(i);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200||o.status===304){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var n=this.hide_element(),i=n?n+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=i;else t.appendChild(d.createTextNode(i));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var i=d.createElement('div');i.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';i.setAttribute('id','_vis_opt_path_hides');i.classList.add('_vis_hide_layer');t.parentNode.insertBefore(i,t.nextSibling)}var o=window._vis_opt_url||d.URL,s='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(o)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:s})}else{this.load(s+'&x=true')}}};w._vwo_code=code;code.init();})();
+    </script>
+    <!-- End VWO Async SmartCode -->
+     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #e94560;
+            font-size: 2.5rem;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        .dropdowns-container {
+            display: flex;
+            gap: 80px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .dropdown-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .dropdown-label {
+            color: #a2d2ff;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 500;
+        }
+
+        /* Base dropdown styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-btn {
+            background: linear-gradient(145deg, #1f2937, #374151);
+            color: #f8fafc;
+            padding: 16px 28px;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 200px;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .dropdown-btn:hover {
+            border-color: #e94560;
+            box-shadow: 0 6px 25px rgba(233, 69, 96, 0.2);
+        }
+
+        .dropdown-btn .arrow {
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            background: linear-gradient(145deg, #1f2937, #2d3748);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            z-index: 100;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 14px 20px;
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(233, 69, 96, 0.15);
+            color: #e94560;
+            padding-left: 28px;
+        }
+
+        /* Hover Dropdown Specific */
+        .dropdown-hover:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-hover:hover .dropdown-btn .arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Click Dropdown Specific */
+        .dropdown-click .dropdown-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-click .dropdown-btn.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Decorative elements */
+        .decoration {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .decoration-1 {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            right: -100px;
+        }
+
+        .decoration-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -50px;
+            left: -50px;
+        }
+
+        /* Info text */
+        .info-section {
+            max-width: 600px;
+            text-align: center;
+            color: #94a3b8;
+            line-height: 1.8;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-section h3 {
+            color: #f8fafc;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .info-section code {
+            background: rgba(233, 69, 96, 0.2);
+            color: #e94560;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+
+    <h1>Dropdown Interactions</h1>
+
+    <div class="dropdowns-container">
+        <!-- Hover Dropdown -->
+        <div class="dropdown-wrapper">
+            <span class="dropdown-label">Hover to Open</span>
+            <div class="dropdown dropdown-hover">
+                <button class="dropdown-btn">
+                    Select Framework
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="#">React</a>
+                    <a href="#">Vue.js</a>
+                    <a href="#">Angular</a>
+                    <a href="#">Svelte</a>
+                    <a href="#">Next.js</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Click Dropdown -->
+        <div class="dropdown-wrapper">
+            <span class="dropdown-label">Click to Open</span>
+            <div class="dropdown dropdown-click">
+                <button class="dropdown-btn" id="clickDropdownBtn">
+                    Choose Language
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="dropdown-menu" id="clickDropdownMenu">
+                    <a href="#">JavaScript</a>
+                    <a href="#">Python</a>
+                    <a href="#">TypeScript</a>
+                    <a href="#">Rust</a>
+                    <a href="#">Go</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h3>How It Works</h3>
+        <p>
+            The <code>hover</code> dropdown uses pure CSS with the <code>:hover</code> pseudo-class 
+            to show and hide the menu. The <code>click</code> dropdown uses JavaScript to toggle 
+            an <code>active</code> class when the button is clicked, and closes when clicking outside.
+        </p>
+    </div>
+
+    <script>
+        // Click Dropdown Logic
+        const clickBtn = document.getElementById('clickDropdownBtn');
+        const clickMenu = document.getElementById('clickDropdownMenu');
+
+        clickBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            clickBtn.classList.toggle('active');
+            clickMenu.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!clickBtn.contains(e.target) && !clickMenu.contains(e.target)) {
+                clickBtn.classList.remove('active');
+                clickMenu.classList.remove('active');
+            }
+        });
+
+        // Close dropdown when pressing Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                clickBtn.classList.remove('active');
+                clickMenu.classList.remove('active');
+            }
+        });
+
+        // Optional: Close click dropdown when a menu item is selected
+        clickMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                clickBtn.classList.remove('active');
+                clickMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
