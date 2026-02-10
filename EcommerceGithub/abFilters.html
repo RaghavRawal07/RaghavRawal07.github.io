@@ -469,7 +469,7 @@ f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+
 					<div style="margin: 20px 0;">
 						<button id="pushstate-home" class="btn btn-default" onclick="navigateTo('home')">Home</button>
 						<button id="pushstate-about" class="btn btn-default" onclick="navigateTo('about')">About</button>
-						<button id="pushstate-contact" class="btn btn-default" onclick="navigateTo('contact')">Contact</button>
+						<button id="pushstate-aaa" class="btn btn-default" onclick="navigateTo('aaa')">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</button>
 					</div>
 					<div id="spa-content" style="padding: 20px; border: 1px solid #ddd; border-radius: 4px; min-height: 100px; background: #f9f9f9;">
 						<h3 id="spa-page-title">Home</h3>
@@ -483,23 +483,24 @@ f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+
 		</div>
 	
 		<script>
-			var spaPages = {
-				home:    { title: 'Home',    body: 'Welcome to the Home page. Check the URL bar — it will change without a full page reload!' },
-				about:   { title: 'About',   body: 'This is the About page. Notice the URL changed to /about but no network request was made.' },
-				contact: { title: 'Contact', body: 'This is the Contact page. The browser history now has a new entry you can navigate with Back/Forward.' }
-			};
+		var spaPages = {
+			home:    { title: 'Home',    body: 'Welcome to the Home page. Check the URL bar — it will change without a full page reload!' },
+			about:   { title: 'About',   body: 'This is the About page. Notice the URL changed to /about but no network request was made.' },
+			aaa:     { title: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', body: 'This is the aaa page. Only history.pushState was used — no redirect, no page reload.' }
+		};
 	
-			function renderPage(page) {
-				var data = spaPages[page] || spaPages['home'];
-				document.getElementById('spa-page-title').textContent = data.title;
-				document.getElementById('spa-page-body').textContent  = data.body;
-				document.getElementById('spa-current-path').textContent = window.location.pathname;
-			}
+		function renderPage(page) {
+			var data = spaPages[page] || spaPages['home'];
+			document.getElementById('spa-page-title').textContent = data.title;
+			document.getElementById('spa-page-body').textContent  = data.body;
+			document.getElementById('spa-current-path').textContent = window.location.pathname;
+		}
 	
-			function navigateTo(page) {
-				history.pushState({ page: page }, '', '/' + page);
-				renderPage(page);
-			}
+		function navigateTo(page) {
+			// Only use history.pushState — no page reload
+			history.pushState({ page: page }, '', '/' + page);
+			renderPage(page);
+		}
 	
 			// Handle browser Back / Forward buttons
 			window.addEventListener('popstate', function(event) {
