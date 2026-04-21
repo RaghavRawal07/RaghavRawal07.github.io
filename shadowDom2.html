@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <!-- Start VWO 3.0 SmartCode -->
-<link rel="preload" href="https://dev.visualwebsiteoptimizer.com/tag/1215818.js" as="script">
-<!-- End VWO 3.0 SmartCode -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shadow DOM Demo</title>
@@ -153,6 +150,14 @@
       .site-footer p {
         color: var(--muted) !important;
       }
+
+      .plain-iframe {
+        width: 100%;
+        height: 320px;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: 10px;
+        background: #ffffff;
+      }
     </style>
   </head>
   <body>
@@ -195,6 +200,27 @@
         </div>
 
         <reveal-card></reveal-card>
+      </section>
+
+      <section class="demo-section">
+        <div class="section-heading">
+          <span class="badge">Section 3</span>
+          <h2>Plain iframe (no Shadow DOM)</h2>
+          <p>
+            This <code>&lt;iframe&gt;</code> is rendered directly in the light
+            DOM. It is <strong>not</strong> wrapped in any custom element and
+            has no shadow root &mdash; inspect it in DevTools and you will see
+            the <code>&lt;iframe&gt;</code> tag sitting right inside
+            <code>&lt;main&gt;</code>.
+          </p>
+        </div>
+
+        <iframe
+          class="plain-iframe"
+          title="Plain iframe example"
+          src="https://nextjs-ecommerce-template-five.vercel.app/"
+          loading="lazy"
+        ></iframe>
       </section>
     </main>
 
