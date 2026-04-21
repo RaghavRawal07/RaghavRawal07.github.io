@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <!-- Start VWO 3.0 SmartCode -->
+<link rel="preload" href="https://dev.visualwebsiteoptimizer.com/tag/1215818.js" as="script">
+<!-- End VWO 3.0 SmartCode -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadow DOM Demo</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --bg-elev: #111c35;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #38bdf8;
+        --accent-alt: #a78bfa;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background: radial-gradient(circle at top left, #1e293b, var(--bg) 60%);
+        color: var(--text);
+        min-height: 100vh;
+        line-height: 1.6;
+      }
+
+      /* ---- global styles that INTENTIONALLY try to leak into components ---- */
+      /* These rules should NOT affect anything inside a shadow root.           */
+      p {
+        color: #ef4444 !important;
+      }
+
+      button {
+        background: #000 !important;
+        color: #fff !important;
+        border: 2px dashed #ef4444 !important;
+        padding: 6px 10px !important;
+        font-family: "Courier New", monospace !important;
+      }
+
+      h3 {
+        color: #ef4444 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+      }
+      /* ------------------------------------------------------------------- */
+
+      .site-header {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 64px 24px 24px;
+        text-align: center;
+      }
+
+      .site-header h1 {
+        font-size: 2.75rem;
+        margin: 0 0 12px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .site-header .subtitle {
+        color: var(--muted) !important;
+        font-size: 1.1rem;
+        margin: 0 0 16px;
+      }
+
+      .site-header .hint {
+        color: var(--muted) !important;
+        font-size: 0.9rem;
+      }
+
+      .site-header code {
+        background: rgba(148, 163, 184, 0.15);
+        padding: 2px 6px;
+        border-radius: 4px;
+        color: var(--accent);
+        font-size: 0.85rem;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 16px 24px 64px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .demo-section {
+        background: var(--bg-elev);
+        border: 1px solid rgba(148, 163, 184, 0.15);
+        border-radius: 16px;
+        padding: 32px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      .section-heading {
+        margin-bottom: 24px;
+      }
+
+      .section-heading h2 {
+        margin: 8px 0 12px;
+        font-size: 1.6rem;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        border-radius: 999px;
+        background: rgba(56, 189, 248, 0.15);
+        color: var(--accent);
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .badge-alt {
+        background: rgba(167, 139, 250, 0.15);
+        color: var(--accent-alt);
+      }
+
+      .section-heading code {
+        background: rgba(148, 163, 184, 0.15);
+        padding: 1px 6px;
+        border-radius: 4px;
+        color: var(--accent);
+        font-size: 0.85rem;
+      }
+
+      .site-footer {
+        text-align: center;
+        padding: 24px;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .site-footer p {
+        color: var(--muted) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Shadow DOM Demo</h1>
+      <p class="subtitle">
+        Two sections, two custom elements, two shadow roots.
+      </p>
+      <p class="hint">
+        Open DevTools and expand each custom element to see
+        <code>#shadow-root (open)</code>.
+      </p>
+    </header>
+
+    <main>
+      <section class="demo-section">
+        <div class="section-heading">
+          <span class="badge">Section 1</span>
+          <h2>Always-visible Shadow DOM</h2>
+          <p>
+            The content below is rendered <strong>inside a shadow root</strong>
+            as soon as the page loads. The global CSS on this page tries to
+            paint every <code>&lt;p&gt;</code> bright red, but the scoped
+            styles inside the shadow root win.
+          </p>
+        </div>
+
+        <visible-card></visible-card>
+      </section>
+
+      <section class="demo-section">
+        <div class="section-heading">
+          <span class="badge badge-alt">Section 2</span>
+          <h2>Click-to-reveal Shadow DOM</h2>
+          <p>
+            The button below lives inside a shadow root. Clicking it injects
+            more nodes into the <em>same</em> shadow root, so the revealed
+            content is also shadow DOM.
+          </p>
+        </div>
+
+        <reveal-card></reveal-card>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with vanilla HTML, CSS, and Web Components &mdash; no frameworks.</p>
+    </footer>
+
+    <script>
+      class VisibleCard extends HTMLElement {
+        constructor() {
+          super();
+          this.attachShadow({ mode: "open" });
+        }
+
+        connectedCallback() {
+          this.shadowRoot.innerHTML = `
+            <style>
+              :host {
+                display: block;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+              }
+
+              .card {
+                background: linear-gradient(135deg, #0ea5e9, #6366f1);
+                border-radius: 14px;
+                padding: 24px 28px;
+                color: #f8fafc;
+                box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35);
+              }
+
+              h3 {
+                margin: 0 0 8px;
+                font-size: 1.3rem;
+                letter-spacing: 0;
+                text-transform: none;
+                color: #ffffff;
+              }
+
+              p {
+                margin: 0 0 14px;
+                color: #e0f2fe;
+                line-height: 1.55;
+              }
+
+              ul {
+                margin: 0;
+                padding-left: 20px;
+                color: #e0f2fe;
+              }
+
+              li {
+                margin-bottom: 4px;
+              }
+
+              .tag {
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.18);
+                color: #f8fafc;
+                font-size: 0.7rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                padding: 3px 10px;
+                border-radius: 999px;
+                margin-bottom: 10px;
+              }
+            </style>
+
+            <div class="card">
+              <span class="tag">Rendered immediately</span>
+              <h3>Hello from inside a shadow root</h3>
+              <p>
+                Every element you see here lives in this component's shadow DOM.
+                The page's global CSS cannot reach it.
+              </p>
+              <ul>
+                <li>Heading, paragraph, and list are scoped.</li>
+                <li>Styles are defined in a &lt;style&gt; tag inside the shadow root.</li>
+                <li>Inspect this element in DevTools to see #shadow-root (open).</li>
+              </ul>
+            </div>
+          `;
+        }
+      }
+
+      customElements.define("visible-card", VisibleCard);
+
+      class RevealCard extends HTMLElement {
+        constructor() {
+          super();
+          this.attachShadow({ mode: "open" });
+          this._revealed = false;
+        }
+
+        connectedCallback() {
+          this.shadowRoot.innerHTML = `
+            <style>
+              :host {
+                display: block;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+              }
+
+              .card {
+                background: linear-gradient(135deg, #7c3aed, #ec4899);
+                border-radius: 14px;
+                padding: 24px 28px;
+                color: #fdf4ff;
+                box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35);
+              }
+
+              .tag {
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.18);
+                color: #fdf4ff;
+                font-size: 0.7rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                padding: 3px 10px;
+                border-radius: 999px;
+                margin-bottom: 12px;
+              }
+
+              button {
+                background: #fdf4ff;
+                color: #7c3aed;
+                border: none;
+                border-radius: 10px;
+                padding: 10px 18px;
+                font-size: 0.95rem;
+                font-weight: 600;
+                font-family: inherit;
+                cursor: pointer;
+                transition: transform 0.15s ease, box-shadow 0.15s ease;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+              }
+
+              button:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+              }
+
+              button:active {
+                transform: translateY(0);
+              }
+
+              #slot {
+                margin-top: 18px;
+              }
+
+              #slot[hidden] {
+                display: none;
+              }
+
+              h3 {
+                margin: 0 0 8px;
+                font-size: 1.25rem;
+                letter-spacing: 0;
+                text-transform: none;
+                color: #ffffff;
+              }
+
+              p {
+                margin: 0 0 10px;
+                color: #fae8ff;
+                line-height: 1.55;
+              }
+
+              .note {
+                margin-top: 12px;
+                padding: 10px 14px;
+                background: rgba(255, 255, 255, 0.12);
+                border-left: 3px solid #fdf4ff;
+                border-radius: 8px;
+                font-size: 0.9rem;
+              }
+            </style>
+
+            <div class="card">
+              <span class="tag">Click to reveal</span>
+              <p>Press the button to inject more shadow DOM nodes into this component.</p>
+              <button type="button" id="toggle">Reveal Shadow Content</button>
+              <div id="slot" hidden></div>
+            </div>
+          `;
+
+          const button = this.shadowRoot.getElementById("toggle");
+          button.addEventListener("click", () => this._toggle());
+        }
+
+        _toggle() {
+          const slot = this.shadowRoot.getElementById("slot");
+          const button = this.shadowRoot.getElementById("toggle");
+
+          if (!this._revealed) {
+            slot.innerHTML = `
+              <h3>Surprise! This is also shadow DOM.</h3>
+              <p>
+                These nodes were just created and appended into the same shadow root
+                as the button. They are fully encapsulated &mdash; the global page
+                CSS still cannot reach them.
+              </p>
+              <div class="note">
+                Try inspecting &lt;reveal-card&gt; in DevTools. You will see this
+                content nested under <code>#shadow-root (open)</code>.
+              </div>
+            `;
+            slot.hidden = false;
+            button.textContent = "Hide Shadow Content";
+            this._revealed = true;
+          } else {
+            slot.hidden = true;
+            slot.innerHTML = "";
+            button.textContent = "Reveal Shadow Content";
+            this._revealed = false;
+          }
+        }
+      }
+
+      customElements.define("reveal-card", RevealCard);
+    </script>
+  </body>
+</html>
