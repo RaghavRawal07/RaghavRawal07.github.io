@@ -1,904 +1,2128 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+ <!-- Start Wingify Async V3.0 SmartCode --> <link rel="preconnect" href="https://edge.wingify.net" /> <script type="text/javascript" > window._wingify_code || (function() { var account_id = 2000921, version = 3.0, settings_tolerance = 5000, hide_element = '', hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important'; /* DO NOT EDIT BELOW THIS LINE */ var t=window,n=document;if(-1<n.URL.indexOf('__wingify_disable__')||t._wingify_code)return;var i=!1,o=n.currentScript,e={sT:settings_tolerance,hES:hide_element_style,hE:hide_element};try{e=Object.assign(JSON.parse(localStorage.getItem('_wingify_'+account_id+'_config')),e)}catch(e){}var code={nonce:o.nonce,settings_tolerance:function(){return e.sT},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':e.hE},hide_element_style:function(){return'{'+e.hES+'}'},getVersion:function(){return version},finish:function(){var e;!i&&(i=!0,e=n.getElementById('_vis_opt_path_hides'))&&e.parentNode.removeChild(e)},finished:function(){return i},addScript:function(e){var t=n.createElement('script');t.src=e,o.nonce&&t.setAttribute('nonce',o.nonce),t.fetchPriority='high',n.head.appendChild(t)},init:function(){t._settings_timer=setTimeout(function(){code.finish()},this.settings_tolerance());var e=n.createElement('style');e.id='_vis_opt_path_hides',o.nonce&&e.setAttribute('nonce',o.nonce),e.textContent=this.hide_element()+this.hide_element_style(),n.head.appendChild(e),this.addScript('https://edge.wingify.net/cloud-run-test/final/'+account_id+'.js')}};t._wingify_code=code;code.init();})(); </script> <!--End Wingify Async SmartCode -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --surface-alt: #eff6ff;
+            --text: #0f172a;
+            --muted: #64748b;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent: #f59e0b;
+            --border: #e2e8f0;
+            --shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+        }
 
-	<title>Ecommerce Template</title>
+        html {
+            scroll-behavior: smooth;
+        }
 
-	<!-- Custom styles for this template (imports bootstrap from LESS) -->
-	<link href="style.css" rel="stylesheet">
-	<link href="social.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script type='text/javascript'>
-        //var _vwo_clicks = 200000; //this will track first 10 clicks
-	</script>
+        body {
+            margin: 0;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
 
-	<!-- <script type="text/javascript" src="https://try.abtasty.com/81677aa3dd7b49d4a23ac9870dfee7ce.js"></script> -->
-	 <!-- Start VWO Async SmartCode -->
-<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
-<script type='text/javascript' id='vwoCode'>
-window._vwo_code || (function() {
-var account_id = location.search.split('id=')[1] ? location.search.split('id=')[1] : '808235';
-version=2.1,
-settings_tolerance=2000,
-hide_element='body',
-hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;',
-/* DO NOT EDIT BELOW THIS LINE */
-f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={nonce:v&&v.nonce,use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}v&&t.setAttribute('nonce',v.nonce);d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var n=this.getSettings(),i=d.createElement('script'),r=this;t=t||{};if(n){i.textContent=n;d.getElementsByTagName('head')[0].appendChild(i);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200||o.status===304){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var n=this.hide_element(),i=n?n+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=i;else t.appendChild(d.createTextNode(i));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var i=d.createElement('div');i.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';i.setAttribute('id','_vis_opt_path_hides');i.classList.add('_vis_hide_layer');t.parentNode.insertBefore(i,t.nextSibling)}var o=window._vis_opt_url||d.URL,s='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(o)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:s})}else{this.load(s+'&x=true')}}};w._vwo_code=code;code.init();})();
-</script>
-<!-- End VWO Async SmartCode -->
-	<script>
-        function appendQS() {
-            var querystring = window.location.search;
-            $('a.linkUpdate').each(function() {
-                var href = $(this).attr('href');
-                href += querystring;
-                $(this).attr('href', href);
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img,
+        video,
+        iframe {
+            max-width: 100%;
+        }
+
+        section {
+            scroll-margin-top: 88px;
+            padding: 5rem 0;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.92);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(16px);
+        }
+
+        .site-nav {
+            width: min(1120px, calc(100% - 2rem));
+            min-height: 72px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .site-logo {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .nav-toggle {
+            display: none;
+            border: 0;
+            border-radius: 0.75rem;
+            padding: 0.7rem 0.85rem;
+            color: #ffffff;
+            background: var(--primary);
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a,
+        .footer-nav a {
+            border-radius: 999px;
+            padding: 0.5rem 0.8rem;
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active,
+        .footer-nav a:hover {
+            color: var(--primary-dark);
+            background: #dbeafe;
+        }
+
+        .hero {
+            min-height: calc(100vh - 72px);
+            display: grid;
+            grid-template-columns: minmax(1rem, 1fr) minmax(0, 560px) minmax(0, 480px) minmax(1rem, 1fr);
+            align-items: center;
+            gap: 3rem;
+            overflow: hidden;
+            background: radial-gradient(circle at 20% 20%, #dbeafe 0, transparent 32%), linear-gradient(135deg, #eff6ff 0%, #ffffff 52%, #fef3c7 100%);
+        }
+
+        .hero-content {
+            grid-column: 2;
+        }
+
+        .hero-heading {
+            margin: 0;
+            font-size: clamp(3rem, 8vw, 5.75rem);
+            line-height: 0.95;
+            letter-spacing: -0.07em;
+        }
+
+        .hero-subtitle {
+            max-width: 36rem;
+            margin: 1.25rem 0 2rem;
+            color: var(--muted);
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+        }
+
+        .cta-button,
+        .submit-button,
+        .modal-trigger,
+        .modal-close,
+        .accordion-trigger,
+        .deep-nesting-button,
+        .reviews-cta-id,
+        .carousel-arrow {
+            border: 0;
+            border-radius: 999px;
+            padding: 0.9rem 1.35rem;
+            color: #ffffff;
+            background: var(--primary);
+            font: inherit;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .cta-button:hover,
+        .submit-button:hover,
+        .modal-trigger:hover,
+        .modal-close:hover,
+        .accordion-trigger:hover,
+        .deep-nesting-button:hover,
+        .reviews-cta-id:hover,
+        .carousel-arrow:hover {
+            background: var(--primary-dark);
+            box-shadow: 0 14px 30px rgba(37, 99, 235, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            grid-column: 3;
+            position: relative;
+            height: 440px;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 36% 64% 52% 48%;
+            filter: drop-shadow(0 30px 30px rgba(37, 99, 235, 0.18));
+            animation: float 7s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            inset: 2rem auto auto 4rem;
+            width: 240px;
+            height: 240px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+        }
+
+        .shape-2 {
+            right: 2rem;
+            bottom: 3rem;
+            width: 190px;
+            height: 190px;
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+            animation-delay: -2s;
+        }
+
+        .shape-3 {
+            left: 1rem;
+            bottom: 1rem;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #10b981, #06b6d4);
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-22px) rotate(8deg);
+            }
+        }
+
+        .section-title {
+            margin: 0 0 0.75rem;
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            line-height: 1;
+            letter-spacing: -0.045em;
+            text-align: center;
+        }
+
+        .section-desc,
+        .iframe-section-desc {
+            max-width: 760px;
+            margin: 0 auto 2rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .about,
+        .reviews-section,
+        .parent-child-section,
+        .modal-section,
+        .form-elements-section,
+        .video-section--alt,
+        .contact {
+            background: var(--surface);
+        }
+
+        .about-content,
+        .anchor-section-content {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-card,
+        .anchor-section-link,
+        .service-card,
+        .review-item,
+        .review-card,
+        .parent-demo,
+        .rapid-demo,
+        .accordion,
+        .form-elements-group,
+        .modal-box {
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .about-card {
+            padding: 2rem;
+        }
+
+        .about-card p {
+            margin: 0 0 1rem;
+            color: var(--muted);
+        }
+
+        .about-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-stats {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .stat {
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+        }
+
+        .stat-number {
+            font-size: 2.35rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .stat-label {
+            opacity: 0.9;
+        }
+
+        .anchor-section-link {
+            display: block;
+            color: inherit;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .anchor-section-link:hover {
+            transform: translateY(-4px);
+        }
+
+        .anchor-section-text {
+            padding: 2rem;
+        }
+
+        .anchor-section-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .services-grid,
+        .reviews-grid,
+        .parent-demo-grid,
+        .form-elements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .service-card,
+        .review-item,
+        .parent-demo,
+        .form-elements-group {
+            padding: 1.5rem;
+        }
+
+        .service-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            display: grid;
+            place-items: center;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            background: #dbeafe;
+            font-size: 1.6rem;
+        }
+
+        .service-card h3,
+        .review-title {
+            margin: 0 0 0.5rem;
+        }
+
+        .service-card p,
+        .review-text,
+        .review-item p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .review-item footer {
+            margin-top: 1rem;
+            color: var(--primary-dark);
+            font-weight: 800;
+        }
+
+        .carousel-section {
+            overflow: hidden;
+            background: #0f172a;
+            color: #ffffff;
+        }
+
+        .reviews-header,
+        .carousel-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .reviews-title {
+            margin: 0;
+            font-size: clamp(1.5rem, 3vw, 2.4rem);
+        }
+
+        .reviews-stars,
+        .review-stars {
+            color: #fbbf24;
+            letter-spacing: 0.12em;
+        }
+
+        .carousel-viewport {
+            width: min(1120px, calc(100% - 2rem));
+            margin: 2rem auto;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 1rem;
+            transition: transform 0.35s ease;
+        }
+
+        .review-card {
+            min-width: calc((100% - 2rem) / 3);
+            padding: 1.5rem;
+            color: var(--text);
+        }
+
+        .review-verified {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #16a34a;
+            font-weight: 800;
+        }
+
+        .carousel-arrows {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .carousel-arrow {
+            width: 3rem;
+            height: 3rem;
+            padding: 0;
+        }
+
+        .pseudo-section {
+            background: linear-gradient(135deg, #fff7ed, #fffbeb);
+        }
+
+        .pseudo-demo {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .pseudo-before-after {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-radius: 1rem;
+            padding: 1rem 1.25rem;
+            background: #ffffff;
+            box-shadow: var(--shadow);
+            font-weight: 800;
+        }
+
+        .pseudo-before-after::before {
+            content: "Before";
+            border-radius: 999px;
+            padding: 0.25rem 0.6rem;
+            color: #ffffff;
+            background: var(--accent);
+            font-size: 0.75rem;
+        }
+
+        .pseudo-before-after::after {
+            content: "After";
+            border-radius: 999px;
+            padding: 0.25rem 0.6rem;
+            color: #ffffff;
+            background: var(--primary);
+            font-size: 0.75rem;
+        }
+
+        .parent-demo-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .parent-node,
+        .child-node,
+        .grandchild-node {
+            border: 1px dashed #93c5fd;
+            border-radius: 1rem;
+            padding: 1rem;
+            background: #eff6ff;
+        }
+
+        .child-node,
+        .grandchild-node {
+            margin-top: 0.75rem;
+            background: #ffffff;
+        }
+
+        .node-label {
+            font-weight: 900;
+        }
+
+        .node-desc {
+            margin: 0.15rem 0 0;
+            color: var(--muted);
+        }
+
+        .deep-nesting-section {
+            background: #f8fafc;
+        }
+
+        .deep-nesting-root {
+            overflow-x: auto;
+        }
+
+        .nest {
+            border-left: 3px solid rgba(37, 99, 235, 0.18);
+            padding: 0.25rem 0 0.25rem 0.65rem;
+        }
+
+        .deep-nesting-target {
+            min-width: 260px;
+            border-radius: 1.25rem;
+            padding: 1.25rem;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0f172a, #1d4ed8);
+        }
+
+        .deep-nesting-title {
+            margin: 0 0 0.4rem;
+        }
+
+        .deep-nesting-text {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .rapid-demo {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .rapid-counter {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .rapid-list {
+            margin: 1rem 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .rapid-list li {
+            border-radius: 0.75rem;
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            background: #eff6ff;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            background: rgba(15, 23, 42, 0.65);
+        }
+
+        .modal-overlay[hidden],
+        .accordion-panel[hidden] {
+            display: none;
+        }
+
+        .modal-box {
+            width: min(520px, 100%);
+            padding: 2rem;
+        }
+
+        .modal-title {
+            margin: 0 0 0.75rem;
+        }
+
+        .modal-body {
+            color: var(--muted);
+        }
+
+        .accordion {
+            max-width: 720px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .accordion-trigger {
+            width: 100%;
+            border-radius: 0;
+            text-align: left;
+        }
+
+        .accordion-panel {
+            padding: 1.25rem 1.5rem;
+        }
+
+        .form-elements-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .form-elements-group {
+            margin: 0;
+        }
+
+        .form-elements-legend {
+            padding: 0 0.5rem;
+            font-weight: 900;
+        }
+
+        .form-check-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+
+        .form-check-label input {
+            width: 1.1rem;
+            height: 1.1rem;
+            accent-color: var(--primary);
+        }
+
+        .display-none-section {
+            display: none;
+        }
+
+        .shadow-section {
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+        }
+
+        .iframe-wrapper {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            background: #000000;
+            box-shadow: var(--shadow);
+        }
+
+        .iframe-wrapper + .iframe-wrapper {
+            margin-top: 1.5rem;
+        }
+
+        .video-wrapper {
+            overflow: hidden;
+            border-radius: 1.5rem;
+            background: #000000;
+            box-shadow: var(--shadow);
+        }
+
+        .embed-iframe {
+            display: block;
+            width: min(100%, 760px);
+            min-height: 300px;
+            border: 0;
+        }
+
+        .video-bg-section {
+            position: relative;
+            min-height: 520px;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .video-bg-el,
+        .video-bg-overlay {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-bg-el {
+            object-fit: cover;
+        }
+
+        .video-bg-overlay {
+            background: rgba(15, 23, 42, 0.65);
+        }
+
+        .video-bg-content {
+            position: relative;
+            width: min(780px, calc(100% - 2rem));
+        }
+
+        .video-type-badge {
+            display: inline-flex;
+            border-radius: 999px;
+            padding: 0.45rem 0.75rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+            background: #fbbf24;
+            font-size: 0.8rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .video-type-badge--dark {
+            color: #ffffff;
+            background: #0f172a;
+        }
+
+        .video-bg-title {
+            margin: 0;
+            font-size: clamp(2.25rem, 6vw, 5rem);
+            line-height: 0.95;
+        }
+
+        .video-bg-desc {
+            max-width: 660px;
+            margin: 1rem auto 0;
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .site-video {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+        }
+
+        .contact-form {
+            max-width: 680px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1rem;
+            color: var(--text);
+            background: #ffffff;
+            font: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: 3px solid rgba(37, 99, 235, 0.2);
+            border-color: var(--primary);
+        }
+
+        .footer {
+            padding: 2rem 0;
+            color: #cbd5e1;
+            background: #0f172a;
+            text-align: center;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-nav a {
+            color: #cbd5e1;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1rem 1fr 1rem;
+                padding-top: 4rem;
+            }
+
+            .hero-content,
+            .hero-image {
+                grid-column: 2;
+            }
+
+            .hero-image {
+                height: 320px;
+            }
+
+            .about-content,
+            .anchor-section-content,
+            .services-grid,
+            .reviews-grid,
+            .parent-demo-grid,
+            .form-elements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .review-card {
+                min-width: calc((100% - 1rem) / 2);
+            }
+        }
+
+        @media (max-width: 760px) {
+            section {
+                padding: 4rem 0;
+            }
+
+            .site-nav {
+                align-items: flex-start;
+                flex-wrap: wrap;
+                padding: 1rem 0;
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+            }
+
+            .nav-links {
+                width: 100%;
+                display: none;
+                align-items: stretch;
+                flex-direction: column;
+                padding-top: 0.75rem;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                width: 100%;
+            }
+
+            .reviews-header,
+            .carousel-bottom {
+                flex-direction: column;
+            }
+
+            .review-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav-bar></nav-bar>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-heading">Welcome to My Website</h1>
+            <p class="hero-subtitle">A modern, beautiful website built with care</p>
+            <button class="cta-button" onclick="scrollToSection('contact')">Get Started</button>
+        </div>
+        <div class="hero-image">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <about-us-text></about-us-text>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Clients</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feature" class="anchor-section">
+        <div class="container">
+            <h2 class="section-title">Featured</h2>
+            <a href="#contact" class="anchor-section-link">
+                <div class="anchor-section-content">
+                    <div class="anchor-section-text">
+                        <p>This section combines text and an image. You can use it to highlight a product, team photo, or any visual that supports your message. Replace the image source with your own asset.</p>
+                        <p>This block is wrapped in an anchor tag—click anywhere to go to the Contact section.</p>
+                    </div>
+                    <div class="anchor-section-image">
+                        <!--
+                            <picture> element for image optimization:
+                            - <source type="image/webp">: served to browsers that support WebP
+                            - <img> fallback: served to browsers that don't support WebP
+                            srcset provides 3 sizes (small/medium/large) so the browser
+                            picks the best fit based on the viewport width (sizes attribute).
+                        -->
+                        <picture>
+                            <!-- WebP source: smaller file size, better quality -->
+                            <source
+                                type="image/webp"
+                                srcset="https://picsum.photos/400/267 400w, https://picsum.photos/600/400 600w, https://picsum.photos/900/600 900w"
+                                sizes="(max-width: 480px) 400px, (max-width: 768px) 600px, 900px"
+                            >
+                            <!-- JPG fallback for older browsers -->
+                            <img
+                                src="https://picsum.photos/600/400"
+                                srcset="https://picsum.photos/400/267 400w, https://picsum.photos/600/400 600w, https://picsum.photos/900/600 900w"
+                                sizes="(max-width: 480px) 400px, (max-width: 768px) 600px, 900px"
+                                alt="Featured image"
+                                width="600"
+                                height="400"
+                                loading="lazy"
+                            >
+                        </picture>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Web Design</h3>
+                    <p>Beautiful, responsive designs that work on all devices</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Development</h3>
+                    <p>Clean, efficient code that powers your website</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Optimization</h3>
+                    <p>Fast loading times and excellent performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- #reviews: SPA-style anchor target, scrolled to from the nav "Reviews" link -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">Client Reviews</h2>
+            <p class="section-desc">Real feedback from real clients about our work.</p>
+            <div class="reviews-grid">
+                <blockquote class="review-item">
+                    <p>"Working with this team was an absolute pleasure. They delivered beyond our expectations."</p>
+                    <footer>— Sarah T., CEO at NovaCo</footer>
+                </blockquote>
+                <blockquote class="review-item">
+                    <p>"Fast, clean, and professional. Our site performance improved drastically after their optimization work."</p>
+                    <footer>— James R., Founder at Buildify</footer>
+                </blockquote>
+                <blockquote class="review-item">
+                    <p>"Highly responsive team with a strong eye for design. We've now worked together on 3 projects."</p>
+                    <footer>— Priya M., Product Lead at Loopbase</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section id="carousel" class="carousel-section">
+        <div class="container">
+            <div class="reviews-header">
+                <div class="reviews-stars">★★★★★</div>
+                <h2 class="reviews-title">50+ 5-STAR REVIEWS FROM HAPPY CLIENTS</h2>
+                <div class="reviews-stars">★★★★★</div>
+            </div>
+        </div>
+        <div class="carousel-viewport" id="carousel-viewport">
+            <div class="carousel-track" id="carousel-track">
+                <article class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <h3 class="review-title">Exactly what we needed</h3>
+                    <p class="review-text">Beautiful, responsive design that works flawlessly on all devices. They took our vision and turned it into a modern, clean website. Highly recommend!</p>
+                    <span class="review-verified">✓ Verified Client</span>
+                </article>
+                <article class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <h3 class="review-title">Clean code, fast delivery</h3>
+                    <p class="review-text">The development quality was excellent—efficient code that powers our site smoothly. Professional team that delivered on time. Will work with them again.</p>
+                    <span class="review-verified">✓ Verified Client</span>
+                </article>
+                <article class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <h3 class="review-title">Performance went through the roof</h3>
+                    <p class="review-text">After their optimization work, our site loads in under 2 seconds. Bounce rate dropped and conversions improved. Worth every penny.</p>
+                    <span class="review-verified">✓ Verified Client</span>
+                </article>
+                <article class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <h3 class="review-title">User experience focus</h3>
+                    <p class="review-text">They really understand user experience and clean design. Our new site is both functional and visually appealing. Customers love it.</p>
+                    <span class="review-verified">✓ Verified Client</span>
+                </article>
+                <article class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <h3 class="review-title">5+ years of trust</h3>
+                    <p class="review-text">We've worked together on multiple projects. Consistently professional, creative, and attentive to detail. Couldn't ask for a better partner.</p>
+                    <span class="review-verified">✓ Verified Client</span>
+                </article>
+            </div>
+        </div>
+        <div class="container">
+            <div class="carousel-bottom">
+                <button type="button" class="reviews-cta-id" id="reviews-cta-id">SEE ALL TESTIMONIALS</button>
+                <div class="carousel-arrows">
+                    <button type="button" class="carousel-arrow carousel-prev" id="carousel-prev" aria-label="Previous reviews">&lt;</button>
+                    <button type="button" class="carousel-arrow carousel-next" id="carousel-next" aria-label="Next reviews">&gt;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pseudo" class="pseudo-section">
+        <div class="container">
+            <h2 class="section-title">::before / ::after Content</h2>
+            <p class="section-desc">Content and decoration added via CSS pseudo-elements.</p>
+            <div class="pseudo-demo">
+                <span class="pseudo-before-after">Quote</span>
+                <span class="pseudo-before-after">Label</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="parent-child" class="parent-child-section">
+        <div class="container">
+            <h2 class="section-title">Parent-Child</h2>
+            <p class="section-desc">Nested DOM structure: parent container with child elements.</p>
+            <div class="parent-demo-grid">
+                <div class="parent-demo">
+                    <div class="parent-node">
+                        <span class="node-label">Parent</span>
+                        <p class="node-desc">Main container</p>
+                        <div class="child-node">
+                            <span class="node-label">Child 1</span>
+                            <p class="node-desc">First item</p>
+                            <div class="grandchild-node">Grandchild 1a</div>
+                            <div class="grandchild-node">Grandchild 1b</div>
+                        </div>
+                        <div class="child-node">
+                            <span class="node-label">Child 2</span>
+                            <p class="node-desc">Second item</p>
+                        </div>
+                        <div class="child-node">
+                            <span class="node-label">Child 3</span>
+                            <p class="node-desc">Third item</p>
+                            <div class="grandchild-node">Grandchild 3a</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="parent-demo">
+                    <div class="parent-node">
+                        <span class="node-label">Sidebar</span>
+                        <p class="node-desc">Another parent tree</p>
+                        <div class="child-node">Link A</div>
+                        <div class="child-node">Link B</div>
+                        <div class="child-node">Link C</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="deep-nesting" class="deep-nesting-section">
+        <div class="container">
+            <h2 class="section-title">Deeply Nested (15 levels)</h2>
+            <p class="section-desc">A long nested DOM example for testing robust selectors and scroll/visibility behavior.</p>
+            <div class="deep-nesting-root" aria-label="15-level nested container">
+                <div class="nest nest-1">
+                    <div class="nest nest-2">
+                        <div class="nest nest-3">
+                            <div class="nest nest-4">
+                                <div class="nest nest-5">
+                                    <div class="nest nest-6">
+                                        <div class="nest nest-7">
+                                            <div class="nest nest-8">
+                                                <div class="nest nest-9">
+                                                    <div class="nest nest-10">
+                                                        <div class="nest nest-11">
+                                                            <div class="nest nest-12">
+                                                                <div class="nest nest-13">
+                                                                    <div class="nest nest-14">
+                                                                        <div class="nest nest-15">
+                                                                            <div class="deep-nesting-target" id="deep-nesting-target">
+                                                                                <h3 class="deep-nesting-title">Target at level 15</h3>
+                                                                                <p class="deep-nesting-text">If you can click this button reliably, your selectors are probably solid.</p>
+                                                                                <button type="button" class="deep-nesting-button" id="deep-nesting-button">Deep nested button</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rapid-mutation" class="rapid-mutation-section">
+        <div class="container">
+            <h2 class="section-title">Rapid DOM Mutation</h2>
+            <p class="section-desc">DOM updates on a slow interval (counter and list change every 10 seconds).</p>
+            <div class="rapid-demo">
+                <div class="rapid-counter" id="rapid-counter">0</div>
+                <ul class="rapid-list" id="rapid-list"></ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="modal" class="modal-section">
+        <div class="container">
+            <h2 class="section-title">Modal Popup</h2>
+            <p class="section-desc">Click the button to open a modal overlay.</p>
+            <button type="button" class="modal-trigger" id="modal-trigger">Open modal</button>
+        </div>
+    </section>
+
+    <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-box">
+            <h2 id="modal-title" class="modal-title">Modal Popup</h2>
+            <p class="modal-body">This content is inside a modal. Close with the button or by clicking outside.</p>
+            <button type="button" class="modal-close" id="modal-close">Close</button>
+        </div>
+    </div>
+
+    <section id="accordion" class="accordion-section">
+        <div class="container">
+            <h2 class="section-title">Accordion (Collapsed)</h2>
+            <p class="section-desc">Accordion panel starts collapsed; click to expand.</p>
+            <div class="accordion" id="accordion-demo">
+                <button type="button" class="accordion-trigger" id="accordion-trigger" aria-expanded="false" aria-controls="accordion-panel">Accordion header (collapsed)</button>
+                <div class="accordion-panel" id="accordion-panel" hidden>
+                    <p>Accordion content appears here when expanded.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="form-elements" class="form-elements-section">
+        <div class="container">
+            <h2 class="section-title">Form Elements</h2>
+            <p class="section-desc">Checkboxes and radio buttons for selection inputs.</p>
+            <div class="form-elements-grid">
+
+                <!-- Checkboxes -->
+                <fieldset class="form-elements-group">
+                    <legend class="form-elements-legend">Select your interests</legend>
+                    <label class="form-check-label">
+                        <input type="checkbox" id="check-design" name="interests" value="design">
+                        <span class="form-check-custom"></span>
+                        Web Design
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" id="check-dev" name="interests" value="development" checked>
+                        <span class="form-check-custom"></span>
+                        Development
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" id="check-seo" name="interests" value="seo">
+                        <span class="form-check-custom"></span>
+                        SEO &amp; Performance
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" id="check-branding" name="interests" value="branding">
+                        <span class="form-check-custom"></span>
+                        Branding
+                    </label>
+                </fieldset>
+
+                <!-- Radio buttons -->
+                <fieldset class="form-elements-group">
+                    <legend class="form-elements-legend">Preferred contact method</legend>
+                    <label class="form-check-label">
+                        <input type="radio" id="radio-email" name="contact-method" value="email" checked>
+                        <span class="form-radio-custom"></span>
+                        Email
+                    </label>
+                    <label class="form-check-label">
+                        <input type="radio" id="radio-phone" name="contact-method" value="phone">
+                        <span class="form-radio-custom"></span>
+                        Phone
+                    </label>
+                    <label class="form-check-label">
+                        <input type="radio" id="radio-chat" name="contact-method" value="chat">
+                        <span class="form-radio-custom"></span>
+                        Live Chat
+                    </label>
+                    <label class="form-check-label">
+                        <input type="radio" id="radio-meeting" name="contact-method" value="meeting">
+                        <span class="form-radio-custom"></span>
+                        Video Meeting
+                    </label>
+                </fieldset>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="display-none" class="display-none-section">
+        <div class="container">
+            <h2 class="section-title">display:none Section</h2>
+            <p class="section-desc">This section is in the DOM but hidden with <code>display: none</code>.</p>
+        </div>
+    </section>
+
+    <section id="shadow-open" class="shadow-section">
+        <feature-section></feature-section>
+        <shadow-link-card></shadow-link-card>
+        <two-level-shadow-card></two-level-shadow-card>
+        <three-level-shadow-card></three-level-shadow-card>
+    </section>
+
+    <section id="iframe" class="iframe-section">
+        <div class="container">
+            <h2 class="section-title">Embedded Content</h2>
+            <p class="iframe-section-desc">This section embeds content in an <code>&lt;iframe&gt;</code>. The iframe is a separate document with its own browsing context—scripts and styles from the parent page do not apply inside it.</p>
+            <div class="iframe-wrapper">
+                <iframe
+                    title="Embedded demo"
+                    srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>body{font-family:system-ui;margin:0;padding:2rem;background:linear-gradient(135deg,#fef3c7,#fde68a);color:#92400e;display:flex;align-items:center;justify-content:center;min-height:200px;}h2{margin:0 0 0.5rem;}p{margin:0 0 1rem;opacity:0.9;}.iframe-links{display:flex;gap:0.75rem;flex-wrap:wrap;}.iframe-links a{color:#92400e;font-weight:700;text-decoration:none;border:1px solid rgba(146,64,14,0.35);border-radius:999px;padding:0.5rem 0.85rem;background:rgba(255,255,255,0.55);}.iframe-links a:hover{text-decoration:underline;}</style></head><body><div><h2>Inside the iframe</h2><p>This content is in a separate document.</p><nav class='iframe-links' aria-label='Iframe links'><a href='#contact' target='_top'>Parent Contact</a><a href='#services' target='_top'>Parent Services</a></nav></div></body></html>"
+                    class="embed-iframe"
+                ></iframe>
+            </div>
+            <div class="iframe-wrapper">
+                <iframe
+                    id="two-level-iframe-demo"
+                    title="2 levels iframe demo"
+                    srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>body{font-family:system-ui;margin:0;padding:2rem;background:linear-gradient(135deg,#fef3c7,#fde68a);color:#92400e;display:flex;align-items:center;justify-content:center;min-height:200px;}h2{margin:0 0 0.5rem;}p{margin:0 0 1rem;opacity:0.9;}button{border:1px solid rgba(146,64,14,0.35);border-radius:999px;padding:0.55rem 0.9rem;color:#92400e;background:rgba(255,255,255,0.65);font:inherit;font-weight:800;cursor:pointer;}</style></head><body><div><h2>2 Levels Iframe</h2><p>This iframe contains one nested iframe below.</p><button type='button'>2-Level Button</button></div></body></html>"
+                    class="embed-iframe"
+                ></iframe>
+            </div>
+            <div class="iframe-wrapper">
+                <iframe
+                    id="three-level-iframe-demo"
+                    title="3 levels iframe demo"
+                    srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>body{font-family:system-ui;margin:0;padding:2rem;background:linear-gradient(135deg,#fef3c7,#fde68a);color:#92400e;display:flex;align-items:center;justify-content:center;min-height:200px;}h2{margin:0 0 0.5rem;}p{margin:0 0 1rem;opacity:0.9;}button{border:1px solid rgba(146,64,14,0.35);border-radius:999px;padding:0.55rem 0.9rem;color:#92400e;background:rgba(255,255,255,0.65);font:inherit;font-weight:800;cursor:pointer;}</style></head><body><div><h2>3 Levels Iframe</h2><p>This iframe contains a second iframe, which contains a third iframe.</p><button type='button'>3-Level Button</button></div></body></html>"
+                    class="embed-iframe"
+                ></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── VIDEO: Background / Hero autoplay ── -->
+    <section id="video-bg" class="video-bg-section">
+        <video class="video-bg-el" autoplay muted loop playsinline aria-hidden="true">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        </video>
+        <div class="video-bg-overlay"></div>
+        <div class="video-bg-content">
+            <span class="video-type-badge">Background / Hero Video</span>
+            <h2 class="video-bg-title">Build Something Extraordinary</h2>
+            <p class="video-bg-desc">Decorative autoplay video used as a full-width section background. Muted, looping, no controls — purely visual.</p>
+        </div>
+    </section>
+
+    <!-- ── VIDEO: Self-hosted HTML5 <video> ── -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <h2 class="section-title">Watch Our Work</h2>
+            <p class="section-desc">Self-hosted video using the HTML5 <code>&lt;video&gt;</code> element — full browser-native controls, no third-party dependency.</p>
+            <span class="video-type-badge video-type-badge--dark">Self-hosted &lt;video&gt;</span>
+            <div class="video-wrapper">
+                <video
+                    class="site-video"
+                    controls
+                    poster="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&auto=format&fit=crop"
+                    preload="none"
+                    aria-label="Website walkthrough video"
+                >
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── VIDEO: YouTube embed ── -->
+    <section id="video-youtube" class="video-section video-section--alt">
+        <div class="container">
+            <h2 class="section-title">YouTube Embed</h2>
+            <p class="section-desc">Video hosted on YouTube and embedded via <code>&lt;iframe&gt;</code>. YouTube handles encoding, CDN delivery, and adaptive streaming — zero bandwidth cost on your server.</p>
+            <span class="video-type-badge video-type-badge--dark">YouTube &lt;iframe&gt;</span>
+            <div class="video-wrapper">
+                <iframe
+                    class="site-video"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy"
+                ></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── VIDEO: Vimeo embed ── -->
+    <section id="video-vimeo" class="video-section">
+        <div class="container">
+            <h2 class="section-title">Vimeo Embed</h2>
+            <p class="section-desc">Video hosted on Vimeo and embedded via <code>&lt;iframe&gt;</code>. Preferred by creative agencies for its cleaner player and privacy-friendly options.</p>
+            <span class="video-type-badge video-type-badge--dark">Vimeo &lt;iframe&gt;</span>
+            <div class="video-wrapper">
+                <iframe
+                    class="site-video"
+                    src="https://player.vimeo.com/video/76979871"
+                    title="Vimeo video player"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy"
+                ></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services Page</a>
+                <a href="#pseudo">Pseudo</a>
+                <a href="#parent-child">Parent-Child</a>
+                <a href="#rapid-mutation">Rapid DOM</a>
+                <a href="#modal">Modal</a>
+                <a href="#accordion">Accordion</a>
+                <a href="#form-elements">Form Elements</a>
+                <a href="#iframe">Embed</a>
+                <a href="#video-bg">Video: BG</a>
+                <a href="#video">Video: Self-hosted</a>
+                <a href="#video-youtube">Video: YouTube</a>
+                <a href="#video-vimeo">Video: Vimeo</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        class ShadowLinkCard extends HTMLElement {
+            connectedCallback() {
+                if (this.shadowRoot) return;
+
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            margin: 1.5rem auto 0;
+                            max-width: 1100px;
+                            padding: 0 1rem;
+                        }
+
+                        .shadow-card {
+                            border-radius: 1.25rem;
+                            padding: 1.5rem;
+                            background: linear-gradient(135deg, #eef2ff, #dbeafe);
+                            color: #1e3a8a;
+                            box-shadow: 0 20px 45px rgba(30, 58, 138, 0.12);
+                        }
+
+                        h3 {
+                            margin: 0 0 0.5rem;
+                            font-size: 1.35rem;
+                        }
+
+                        p {
+                            margin: 0 0 1rem;
+                            opacity: 0.85;
+                        }
+
+                        .shadow-links {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 0.75rem;
+                        }
+
+                        a {
+                            display: inline-flex;
+                            align-items: center;
+                            border-radius: 999px;
+                            padding: 0.65rem 1rem;
+                            background: #1d4ed8;
+                            color: #ffffff;
+                            font-weight: 700;
+                            text-decoration: none;
+                        }
+
+                        a.secondary {
+                            background: #ffffff;
+                            color: #1d4ed8;
+                            border: 1px solid rgba(29, 78, 216, 0.25);
+                        }
+
+                        a:hover,
+                        a:focus-visible {
+                            text-decoration: underline;
+                        }
+                    </style>
+                    <article class="shadow-card">
+                        <h3>Links inside open shadow DOM</h3>
+                        <p>These anchors live inside this custom element's shadow root.</p>
+                        <nav class="shadow-links" aria-label="Shadow DOM links">
+                            <a href="#contact">Shadow Contact Link</a>
+                            <a class="secondary" href="#about">Shadow About Link</a>
+                        </nav>
+                    </article>
+                `;
+            }
+        }
+
+        class TwoLevelShadowCard extends HTMLElement {
+            connectedCallback() {
+                if (this.shadowRoot) return;
+
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            margin: 1.5rem auto 0;
+                            max-width: 1100px;
+                            padding: 0 1rem;
+                        }
+
+                        .nested-shadow-card {
+                            border-radius: 1.25rem;
+                            padding: 1.5rem;
+                            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+                            color: #064e3b;
+                            box-shadow: 0 20px 45px rgba(6, 78, 59, 0.12);
+                        }
+
+                        .eyebrow {
+                            margin: 0 0 0.45rem;
+                            font-size: 0.8rem;
+                            font-weight: 900;
+                            letter-spacing: 0.08em;
+                            text-transform: uppercase;
+                        }
+
+                        h3 {
+                            margin: 0 0 0.5rem;
+                            font-size: 1.35rem;
+                        }
+
+                        p {
+                            margin: 0 0 1rem;
+                            opacity: 0.85;
+                        }
+
+                        .level-two-host {
+                            display: block;
+                            margin-top: 1rem;
+                        }
+                    </style>
+                    <article class="nested-shadow-card">
+                        <p class="eyebrow">Two levels deep</p>
+                        <h3>2 Levels Shadow DOM</h3>
+                        <p>Level 1 is this custom element's shadow root. The panel below is rendered inside a second shadow root.</p>
+                        <div class="level-two-host"></div>
+                    </article>
+                `;
+
+                const levelTwoHost = shadow.querySelector('.level-two-host');
+                const levelTwoShadow = levelTwoHost.attachShadow({ mode: 'open' });
+                levelTwoShadow.innerHTML = `
+                    <style>
+                        .inner-card {
+                            border: 1px solid rgba(6, 78, 59, 0.18);
+                            border-radius: 1rem;
+                            padding: 1rem;
+                            background: rgba(255, 255, 255, 0.72);
+                        }
+
+                        p {
+                            margin: 0 0 0.85rem;
+                            color: #065f46;
+                            font-family: system-ui, sans-serif;
+                        }
+
+                        .shadow-links {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 0.75rem;
+                        }
+
+                        a {
+                            display: inline-flex;
+                            align-items: center;
+                            border-radius: 999px;
+                            padding: 0.65rem 1rem;
+                            background: #047857;
+                            color: #ffffff;
+                            font-family: system-ui, sans-serif;
+                            font-weight: 800;
+                            text-decoration: none;
+                        }
+
+                        a.secondary {
+                            background: #ffffff;
+                            color: #047857;
+                            border: 1px solid rgba(4, 120, 87, 0.25);
+                        }
+
+                        a:hover,
+                        a:focus-visible {
+                            text-decoration: underline;
+                        }
+                    </style>
+                    <section class="inner-card" aria-label="Second-level shadow DOM content">
+                        <p>This content is inside shadow root level 2.</p>
+                        <nav class="shadow-links" aria-label="Two-level shadow DOM links">
+                            <a href="#services">2-Level Services Link</a>
+                            <a class="secondary" href="#contact">2-Level Contact Link</a>
+                        </nav>
+                    </section>
+                `;
+            }
+        }
+
+        class ThreeLevelShadowCard extends HTMLElement {
+            connectedCallback() {
+                if (this.shadowRoot) return;
+
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            margin: 1.5rem auto 0;
+                            max-width: 1100px;
+                            padding: 0 1rem;
+                        }
+
+                        .nested-shadow-card {
+                            border-radius: 1.25rem;
+                            padding: 1.5rem;
+                            background: linear-gradient(135deg, #fff7ed, #fed7aa);
+                            color: #7c2d12;
+                            box-shadow: 0 20px 45px rgba(124, 45, 18, 0.12);
+                        }
+
+                        .eyebrow {
+                            margin: 0 0 0.45rem;
+                            font-size: 0.8rem;
+                            font-weight: 900;
+                            letter-spacing: 0.08em;
+                            text-transform: uppercase;
+                        }
+
+                        h3 {
+                            margin: 0 0 0.5rem;
+                            font-size: 1.35rem;
+                        }
+
+                        p {
+                            margin: 0 0 1rem;
+                            opacity: 0.85;
+                        }
+
+                        .level-two-host {
+                            display: block;
+                            margin-top: 1rem;
+                        }
+                    </style>
+                    <article class="nested-shadow-card">
+                        <p class="eyebrow">Three levels deep</p>
+                        <h3>3 Levels Shadow DOM</h3>
+                        <p>Level 1 starts here, then a second host creates level 2, and the final content lives in level 3.</p>
+                        <div class="level-two-host"></div>
+                    </article>
+                `;
+
+                const levelTwoHost = shadow.querySelector('.level-two-host');
+                const levelTwoShadow = levelTwoHost.attachShadow({ mode: 'open' });
+                levelTwoShadow.innerHTML = `
+                    <style>
+                        .middle-card {
+                            border: 1px solid rgba(124, 45, 18, 0.16);
+                            border-radius: 1rem;
+                            padding: 1rem;
+                            background: rgba(255, 255, 255, 0.62);
+                        }
+
+                        p {
+                            margin: 0 0 0.85rem;
+                            color: #9a3412;
+                            font-family: system-ui, sans-serif;
+                            font-weight: 700;
+                        }
+
+                        .level-three-host {
+                            display: block;
+                        }
+                    </style>
+                    <section class="middle-card" aria-label="Second-level shadow DOM shell">
+                        <p>This middle panel is inside shadow root level 2.</p>
+                        <div class="level-three-host"></div>
+                    </section>
+                `;
+
+                const levelThreeHost = levelTwoShadow.querySelector('.level-three-host');
+                const levelThreeShadow = levelThreeHost.attachShadow({ mode: 'open' });
+                levelThreeShadow.innerHTML = `
+                    <style>
+                        .inner-card {
+                            border-radius: 0.85rem;
+                            padding: 1rem;
+                            background: #ffffff;
+                        }
+
+                        p {
+                            margin: 0 0 0.85rem;
+                            color: #7c2d12;
+                            font-family: system-ui, sans-serif;
+                        }
+
+                        .shadow-links {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 0.75rem;
+                        }
+
+                        a {
+                            display: inline-flex;
+                            align-items: center;
+                            border-radius: 999px;
+                            padding: 0.65rem 1rem;
+                            background: #ea580c;
+                            color: #ffffff;
+                            font-family: system-ui, sans-serif;
+                            font-weight: 800;
+                            text-decoration: none;
+                        }
+
+                        a.secondary {
+                            background: #fff7ed;
+                            color: #c2410c;
+                            border: 1px solid rgba(194, 65, 12, 0.25);
+                        }
+
+                        a:hover,
+                        a:focus-visible {
+                            text-decoration: underline;
+                        }
+                    </style>
+                    <section class="inner-card" aria-label="Third-level shadow DOM content">
+                        <p>This content is inside shadow root level 3.</p>
+                        <nav class="shadow-links" aria-label="Three-level shadow DOM links">
+                            <a href="#reviews">3-Level Reviews Link</a>
+                            <a class="secondary" href="#contact">3-Level Contact Link</a>
+                        </nav>
+                    </section>
+                `;
+            }
+        }
+
+        customElements.define('shadow-link-card', ShadowLinkCard);
+        customElements.define('two-level-shadow-card', TwoLevelShadowCard);
+        customElements.define('three-level-shadow-card', ThreeLevelShadowCard);
+    </script>
+    <script>
+        const navItems = [
+            ['Home', '#home'],
+            ['About', '#about'],
+            ['Featured', '#feature'],
+            ['Services', '#services'],
+            ['Reviews', '#reviews'],
+            ['Carousel', '#carousel'],
+            ['Shadow DOM', '#shadow-open'],
+            ['Iframe', '#iframe'],
+            ['Videos', '#video-bg'],
+            ['Contact', '#contact'],
+        ];
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        window.scrollToSection = scrollToSection;
+
+        class NavBar extends HTMLElement {
+            connectedCallback() {
+                this.innerHTML = `
+                    <header class="site-header">
+                        <nav class="site-nav" aria-label="Main navigation">
+                            <a class="site-logo" href="#home">MyWebsite</a>
+                            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav-links">Menu</button>
+                            <div class="nav-links" id="main-nav-links">
+                                ${navItems.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}
+                            </div>
+                        </nav>
+                    </header>
+                `;
+
+                const toggle = this.querySelector('.nav-toggle');
+                const links = this.querySelector('.nav-links');
+
+                toggle?.addEventListener('click', () => {
+                    const isOpen = links.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', String(isOpen));
+                });
+
+                links?.addEventListener('click', (event) => {
+                    if (event.target.closest('a')) {
+                        links.classList.remove('open');
+                        toggle?.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        }
+
+        class AboutUsText extends HTMLElement {
+            connectedCallback() {
+                this.innerHTML = `
+                    <div class="about-card">
+                        <p>We create fast, accessible websites with clean visuals and practical interactions.</p>
+                        <p>This demo includes common page patterns for testing navigation, selectors, media, forms, modals, shadow DOM, and iframe content.</p>
+                    </div>
+                `;
+            }
+        }
+
+        class FeatureSection extends HTMLElement {
+            connectedCallback() {
+                if (this.shadowRoot) return;
+
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            width: min(1120px, calc(100% - 2rem));
+                            margin: 0 auto;
+                        }
+
+                        .feature-card {
+                            border-radius: 1.5rem;
+                            padding: 2rem;
+                            background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+                            color: #ffffff;
+                            box-shadow: 0 20px 50px rgba(29, 78, 216, 0.24);
+                        }
+
+                        h2 {
+                            margin: 0 0 0.75rem;
+                            font-family: system-ui, sans-serif;
+                            font-size: clamp(1.75rem, 4vw, 2.75rem);
+                            line-height: 1;
+                        }
+
+                        p {
+                            max-width: 720px;
+                            margin: 0 0 1.25rem;
+                            color: rgba(255, 255, 255, 0.82);
+                            font-family: system-ui, sans-serif;
+                        }
+
+                        a {
+                            display: inline-flex;
+                            border-radius: 999px;
+                            padding: 0.75rem 1rem;
+                            background: #ffffff;
+                            color: #1d4ed8;
+                            font-family: system-ui, sans-serif;
+                            font-weight: 800;
+                            text-decoration: none;
+                        }
+
+                        a:hover,
+                        a:focus-visible {
+                            text-decoration: underline;
+                        }
+                    </style>
+                    <article class="feature-card">
+                        <h2>Open Shadow DOM Section</h2>
+                        <p>This custom element renders its content inside an open shadow root and includes a navigable link.</p>
+                        <a href="#contact">Go to Contact</a>
+                    </article>
+                `;
+            }
+        }
+
+        function createNestedIframeDocument({ heading, description, buttonLabel, nestedTitle = '' }) {
+            const nestedFrame = nestedTitle
+                ? `<iframe id="nested-iframe-target" title="${nestedTitle}" class="nested-frame"></iframe>`
+                : '';
+
+            return `<!DOCTYPE html>
+                <html>
+                    <head>
+                        <meta charset="UTF-8">
+                        <style>
+                            body {
+                                min-height: 200px;
+                                margin: 0;
+                                padding: 2rem;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: #92400e;
+                                background: linear-gradient(135deg, #fef3c7, #fde68a);
+                                font-family: system-ui;
+                            }
+
+                            .iframe-shell {
+                                width: 100%;
+                                max-width: 680px;
+                            }
+
+                            h2 {
+                                margin: 0 0 0.5rem;
+                            }
+
+                            p {
+                                margin: 0 0 1rem;
+                                opacity: 0.9;
+                            }
+
+                            .iframe-button {
+                                border: 1px solid rgba(146, 64, 14, 0.35);
+                                border-radius: 999px;
+                                padding: 0.55rem 0.9rem;
+                                color: #92400e;
+                                background: rgba(255, 255, 255, 0.65);
+                                font: inherit;
+                                font-weight: 800;
+                                cursor: pointer;
+                            }
+
+                            .nested-frame {
+                                display: block;
+                                width: 100%;
+                                min-height: 145px;
+                                margin-top: 1rem;
+                                border: 0;
+                                border-radius: 1rem;
+                                background: #000000;
+                                box-shadow: 0 16px 30px rgba(146, 64, 14, 0.18);
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="iframe-shell">
+                            <h2>${heading}</h2>
+                            <p>${description}</p>
+                            <button class="iframe-button" type="button">${buttonLabel}</button>
+                            ${nestedFrame}
+                        </div>
+                    </body>
+                </html>`;
+        }
+
+        function setupNestedIframes() {
+            const twoLevelFrame = document.getElementById('two-level-iframe-demo');
+            const threeLevelFrame = document.getElementById('three-level-iframe-demo');
+
+            if (twoLevelFrame) {
+                twoLevelFrame.addEventListener('load', () => {
+                    const levelTwoFrame = twoLevelFrame.contentDocument?.getElementById('nested-iframe-target');
+
+                    if (levelTwoFrame) {
+                        levelTwoFrame.srcdoc = createNestedIframeDocument({
+                            heading: 'Inside iframe level 2',
+                            description: 'This content is in the second iframe document.',
+                            buttonLabel: 'Level 2 Button',
+                        });
+                    }
+                }, { once: true });
+
+                twoLevelFrame.srcdoc = createNestedIframeDocument({
+                    heading: '2 Levels Iframe',
+                    description: 'This iframe contains one nested iframe below.',
+                    buttonLabel: '2-Level Button',
+                    nestedTitle: 'Nested level 2 iframe',
+                });
+            }
+
+            if (threeLevelFrame) {
+                threeLevelFrame.addEventListener('load', () => {
+                    const levelTwoFrame = threeLevelFrame.contentDocument?.getElementById('nested-iframe-target');
+
+                    if (!levelTwoFrame) return;
+
+                    levelTwoFrame.addEventListener('load', () => {
+                        const levelThreeFrame = levelTwoFrame.contentDocument?.getElementById('nested-iframe-target');
+
+                        if (levelThreeFrame) {
+                            levelThreeFrame.srcdoc = createNestedIframeDocument({
+                                heading: 'Inside iframe level 3',
+                                description: 'This content is in the deepest iframe document.',
+                                buttonLabel: 'Level 3 Button',
+                            });
+                        }
+                    }, { once: true });
+
+                    levelTwoFrame.srcdoc = createNestedIframeDocument({
+                        heading: 'Inside iframe level 2',
+                        description: 'This second iframe contains the final third-level iframe.',
+                        buttonLabel: 'Level 2 Button',
+                        nestedTitle: 'Nested level 3 iframe',
+                    });
+                }, { once: true });
+
+                threeLevelFrame.srcdoc = createNestedIframeDocument({
+                    heading: '3 Levels Iframe',
+                    description: 'This iframe contains a second iframe, which contains a third iframe.',
+                    buttonLabel: '3-Level Button',
+                    nestedTitle: 'Nested level 2 iframe',
+                });
+            }
+        }
+
+        function registerCustomElements() {
+            if (!customElements.get('nav-bar')) {
+                customElements.define('nav-bar', NavBar);
+            }
+
+            if (!customElements.get('about-us-text')) {
+                customElements.define('about-us-text', AboutUsText);
+            }
+
+            if (!customElements.get('feature-section')) {
+                customElements.define('feature-section', FeatureSection);
+            }
+        }
+
+        function setActiveNavLink() {
+            const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+            const sections = links
+                .map((link) => document.querySelector(link.getAttribute('href')))
+                .filter(Boolean);
+
+            if (!sections.length) return;
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+
+                        const activeId = `#${entry.target.id}`;
+                        links.forEach((link) => {
+                            link.classList.toggle('active', link.getAttribute('href') === activeId);
+                        });
+                    });
+                },
+                { rootMargin: '-35% 0px -55% 0px', threshold: 0 }
+            );
+
+            sections.forEach((section) => observer.observe(section));
+        }
+
+        function setupCarousel() {
+            const track = document.getElementById('carousel-track');
+            const prev = document.getElementById('carousel-prev');
+            const next = document.getElementById('carousel-next');
+            const cta = document.getElementById('reviews-cta-id');
+
+            if (!track || !prev || !next) return;
+
+            let index = 0;
+
+            const update = () => {
+                const card = track.querySelector('.review-card');
+                if (!card) return;
+
+                const gap = parseFloat(getComputedStyle(track).gap) || 0;
+                const cardWidth = card.getBoundingClientRect().width + gap;
+                const visibleCards = Math.max(1, Math.floor(track.parentElement.getBoundingClientRect().width / cardWidth));
+                const maxIndex = Math.max(0, track.children.length - visibleCards);
+
+                index = Math.min(Math.max(index, 0), maxIndex);
+                track.style.transform = `translateX(${-index * cardWidth}px)`;
+            };
+
+            prev.addEventListener('click', () => {
+                index -= 1;
+                update();
+            });
+
+            next.addEventListener('click', () => {
+                index += 1;
+                update();
+            });
+
+            cta?.addEventListener('click', () => scrollToSection('reviews'));
+            window.addEventListener('resize', update);
+            update();
+        }
+
+        function setupRapidMutation() {
+            const counter = document.getElementById('rapid-counter');
+            const list = document.getElementById('rapid-list');
+
+            if (!counter || !list) return;
+
+            let count = 0;
+
+            const render = () => {
+                count += 1;
+                counter.textContent = String(count);
+                list.innerHTML = Array.from({ length: 3 }, (_, index) => `<li>Mutation ${count}.${index + 1}</li>`).join('');
+            };
+
+            render();
+            setInterval(render, 10000);
+        }
+
+        function setupModal() {
+            const overlay = document.getElementById('modal-overlay');
+            const trigger = document.getElementById('modal-trigger');
+            const close = document.getElementById('modal-close');
+
+            if (!overlay || !trigger || !close) return;
+
+            const openModal = () => {
+                overlay.hidden = false;
+                document.body.classList.add('modal-open');
+                close.focus();
+            };
+
+            const closeModal = () => {
+                overlay.hidden = true;
+                document.body.classList.remove('modal-open');
+                trigger.focus();
+            };
+
+            trigger.addEventListener('click', openModal);
+            close.addEventListener('click', closeModal);
+            overlay.addEventListener('click', (event) => {
+                if (event.target === overlay) closeModal();
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !overlay.hidden) {
+                    closeModal();
+                }
             });
         }
-	</script>
-</head>
 
-<body onload="appendQS()">
+        function setupAccordion() {
+            const trigger = document.getElementById('accordion-trigger');
+            const panel = document.getElementById('accordion-panel');
 
-<div class="container">
+            if (!trigger || !panel) return;
 
-	<header>
-		<div class="row">
-			<div class="col-md-4 col-sm-12">
-				<h1 class="logo"><i class="glyphicon glyphicon-tag"></i> My Store</h1>
-				<p class="subtext">Bootstrap Ecommerce Template</p>
-			</div>
-			<!-- col-md-4 -->
-			<div class="col-md-8 col-sm-12">
-				<br class="form-inline">
-					<div class="form-group">
-						<label>Email</label>
-						<input id="emailBox" type="email" class="form-control" placeholder="Enter Email">
-					</div>
-					<div class="form-group">
-						<label>Password</label>
-						<input id="passwordBox" type="password" class="form-control" placeholder="Enter Password">
-					</div>
-					<div class="form-group">
-						<label>Hint</label>
-						<input id="hint" type="input" class="form-control" placeholder="VWO">
-					</div>
-					<br> </br>
-					<a id="login_Button" class="btn btn-default" style="display: block; margin: 0 auto;">Login</a>
-				</form>
-			</div>
-			<!-- col-md-8 -->
-		</div>
-		<!-- row -->
-	</header>
+            trigger.addEventListener('click', () => {
+                const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+                trigger.setAttribute('aria-expanded', String(!isExpanded));
+                trigger.textContent = isExpanded ? 'Accordion header (collapsed)' : 'Accordion header (expanded)';
+                panel.hidden = isExpanded;
+            });
+        }
 
-	<!-- Static navbar -->
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div id="navbar">
-				<ul class="nav navbar-nav">
-					<p class="navbar-text">Home</p>
-					<p class="navbar-text">What's New</p>
-					<p class="navbar-text">Specials</p>
-					<p class="navbar-text">My Account</p>
+        function setupContactForm() {
+            window.handleSubmit = (event) => {
+                event.preventDefault();
+                alert('Thanks! Your message was captured for this demo.');
+                event.target.reset();
+            };
+        }
 
-				</ul>
-			</div>
-			<!--/.nav-collapse -->
-		</div>
-		<!--/.container-fluid -->
-	</nav>
+        registerCustomElements();
+        setupNestedIframes();
 
-	<!-- Main component for a primary marketing message or call to action -->
-	<div class="jumbotron">
-		<!-- Nav tabs -->
-		<ul class="tablist" role="tablist">
-			<li id="featured" role="presentation" class="active"><a href="#featured-item" aria-controls="featured-item" role="tab" data-toggle="tab">Featured Item</a></li>
-			<li id="bestSeller" role="presentation"><a href="#best-seller" aria-controls="best-seller" role="tab" data-toggle="tab">Best Seller</a></li>
-			<li id="summerDiscount" role="presentation"><a href="#discount" aria-controls="discount" role="tab" data-toggle="tab">Summer Discount</a></li>
-			<li id="premium" role="presentation"><a href="#premium" aria-controls="premium" role="tab" data-toggle="tab">Premium Product</a></li>
-			<li id="giftIdea" role="presentation"><a href="#gift-idea" aria-controls="gift-idea" role="tab" data-toggle="tab">Gift Idea</a></li>
-		</ul>
-
-		<!-- Tab panes -->
-		<div class="tab-content">
-			<div role="tabpanel" class="tab-pane active" id="featured-item">
-				<div class="tab-text">
-					<h2>Apple iPhone 6</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
-					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
-				</div>
-				<!-- tab-text -->
-				<img class="slide-img"/>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="best-seller">
-				<div class="tab-text">
-					<h2>Xbox One</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
-					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
-				</div>
-				<!-- tab-text -->
-				<img class="slide-img" />
-			</div>
-			<div role="tabpanel" class="tab-pane" id="discount">
-				<div class="tab-text">
-					<h2>Playstation 4</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
-					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
-				</div>
-				<!-- tab-text -->
-				<img class="slide-img"/>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="premium">
-				<div class="tab-text">
-					<h2>Microsoft Surface</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
-					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
-				</div>
-				<!-- tab-text -->
-				<img class="slide-img"/>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="gift-idea">
-				<div class="tab-text">
-					<h2>Vizio Smart TV</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat, magna ornare euismod consectetur, dolor arcu finibus erat, in finibus ex elit quis nunc. Aliquam erat volutpat. Cras posuere feugiat ligula nec lacinia.</p>
-					<a href="product.html" class="btn btn-default linkUpdate">Read More</a>
-				</div>
-				<!-- tab-text -->
-				<img class="slide-img" />
-			</div>
-		</div>
-	</div>
-	<!-- jumbotron -->
-	<div class="row">
-		<div class="col-md-12 col-centered">
-			<div id="dynamicEle" class="text-center center-block thumbnail tbheight" style=>
-				<div>
-					<h4>DYNAMIC ELEMENT</h4>
-					<h6>Clicking the button more elements are added on the page</h6>
-				</div>
-				<div id="input-container" style="display:flex; padding: auto; justify-content: center;
-">
-				<div id="dynamicInput" style="margin: 5rem;">
-					<h5 id="normal1">Normal Click</h5>
-					<input id="normalclick" type="text" name="myInputs[]">
-				</div>
-				<div id="dynamicInput" style="margin: 5rem;">
-					<h5 id="rage1">Rage Clicks</h5>
-					<input id="rageclicks" type="text" name="myInputs[]">
-				</div>
-				<div style="margin: 5rem;">
-					<h5 id="dead1">Dead Clicks</h5>
-				</div>
-				<div id="dynamicInput" style="margin: 5rem;">
-					<h5 id="error1">Error Click</h5>
-					<input id="errorclicks1" type="text" name="myInputs[]">
-				</div>
-			 </div>
-
-			<div class="col-md-12 col-centered">
-			<div id="dynamicEle" class="text-center center-block thumbnail tbheight" style=>
-
-				<div id="dynamicInput" style="margin: 5rem;">
-					<h5 id="ragedead1">Rage and Dead Clicks</h5>
-				</div>
-				
-				<div id="dynamicInput" style="margin: 5rem;">
-					<h5 id="rageerror1">Rage and Error Clicks</h5>
-					<input id="rageerrorclicks1" type="text" name="myInputs[]">
-				</div>
-				
-				<div style="margin: 5rem;">
-				        <h5 id="deaderror1">Dead and Error Click</h5>
-				</div>
-				<div style="margin: 5rem;">
-				        <h5 id="deadrageerror1">Dead, Rage and Error Clicks</h5>
-				</div>
-			</div>
-				
-				<div>
-					<a id="addDynamic" class="btn btn-default" onClick="addInput('dynamicInput')">Add another text input</a>
-					<!--<input id="addDynamic" type="button" value="Add another text input" class="btn btn-default" onClick="addInput('dynamicInput');">-->
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row i-am-centered">
-		<div class="col-md-4">
-			<div class="center-block jumbotron text-center center-block thumbnail tbheight">
-				<div>
-					<h4>DYNAMIC ID Text Box</h4>
-					<h6>This is a case where input box id changes every time a page is reloaded</h6>
-				</div>
-				<div id="dynamicID">
-					<input class="dynamicID" type="text" name="myInputs[]">
-					<script>
-                        var div = document.getElementsByClassName('dynamicID');
-                        div[0].setAttribute('id', 'dynamic' + Date.now());
-					</script>
-				</div>
-				<div>
-					<ul>
-						<button class="btn btn-default">Button 1</button>
-						<button class="btn btn-default">Button 2</button>
-						<button class="btn btn-default">Button 3</button>
-						<button class="btn btn-default">Button 4</button>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="thumbnail tbheight text-center">
-				<div>
-					<h4 id=openModalDialog>Open Modal Dialog</h4>
-				</div>
-				<a id="modal" class="btn btn-default" data-toggle="modal" data-target="#mySpecials"">Click to open Modal</a>
-			<br>
-				<br>
-				<div>
-					<ul>
-						<button class="btn btn-default">Button 1</button>
-						<button class="btn btn-default">Button 2</button>
-						<button class="btn btn-default">Button 3</button>
-						<button class="btn btn-default">Button 4</button>
-					</ul>
-				</div>
-			</div>
-
-		</div>
-		<div class="col-md-4">
-			<div class="thumbnail tbheight jumbotron text-center">
-				<div>
-					<h2 id=heading2>Heading 2 Style</h2>
-					<h6>This has been added so that we have more elements on page</h6>
-				</div>
-				<br>
-				<div>
-					<ul>
-						<button class="btn btn-default">Button 1</button>
-						<button class="btn btn-default">Button 2</button>
-						<button class="btn btn-default">Button 3</button>
-						<button class="btn btn-default">Button 4</button>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
-			<ul class="list-group">
-				<li id="category-one" href="" class="list-group-item">Category One</li>
-				<li id="category-two" href="" class="list-group-item">Category Two</li>
-				<li id="category-three" href="" class="list-group-item">Category Three</li>
-				<li id="category-four" href="" class="list-group-item">Category Four</li>
-				<li id="category-five" href="" class="list-group-item">Category Five</li>
-			</ul>
-		</div>
-		<div class="col-md-4">
-			<div class="list-group">
-				<div>
-					<h2 id=choose>Choose an option</h2>
-					<p>The form below contains three checkboxes. The last option is disabled:</p>
-					<form>
-						<div class="checkbox">
-							<label><input type="checkbox" value="">Option 1</label>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="list-group">
-				<div>
-					<h2>Choose a radio button</h2>
-					<p>The form below contains three radio buttons. The last option is disabled:</p>
-					<form>
-						<div class="radio">
-							<label><input type="radio" name="optradio">Option 1</label>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		</div>
-	<section id="Clicks for Campaigns" class="text-center">
-        <H2 id="clicksForCampaigns" class="text-center mb-4">Clicks for Campaigns</H2>
-		<div class="container">
-			<!-- Row 1: Control Converted and Control Not Converted -->
-			<div class="row mb-4">
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Test Campaign Control Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickTestCampaign">Normal Click</h5>
-								<input id="normalClickTestCampaignControlConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickTestCampaign">Rage Clicks</h5>
-								<input id="rageClickTestCampaignControlConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickTestCampaignControlConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickTestCampaign">Error Click</h5>
-								<input id="errorClickTestCampaignControlConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Test Campaign Control Not Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickTestCampaign">Normal Click</h5>
-								<input id="normalClickTestCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickTestCampaign">Rage Clicks</h5>
-								<input id="rageClickTestCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickTestCampaignControlNotConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickTestCampaign">Error Click</h5>
-								<input id="errorClickTestCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<!-- Row 2: Variation Converted and Variation Not Converted -->
-			<div class="row">
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Test Campaign Variation Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickTestCampaign">Normal Click</h5>
-								<input id="normalClickTestCampaignVariationConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickTestCampaign">Rage Clicks</h5>
-								<input id="rageClickTestCampaignVariationConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickTestCampaignVariationConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickTestCampaign">Error Click</h5>
-								<input id="errorClickTestCampaignVariationConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Test Campaign Variation Not Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickTestCampaign">Normal Click</h5>
-								<input id="normalClickTestCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickTestCampaign">Rage Clicks</h5>
-								<input id="rageClickTestCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickTestCampaignVariationNotConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickTestCampaign">Error Click</h5>
-								<input id="errorClickTestCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- container -->
-	</section>
-
-	<!-- Multivariate Campaign Section -->
-	<section id="Clicks for Multivariate Campaigns" class="text-center">
-		<H2 id="clicksForMultivariateCampaigns" class="text-center mb-4">Clicks for Multivariate Campaigns</H2>
-		<div class="container">
-			<!-- Row 1: Control Converted and Control Not Converted -->
-			<div class="row mb-4">
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Multivariate Campaign Control Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickMultivariateCampaign">Normal Click</h5>
-								<input id="normalClickMultivariateCampaignControlConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickMultivariateCampaign">Rage Clicks</h5>
-								<input id="rageClickMultivariateCampaignControlConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickMultivariateCampaignControlConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickMultivariateCampaign">Error Click</h5>
-								<input id="errorClickMultivariateCampaignControlConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Multivariate Campaign Control Not Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickMultivariateCampaign">Normal Click</h5>
-								<input id="normalClickMultivariateCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickMultivariateCampaign">Rage Clicks</h5>
-								<input id="rageClickMultivariateCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickMultivariateCampaignControlNotConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickMultivariateCampaign">Error Click</h5>
-								<input id="errorClickMultivariateCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<!-- Row 2: Variation Converted and Variation Not Converted -->
-			<div class="row">
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Multivariate Campaign Variation Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickMultivariateCampaign">Normal Click</h5>
-								<input id="normalClickMultivariateCampaignVariationConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickMultivariateCampaign">Rage Clicks</h5>
-								<input id="rageClickMultivariateCampaignVariationConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickMultivariateCampaignVariationConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickMultivariateCampaign">Error Click</h5>
-								<input id="errorClickMultivariateCampaignVariationConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Multivariate Campaign Variation Not Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickMultivariateCampaign">Normal Click</h5>
-								<input id="normalClickMultivariateCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickMultivariateCampaign">Rage Clicks</h5>
-								<input id="rageClickMultivariateCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickMultivariateCampaignVariationNotConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickMultivariateCampaign">Error Click</h5>
-								<input id="errorClickMultivariateCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- container -->
-	</section>
-
-	<!-- Split Campaign Section -->
-	<section id="Clicks for Split Campaigns" class="text-center">
-		<H2 id="clicksForSplitCampaigns" class="text-center mb-4">Clicks for Split Campaigns</H2>
-		<div class="container">
-			<!-- Row 1: Control Converted and Control Not Converted -->
-			<div class="row mb-4">
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Split Campaign Control Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickSplitCampaign">Normal Click</h5>
-								<input id="normalClickSplitCampaignControlConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickSplitCampaign">Rage Clicks</h5>
-								<input id="rageClickSplitCampaignControlConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickSplitCampaignControlConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickSplitCampaign">Error Click</h5>
-								<input id="errorClickSplitCampaignControlConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Split Campaign Control Not Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickSplitCampaign">Normal Click</h5>
-								<input id="normalClickSplitCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickSplitCampaign">Rage Clicks</h5>
-								<input id="rageClickSplitCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickSplitCampaignControlNotConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickSplitCampaign">Error Click</h5>
-								<input id="errorClickSplitCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<!-- Row 2: Variation Converted and Variation Not Converted -->
-			<div class="row">
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Split Campaign Variation Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickSplitCampaign">Normal Click</h5>
-								<input id="normalClickSplitCampaignVariationConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickSplitCampaign">Rage Clicks</h5>
-								<input id="rageClickSplitCampaignVariationConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickSplitCampaignVariationConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickSplitCampaign">Error Click</h5>
-								<input id="errorClickSplitCampaignVariationConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Split Campaign Variation Not Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickSplitCampaign">Normal Click</h5>
-								<input id="normalClickSplitCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickSplitCampaign">Rage Clicks</h5>
-								<input id="rageClickSplitCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickSplitCampaignVariationNotConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickSplitCampaign">Error Click</h5>
-								<input id="errorClickSplitCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- container -->
-	</section>
-
-	<!-- Personalize Campaign Section -->
-	<section id="Clicks for Personalize Campaigns" class="text-center">
-		<H2 id="clicksForPersonalizeCampaigns" class="text-center mb-4">Clicks for Personalize Campaigns</H2>
-		<div class="container">
-			<!-- Row 1: Control Converted and Control Not Converted -->
-			<div class="row mb-4">
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Personalize Campaign Control Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickPersonalizeCampaign">Normal Click</h5>
-								<input id="normalClickPersonalizeCampaignControlConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickPersonalizeCampaign">Rage Clicks</h5>
-								<input id="rageClickPersonalizeCampaignControlConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickPersonalizeCampaignControlConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickPersonalizeCampaign">Error Click</h5>
-								<input id="errorClickPersonalizeCampaignControlConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Personalize Campaign Control Not Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickPersonalizeCampaign">Normal Click</h5>
-								<input id="normalClickPersonalizeCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickPersonalizeCampaign">Rage Clicks</h5>
-								<input id="rageClickPersonalizeCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickPersonalizeCampaignControlNotConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickPersonalizeCampaign">Error Click</h5>
-								<input id="errorClickPersonalizeCampaignControlNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<!-- Row 2: Variation Converted and Variation Not Converted -->
-			<div class="row">
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Personalize Campaign Variation Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickPersonalizeCampaign">Normal Click</h5>
-								<input id="normalClickPersonalizeCampaignVariationConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickPersonalizeCampaign">Rage Clicks</h5>
-								<input id="rageClickPersonalizeCampaignVariationConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickPersonalizeCampaignVariationConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickPersonalizeCampaign">Error Click</h5>
-								<input id="errorClickPersonalizeCampaignVariationConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="thumbnail">
-						<div class="caption">
-							<h4>Personalize Campaign Variation Not Converted Clicks</h4>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="normalClickPersonalizeCampaign">Normal Click</h5>
-								<input id="normalClickPersonalizeCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="rageClickPersonalizeCampaign">Rage Clicks</h5>
-								<input id="rageClickPersonalizeCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-							<div style="margin: 3rem;">
-								<h5 id="deadClickPersonalizeCampaignVariationNotConvertedClicks">Dead Clicks</h5>
-							</div>
-							<div id="dynamicInput" style="margin: 3rem;">
-								<h5 id="errorClickPersonalizeCampaign">Error Click</h5>
-								<input id="errorClickPersonalizeCampaignVariationNotConvertedClicks" type="text" name="myInputs[]">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- container -->
-	</section>
-	
-	<div class="footer-social-icons">
-		<h4 class="_14 text-center">Follow us on</h4>
-		<ul class="social-icons center-block center" style="margin: auto;">
-			<a href="https://facebook.com" target="_blank" class="social-icon"> <i class="fa fa-facebook"></i></a>
-			<a href="https://twitter.com" target="_blank" class="social-icon"> <i class="fa fa-twitter"></i></a>
-			<a href="https://rss.com" target="_blank" class="social-icon"> <i class="fa fa-rss"></i></a>
-			<a href="https://youtube.com" target="_blank" class="social-icon"> <i class="fa fa-youtube"></i></a>
-			<a href="https://linkedin.com" target="_blank" class="social-icon"> <i class="fa fa-linkedin"></i></a>
-			<a href="https://plus.google.com" target="_blank" class="social-icon"> <i class="fa fa-google-plus"></i></a>
-		</ul>
-	</div>
-
-
-<!-- /container -->
-<div id="mySpecials" role="dialog" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" data-dismiss="modal" class="close btn btn-warning pull-right"><i class="fa fa-times"></i></button>
-				<h4 class="modal-title">Special Message</h4>
-			</div>
-			<div class="modal-body">
-				<form class="form-horizontal">
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Message</label>
-						<div class="col-sm-6">
-							<textarea rows="10" ng-model="message" class="form-control"></textarea>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-6">
-							<button type="submit" data-dismiss="modal" class="btn btn-default">Submit</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-
-<footer>
-	<p>MyStore Copyright &copy; 2017 - Terms &middot; Privacy</p>
-</footer>
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script>
-	// Refactored Error Click Handlers for All Campaign Types
-	
-	// Define all campaign input IDs organized by type and campaign
-	const campaignInputIds = {
-		// Test Campaign IDs
-		test: {
-			error: [
-				"errorClickTestCampaignControlConvertedClicks",
-				"errorClickTestCampaignControlNotConvertedClicks",
-				"errorClickTestCampaignVariationConvertedClicks",
-				"errorClickTestCampaignVariationNotConvertedClicks"
-			]
-		},
-		
-		// Multivariate Campaign IDs
-		multivariate: {
-			error: [
-				"errorClickMultivariateCampaignControlConvertedClicks",
-				"errorClickMultivariateCampaignControlNotConvertedClicks",
-				"errorClickMultivariateCampaignVariationConvertedClicks",
-				"errorClickMultivariateCampaignVariationNotConvertedClicks"
-			]
-		},
-		
-		// Split Campaign IDs
-		split: {
-			error: [
-				"errorClickSplitCampaignControlConvertedClicks",
-				"errorClickSplitCampaignControlNotConvertedClicks",
-				"errorClickSplitCampaignVariationConvertedClicks",
-				"errorClickSplitCampaignVariationNotConvertedClicks"
-			]
-		},
-		
-		// Personalize Campaign IDs
-		personalize: {
-			error: [
-				"errorClickPersonalizeCampaignControlConvertedClicks",
-				"errorClickPersonalizeCampaignControlNotConvertedClicks",
-				"errorClickPersonalizeCampaignVariationConvertedClicks",
-				"errorClickPersonalizeCampaignVariationNotConvertedClicks"
-			]
-		}
-	};
-	
-	// Error counters for different click types
-	const errorCounters = {
-		normal: 1000,
-		rage: 2000,
-		error: 3000,
-		dead: 4000
-	};
-	
-	// Function to create error handlers for different click types
-	function createErrorHandler(campaignType, clickType, inputId) {
-		return () => {
-			const errorCode = errorCounters[clickType]++;
-			const errorMessage = `${clickType.toUpperCase()}_CLICK_ERROR_${errorCode}`;
-			const errorDetails = `Campaign: ${campaignType}, Type: ${clickType}, Input: ${inputId}`;
-			
-			// Log error details for debugging
-			console.log(`Error triggered: ${errorMessage} - ${errorDetails}`);
-			
-			// Throw the actual error
-			throw new Error(`${errorMessage} - ${errorDetails}`);
-		};
-	}
-	
-	// Initialize error handlers for all campaign inputs
-	function initializeCampaignErrorHandlers() {
-		let totalHandlers = 0;
-		
-		Object.keys(campaignInputIds).forEach(campaignType => {
-			const campaign = campaignInputIds[campaignType];
-			
-			Object.keys(campaign).forEach(clickType => {
-				campaign[clickType].forEach(inputId => {
-					const element = document.querySelector(`#${inputId}`);
-					if (element) {
-						element.onclick = createErrorHandler(campaignType, clickType, inputId);
-						totalHandlers++;
-					}
-				});
-			});
-		});
-		
-		return totalHandlers;
-	}
-	
-	// Additional utility functions for error handling
-	const ErrorUtils = {
-		// Get all inputs for a specific campaign type
-		getCampaignInputs: function(campaignType) {
-			return campaignInputIds[campaignType] || {};
-		},
-		
-		// Get all inputs of a specific click type across all campaigns
-		getClickTypeInputs: function(clickType) {
-			const inputs = [];
-			Object.keys(campaignInputIds).forEach(campaign => {
-				if (campaignInputIds[campaign][clickType]) {
-					inputs.push(...campaignInputIds[campaign][clickType]);
-				}
-			});
-			return inputs;
-		},
-		
-		// Simulate error for testing
-		simulateError: function(campaignType, clickType, index = 0) {
-			const inputs = campaignInputIds[campaignType]?.[clickType];
-			if (inputs && inputs[index]) {
-				const element = document.querySelector(`#${inputs[index]}`);
-				if (element && element.onclick) {
-					element.onclick();
-				}
-			}
-		}
-	};
-	
-	// Initialize all handlers when DOM is loaded
-	document.addEventListener('DOMContentLoaded', function() {
-		const totalHandlers = initializeCampaignErrorHandlers();
-		console.log(`Campaign error handlers initialized for ${totalHandlers} input elements`);
-		console.log('Available campaigns:', Object.keys(campaignInputIds));
-		console.log('ErrorUtils available globally for testing');
-		
-		// Make ErrorUtils available globally for console testing
-		window.ErrorUtils = ErrorUtils;
-	});
-</script>
-	
+        document.addEventListener('DOMContentLoaded', () => {
+            setActiveNavLink();
+            setupCarousel();
+            setupRapidMutation();
+            setupModal();
+            setupAccordion();
+            setupContactForm();
+        });
+    </script>
 </body>
-
 </html>
