@@ -1,22 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self';
-        script-src 'self' 'unsafe-inline' https://wingify.com https://*.wingify.com https://*.wingify.net;
-        connect-src 'self' https://wingify.com https://*.wingify.com https://*.wingify.net;
-        style-src 'self' 'unsafe-inline' https://wingify.com https://*.wingify.com https://*.wingify.net;
-        img-src 'self' data: https://wingify.com https://*.wingify.com https://picsum.photos https://*.picsum.photos https://images.unsplash.com https://*.wingify.net;
-        media-src 'self' https://www.w3schools.com https://*.wingify.net;
-        frame-src 'self' https://wingify.com https://*.wingify.com https://*.wingify.net https://www.youtube.com https://player.vimeo.com;
-        font-src 'self' https://*.wingify.net;
-        object-src 'none';
-        base-uri 'self';
-    ">
-
-  <!-- <script referrerpolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/cloud-run-test/final/2000845.js" id="vwoCode"></script> -->
- <!-- Start Wingify Async V3.0 SmartCode --> <link rel="preconnect" href="https://edge.wingify.net" /> <script type="text/javascript" > window._wingify_code || (function() { var account_id = 7005665, version = 3.0, settings_tolerance = 5000, hide_element = '', hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important'; /* DO NOT EDIT BELOW THIS LINE */ var t=window,n=document;if(-1<n.URL.indexOf('__wingify_disable__')||t._wingify_code)return;var i=!1,o=n.currentScript,e={sT:settings_tolerance,hES:hide_element_style,hE:hide_element};try{e=Object.assign(JSON.parse(localStorage.getItem('_wingify_'+account_id+'_config')),e)}catch(e){}var code={nonce:o.nonce,settings_tolerance:function(){return e.sT},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':e.hE},hide_element_style:function(){return'{'+e.hES+'}'},getVersion:function(){return version},finish:function(){var e;!i&&(i=!0,e=n.getElementById('_vis_opt_path_hides'))&&e.parentNode.removeChild(e)},finished:function(){return i},addScript:function(e){var t=n.createElement('script');t.src=e,o.nonce&&t.setAttribute('nonce',o.nonce),t.fetchPriority='high',n.head.appendChild(t)},init:function(){t._settings_timer=setTimeout(function(){code.finish()},this.settings_tolerance());var e=n.createElement('style');e.id='_vis_opt_path_hides',o.nonce&&e.setAttribute('nonce',o.nonce),e.textContent=this.hide_element()+this.hide_element_style(),n.head.appendChild(e),this.addScript('https://edge.wingify.net/cloud-run-test/final/'+account_id+'.js')}};t._wingify_code=code;code.init();})(); </script> <!--End Wingify Async SmartCode -->
+ <!-- Start Wingify Async V3.0 SmartCode --> <link rel="preconnect" href="https://edge.wingify.net" /> <script type="text/javascript" > window._wingify_code || (function() { var account_id = 2000921, version = 3.0, settings_tolerance = 5000, hide_element = '', hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important'; /* DO NOT EDIT BELOW THIS LINE */ var t=window,n=document;if(-1<n.URL.indexOf('__wingify_disable__')||t._wingify_code)return;var i=!1,o=n.currentScript,e={sT:settings_tolerance,hES:hide_element_style,hE:hide_element};try{e=Object.assign(JSON.parse(localStorage.getItem('_wingify_'+account_id+'_config')),e)}catch(e){}var code={nonce:o.nonce,settings_tolerance:function(){return e.sT},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':e.hE},hide_element_style:function(){return'{'+e.hES+'}'},getVersion:function(){return version},finish:function(){var e;!i&&(i=!0,e=n.getElementById('_vis_opt_path_hides'))&&e.parentNode.removeChild(e)},finished:function(){return i},addScript:function(e){var t=n.createElement('script');t.src=e,o.nonce&&t.setAttribute('nonce',o.nonce),t.fetchPriority='high',n.head.appendChild(t)},init:function(){t._settings_timer=setTimeout(function(){code.finish()},this.settings_tolerance());var e=n.createElement('style');e.id='_vis_opt_path_hides',o.nonce&&e.setAttribute('nonce',o.nonce),e.textContent=this.hide_element()+this.hide_element_style(),n.head.appendChild(e),this.addScript('https://edge.wingify.net/cloud-run-test/final/'+account_id+'.js')}};t._wingify_code=code;code.init();})(); </script> <!--End Wingify Async SmartCode -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to My Website</title>
@@ -672,6 +657,10 @@
             box-shadow: var(--shadow);
         }
 
+        .iframe-wrapper + .iframe-wrapper {
+            margin-top: 1.5rem;
+        }
+
         .video-wrapper {
             overflow: hidden;
             border-radius: 1.5rem;
@@ -1250,6 +1239,8 @@
     <section id="shadow-open" class="shadow-section">
         <feature-section></feature-section>
         <shadow-link-card></shadow-link-card>
+        <two-level-shadow-card></two-level-shadow-card>
+        <three-level-shadow-card></three-level-shadow-card>
     </section>
 
     <section id="iframe" class="iframe-section">
@@ -1260,6 +1251,22 @@
                 <iframe
                     title="Embedded demo"
                     srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>body{font-family:system-ui;margin:0;padding:2rem;background:linear-gradient(135deg,#fef3c7,#fde68a);color:#92400e;display:flex;align-items:center;justify-content:center;min-height:200px;}h2{margin:0 0 0.5rem;}p{margin:0 0 1rem;opacity:0.9;}.iframe-links{display:flex;gap:0.75rem;flex-wrap:wrap;}.iframe-links a{color:#92400e;font-weight:700;text-decoration:none;border:1px solid rgba(146,64,14,0.35);border-radius:999px;padding:0.5rem 0.85rem;background:rgba(255,255,255,0.55);}.iframe-links a:hover{text-decoration:underline;}</style></head><body><div><h2>Inside the iframe</h2><p>This content is in a separate document.</p><nav class='iframe-links' aria-label='Iframe links'><a href='#contact' target='_top'>Parent Contact</a><a href='#services' target='_top'>Parent Services</a></nav></div></body></html>"
+                    class="embed-iframe"
+                ></iframe>
+            </div>
+            <div class="iframe-wrapper">
+                <iframe
+                    id="two-level-iframe-demo"
+                    title="2 levels iframe demo"
+                    srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>body{font-family:system-ui;margin:0;padding:2rem;background:linear-gradient(135deg,#fef3c7,#fde68a);color:#92400e;display:flex;align-items:center;justify-content:center;min-height:200px;}h2{margin:0 0 0.5rem;}p{margin:0 0 1rem;opacity:0.9;}button{border:1px solid rgba(146,64,14,0.35);border-radius:999px;padding:0.55rem 0.9rem;color:#92400e;background:rgba(255,255,255,0.65);font:inherit;font-weight:800;cursor:pointer;}</style></head><body><div><h2>2 Levels Iframe</h2><p>This iframe contains one nested iframe below.</p><button type='button'>2-Level Button</button></div></body></html>"
+                    class="embed-iframe"
+                ></iframe>
+            </div>
+            <div class="iframe-wrapper">
+                <iframe
+                    id="three-level-iframe-demo"
+                    title="3 levels iframe demo"
+                    srcdoc="<!DOCTYPE html><html><head><meta charset='UTF-8'><style>body{font-family:system-ui;margin:0;padding:2rem;background:linear-gradient(135deg,#fef3c7,#fde68a);color:#92400e;display:flex;align-items:center;justify-content:center;min-height:200px;}h2{margin:0 0 0.5rem;}p{margin:0 0 1rem;opacity:0.9;}button{border:1px solid rgba(146,64,14,0.35);border-radius:999px;padding:0.55rem 0.9rem;color:#92400e;background:rgba(255,255,255,0.65);font:inherit;font-weight:800;cursor:pointer;}</style></head><body><div><h2>3 Levels Iframe</h2><p>This iframe contains a second iframe, which contains a third iframe.</p><button type='button'>3-Level Button</button></div></body></html>"
                     class="embed-iframe"
                 ></iframe>
             </div>
@@ -1453,7 +1460,256 @@
             }
         }
 
+        class TwoLevelShadowCard extends HTMLElement {
+            connectedCallback() {
+                if (this.shadowRoot) return;
+
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            margin: 1.5rem auto 0;
+                            max-width: 1100px;
+                            padding: 0 1rem;
+                        }
+
+                        .nested-shadow-card {
+                            border-radius: 1.25rem;
+                            padding: 1.5rem;
+                            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+                            color: #064e3b;
+                            box-shadow: 0 20px 45px rgba(6, 78, 59, 0.12);
+                        }
+
+                        .eyebrow {
+                            margin: 0 0 0.45rem;
+                            font-size: 0.8rem;
+                            font-weight: 900;
+                            letter-spacing: 0.08em;
+                            text-transform: uppercase;
+                        }
+
+                        h3 {
+                            margin: 0 0 0.5rem;
+                            font-size: 1.35rem;
+                        }
+
+                        p {
+                            margin: 0 0 1rem;
+                            opacity: 0.85;
+                        }
+
+                        .level-two-host {
+                            display: block;
+                            margin-top: 1rem;
+                        }
+                    </style>
+                    <article class="nested-shadow-card">
+                        <p class="eyebrow">Two levels deep</p>
+                        <h3>2 Levels Shadow DOM</h3>
+                        <p>Level 1 is this custom element's shadow root. The panel below is rendered inside a second shadow root.</p>
+                        <div class="level-two-host"></div>
+                    </article>
+                `;
+
+                const levelTwoHost = shadow.querySelector('.level-two-host');
+                const levelTwoShadow = levelTwoHost.attachShadow({ mode: 'open' });
+                levelTwoShadow.innerHTML = `
+                    <style>
+                        .inner-card {
+                            border: 1px solid rgba(6, 78, 59, 0.18);
+                            border-radius: 1rem;
+                            padding: 1rem;
+                            background: rgba(255, 255, 255, 0.72);
+                        }
+
+                        p {
+                            margin: 0 0 0.85rem;
+                            color: #065f46;
+                            font-family: system-ui, sans-serif;
+                        }
+
+                        .shadow-links {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 0.75rem;
+                        }
+
+                        a {
+                            display: inline-flex;
+                            align-items: center;
+                            border-radius: 999px;
+                            padding: 0.65rem 1rem;
+                            background: #047857;
+                            color: #ffffff;
+                            font-family: system-ui, sans-serif;
+                            font-weight: 800;
+                            text-decoration: none;
+                        }
+
+                        a.secondary {
+                            background: #ffffff;
+                            color: #047857;
+                            border: 1px solid rgba(4, 120, 87, 0.25);
+                        }
+
+                        a:hover,
+                        a:focus-visible {
+                            text-decoration: underline;
+                        }
+                    </style>
+                    <section class="inner-card" aria-label="Second-level shadow DOM content">
+                        <p>This content is inside shadow root level 2.</p>
+                        <nav class="shadow-links" aria-label="Two-level shadow DOM links">
+                            <a href="#services">2-Level Services Link</a>
+                            <a class="secondary" href="#contact">2-Level Contact Link</a>
+                        </nav>
+                    </section>
+                `;
+            }
+        }
+
+        class ThreeLevelShadowCard extends HTMLElement {
+            connectedCallback() {
+                if (this.shadowRoot) return;
+
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            margin: 1.5rem auto 0;
+                            max-width: 1100px;
+                            padding: 0 1rem;
+                        }
+
+                        .nested-shadow-card {
+                            border-radius: 1.25rem;
+                            padding: 1.5rem;
+                            background: linear-gradient(135deg, #fff7ed, #fed7aa);
+                            color: #7c2d12;
+                            box-shadow: 0 20px 45px rgba(124, 45, 18, 0.12);
+                        }
+
+                        .eyebrow {
+                            margin: 0 0 0.45rem;
+                            font-size: 0.8rem;
+                            font-weight: 900;
+                            letter-spacing: 0.08em;
+                            text-transform: uppercase;
+                        }
+
+                        h3 {
+                            margin: 0 0 0.5rem;
+                            font-size: 1.35rem;
+                        }
+
+                        p {
+                            margin: 0 0 1rem;
+                            opacity: 0.85;
+                        }
+
+                        .level-two-host {
+                            display: block;
+                            margin-top: 1rem;
+                        }
+                    </style>
+                    <article class="nested-shadow-card">
+                        <p class="eyebrow">Three levels deep</p>
+                        <h3>3 Levels Shadow DOM</h3>
+                        <p>Level 1 starts here, then a second host creates level 2, and the final content lives in level 3.</p>
+                        <div class="level-two-host"></div>
+                    </article>
+                `;
+
+                const levelTwoHost = shadow.querySelector('.level-two-host');
+                const levelTwoShadow = levelTwoHost.attachShadow({ mode: 'open' });
+                levelTwoShadow.innerHTML = `
+                    <style>
+                        .middle-card {
+                            border: 1px solid rgba(124, 45, 18, 0.16);
+                            border-radius: 1rem;
+                            padding: 1rem;
+                            background: rgba(255, 255, 255, 0.62);
+                        }
+
+                        p {
+                            margin: 0 0 0.85rem;
+                            color: #9a3412;
+                            font-family: system-ui, sans-serif;
+                            font-weight: 700;
+                        }
+
+                        .level-three-host {
+                            display: block;
+                        }
+                    </style>
+                    <section class="middle-card" aria-label="Second-level shadow DOM shell">
+                        <p>This middle panel is inside shadow root level 2.</p>
+                        <div class="level-three-host"></div>
+                    </section>
+                `;
+
+                const levelThreeHost = levelTwoShadow.querySelector('.level-three-host');
+                const levelThreeShadow = levelThreeHost.attachShadow({ mode: 'open' });
+                levelThreeShadow.innerHTML = `
+                    <style>
+                        .inner-card {
+                            border-radius: 0.85rem;
+                            padding: 1rem;
+                            background: #ffffff;
+                        }
+
+                        p {
+                            margin: 0 0 0.85rem;
+                            color: #7c2d12;
+                            font-family: system-ui, sans-serif;
+                        }
+
+                        .shadow-links {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 0.75rem;
+                        }
+
+                        a {
+                            display: inline-flex;
+                            align-items: center;
+                            border-radius: 999px;
+                            padding: 0.65rem 1rem;
+                            background: #ea580c;
+                            color: #ffffff;
+                            font-family: system-ui, sans-serif;
+                            font-weight: 800;
+                            text-decoration: none;
+                        }
+
+                        a.secondary {
+                            background: #fff7ed;
+                            color: #c2410c;
+                            border: 1px solid rgba(194, 65, 12, 0.25);
+                        }
+
+                        a:hover,
+                        a:focus-visible {
+                            text-decoration: underline;
+                        }
+                    </style>
+                    <section class="inner-card" aria-label="Third-level shadow DOM content">
+                        <p>This content is inside shadow root level 3.</p>
+                        <nav class="shadow-links" aria-label="Three-level shadow DOM links">
+                            <a href="#reviews">3-Level Reviews Link</a>
+                            <a class="secondary" href="#contact">3-Level Contact Link</a>
+                        </nav>
+                    </section>
+                `;
+            }
+        }
+
         customElements.define('shadow-link-card', ShadowLinkCard);
+        customElements.define('two-level-shadow-card', TwoLevelShadowCard);
+        customElements.define('three-level-shadow-card', ThreeLevelShadowCard);
     </script>
     <script>
         const navItems = [
@@ -1574,6 +1830,136 @@
                         <a href="#contact">Go to Contact</a>
                     </article>
                 `;
+            }
+        }
+
+        function createNestedIframeDocument({ heading, description, buttonLabel, nestedTitle = '' }) {
+            const nestedFrame = nestedTitle
+                ? `<iframe id="nested-iframe-target" title="${nestedTitle}" class="nested-frame"></iframe>`
+                : '';
+
+            return `<!DOCTYPE html>
+                <html>
+                    <head>
+                        <meta charset="UTF-8">
+                        <style>
+                            body {
+                                min-height: 200px;
+                                margin: 0;
+                                padding: 2rem;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: #92400e;
+                                background: linear-gradient(135deg, #fef3c7, #fde68a);
+                                font-family: system-ui;
+                            }
+
+                            .iframe-shell {
+                                width: 100%;
+                                max-width: 680px;
+                            }
+
+                            h2 {
+                                margin: 0 0 0.5rem;
+                            }
+
+                            p {
+                                margin: 0 0 1rem;
+                                opacity: 0.9;
+                            }
+
+                            .iframe-button {
+                                border: 1px solid rgba(146, 64, 14, 0.35);
+                                border-radius: 999px;
+                                padding: 0.55rem 0.9rem;
+                                color: #92400e;
+                                background: rgba(255, 255, 255, 0.65);
+                                font: inherit;
+                                font-weight: 800;
+                                cursor: pointer;
+                            }
+
+                            .nested-frame {
+                                display: block;
+                                width: 100%;
+                                min-height: 145px;
+                                margin-top: 1rem;
+                                border: 0;
+                                border-radius: 1rem;
+                                background: #000000;
+                                box-shadow: 0 16px 30px rgba(146, 64, 14, 0.18);
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="iframe-shell">
+                            <h2>${heading}</h2>
+                            <p>${description}</p>
+                            <button class="iframe-button" type="button">${buttonLabel}</button>
+                            ${nestedFrame}
+                        </div>
+                    </body>
+                </html>`;
+        }
+
+        function setupNestedIframes() {
+            const twoLevelFrame = document.getElementById('two-level-iframe-demo');
+            const threeLevelFrame = document.getElementById('three-level-iframe-demo');
+
+            if (twoLevelFrame) {
+                twoLevelFrame.addEventListener('load', () => {
+                    const levelTwoFrame = twoLevelFrame.contentDocument?.getElementById('nested-iframe-target');
+
+                    if (levelTwoFrame) {
+                        levelTwoFrame.srcdoc = createNestedIframeDocument({
+                            heading: 'Inside iframe level 2',
+                            description: 'This content is in the second iframe document.',
+                            buttonLabel: 'Level 2 Button',
+                        });
+                    }
+                }, { once: true });
+
+                twoLevelFrame.srcdoc = createNestedIframeDocument({
+                    heading: '2 Levels Iframe',
+                    description: 'This iframe contains one nested iframe below.',
+                    buttonLabel: '2-Level Button',
+                    nestedTitle: 'Nested level 2 iframe',
+                });
+            }
+
+            if (threeLevelFrame) {
+                threeLevelFrame.addEventListener('load', () => {
+                    const levelTwoFrame = threeLevelFrame.contentDocument?.getElementById('nested-iframe-target');
+
+                    if (!levelTwoFrame) return;
+
+                    levelTwoFrame.addEventListener('load', () => {
+                        const levelThreeFrame = levelTwoFrame.contentDocument?.getElementById('nested-iframe-target');
+
+                        if (levelThreeFrame) {
+                            levelThreeFrame.srcdoc = createNestedIframeDocument({
+                                heading: 'Inside iframe level 3',
+                                description: 'This content is in the deepest iframe document.',
+                                buttonLabel: 'Level 3 Button',
+                            });
+                        }
+                    }, { once: true });
+
+                    levelTwoFrame.srcdoc = createNestedIframeDocument({
+                        heading: 'Inside iframe level 2',
+                        description: 'This second iframe contains the final third-level iframe.',
+                        buttonLabel: 'Level 2 Button',
+                        nestedTitle: 'Nested level 3 iframe',
+                    });
+                }, { once: true });
+
+                threeLevelFrame.srcdoc = createNestedIframeDocument({
+                    heading: '3 Levels Iframe',
+                    description: 'This iframe contains a second iframe, which contains a third iframe.',
+                    buttonLabel: '3-Level Button',
+                    nestedTitle: 'Nested level 2 iframe',
+                });
             }
         }
 
@@ -1727,6 +2113,7 @@
         }
 
         registerCustomElements();
+        setupNestedIframes();
 
         document.addEventListener('DOMContentLoaded', () => {
             setActiveNavLink();
