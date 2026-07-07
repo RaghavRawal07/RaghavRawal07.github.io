@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Start Wingify Async V3.0 SmartCode --> <link rel="preconnect" href="https://edge.wingify.net" /> <script type="text/javascript" > window._wingify_code || (function() { var account_id = 2000921, version = 3.0, settings_tolerance = 5000, hide_element = '', hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important'; /* DO NOT EDIT BELOW THIS LINE */ var t=window,n=document;if(-1<n.URL.indexOf('__wingify_disable__')||t._wingify_code)return;var i=!1,o=n.currentScript,e={sT:settings_tolerance,hES:hide_element_style,hE:hide_element};try{e=Object.assign(JSON.parse(localStorage.getItem('_wingify_'+account_id+'_config')),e)}catch(e){}var code={nonce:o.nonce,settings_tolerance:function(){return e.sT},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':e.hE},hide_element_style:function(){return'{'+e.hES+'}'},getVersion:function(){return version},finish:function(){var e;!i&&(i=!0,e=n.getElementById('_vis_opt_path_hides'))&&e.parentNode.removeChild(e)},finished:function(){return i},addScript:function(e){var t=n.createElement('script');t.src=e,o.nonce&&t.setAttribute('nonce',o.nonce),t.fetchPriority='high',n.head.appendChild(t)},init:function(){t._settings_timer=setTimeout(function(){code.finish()},this.settings_tolerance());var e=n.createElement('style');e.id='_vis_opt_path_hides',o.nonce&&e.setAttribute('nonce',o.nonce),e.textContent=this.hide_element()+this.hide_element_style(),n.head.appendChild(e),this.addScript('https://edge.wingify.net/cloud-run-test/final/'+account_id+'.js')}};t._wingify_code=code;code.init();})(); </script> <!--End Wingify Async SmartCode -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elements Demo — Normal, Shadow DOM &amp; IFrame</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --card-2: #263449;
+      --accent: #6366f1;
+      --accent-2: #22d3ee;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: #334155;
+      --ok: #22c55e;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1e293b 0%, var(--bg) 55%);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 20px 80px;
+    }
+
+    header {
+      max-width: 960px;
+      margin: 0 auto 32px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin: 0 0 10px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    header p { color: var(--muted); margin: 0; font-size: 1.05rem; }
+
+    .grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .tag {
+      align-self: flex-start;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 12px;
+    }
+
+    .card h2 { margin: 0; font-size: 1.25rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.94rem; line-height: 1.5; }
+
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      padding: 11px 18px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, var(--accent), #4f46e5);
+      transition: transform 0.06s ease, filter 0.15s ease;
+      align-self: flex-start;
+    }
+    button:hover { filter: brightness(1.1); }
+    button:active { transform: translateY(1px); }
+
+    .list-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    iframe {
+      width: 100%;
+      height: 190px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #0b1220;
+    }
+
+    /* Live log / status area */
+    .status {
+      max-width: 960px;
+      margin: 30px auto 0;
+      background: var(--card-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    .status h3 { margin: 0 0 10px; font-size: 1rem; color: var(--muted); }
+    #log {
+      margin: 0;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.85rem;
+      color: var(--text);
+      max-height: 160px;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+    #log .entry { padding: 2px 0; border-bottom: 1px dashed var(--border); }
+    #log .entry:last-child { border-bottom: none; }
+    #log .src { color: var(--accent-2); font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Elements Demo</h1>
+    <p>Normal DOM elements, a Shadow DOM element, and an IFrame — each with its own button.</p>
+  </header>
+
+  <main class="grid">
+    <!-- ============ NORMAL ELEMENTS ============ -->
+    <section class="card">
+      <span class="tag">Normal element</span>
+      <h2>Plain Card</h2>
+      <p>A regular element that lives directly in the main document DOM.</p>
+      <button id="normalBtn">Click me (Normal)</button>
+    </section>
+
+    <section class="card">
+      <span class="tag">Normal element</span>
+      <h2>Counter Card</h2>
+      <p>Another normal element. Its button increments a counter.</p>
+      <p>Count: <strong id="countValue">0</strong></p>
+      <button id="counterBtn">Increment (Normal)</button>
+    </section>
+
+    <article class="card">
+      <span class="tag">Normal element</span>
+      <h2>Actions Card</h2>
+      <p>Multiple buttons inside one normal element.</p>
+      <div class="list-actions">
+        <button data-action="say-hi">Say Hi</button>
+        <button data-action="say-bye">Say Bye</button>
+      </div>
+    </article>
+
+    <!-- ============ SHADOW DOM ELEMENT ============ -->
+    <section class="card">
+      <span class="tag">Shadow DOM</span>
+      <h2>Shadow Host</h2>
+      <p>The button below lives inside an encapsulated shadow root (custom element).</p>
+      <!-- Custom element; its button is created inside its shadow root -->
+      <shadow-widget></shadow-widget>
+    </section>
+
+    <!-- ============ IFRAME ELEMENT ============ -->
+    <section class="card">
+      <span class="tag">IFrame</span>
+      <h2>Embedded Frame</h2>
+      <p>A separate document embedded via &lt;iframe&gt;. Its button lives inside the frame.</p>
+      <iframe id="demoFrame" title="Embedded frame with a button"></iframe>
+    </section>
+  </main>
+
+  <div class="status">
+    <h3>Live log</h3>
+    <div id="log"></div>
+  </div>
+
+  <script>
+    // ---------- Shared logger (lives in the top document) ----------
+    const logEl = document.getElementById('log');
+    function log(source, message) {
+      const entry = document.createElement('div');
+      entry.className = 'entry';
+      const time = new Date().toLocaleTimeString();
+      entry.innerHTML = `<span class="src">[${source}]</span> ${message} ` +
+                        `<span style="color:var(--muted)">— ${time}</span>`;
+      logEl.prepend(entry);
+    }
+    log('system', 'Page loaded. Try the buttons above.');
+
+    // ---------- Normal elements ----------
+    document.getElementById('normalBtn').addEventListener('click', () => {
+      log('Normal', 'Plain card button clicked.');
+    });
+
+    let count = 0;
+    document.getElementById('counterBtn').addEventListener('click', () => {
+      count += 1;
+      document.getElementById('countValue').textContent = count;
+      log('Normal', `Counter incremented to ${count}.`);
+    });
+
+    document.querySelectorAll('[data-action]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const action = btn.getAttribute('data-action');
+        log('Normal', action === 'say-hi' ? 'Hi there! 👋' : 'Goodbye! 👋');
+      });
+    });
+
+    // ---------- Shadow DOM element ----------
+    class ShadowWidget extends HTMLElement {
+      constructor() {
+        super();
+        const root = this.attachShadow({ mode: 'open' });
+        root.innerHTML = `
+          <style>
+            .box {
+              border: 1px dashed #22d3ee;
+              border-radius: 10px;
+              padding: 14px;
+              text-align: center;
+              background: rgba(34, 211, 238, 0.06);
+            }
+            p { margin: 0 0 10px; color: #cbd5e1; font-size: 0.9rem; }
+            button {
+              cursor: pointer;
+              border: none;
+              border-radius: 10px;
+              padding: 10px 16px;
+              font-weight: 600;
+              color: #0f172a;
+              background: linear-gradient(135deg, #22d3ee, #06b6d4);
+            }
+            .out { margin-top: 10px; font-size: 0.85rem; color: #22c55e; min-height: 1em; }
+          </style>
+          <div class="box">
+            <p>This content is inside a shadow root.</p>
+            <button id="shadowBtn">Click me (Shadow DOM)</button>
+            <div class="out" id="shadowOut"></div>
+          </div>
+        `;
+
+        const btn = root.getElementById('shadowBtn');
+        const out = root.getElementById('shadowOut');
+        let clicks = 0;
+        btn.addEventListener('click', () => {
+          clicks += 1;
+          out.textContent = `Clicked ${clicks} time(s) inside Shadow DOM.`;
+          // Reuse the top-document logger from inside the component
+          log('Shadow DOM', `Encapsulated button clicked (${clicks}).`);
+        });
+      }
+    }
+    customElements.define('shadow-widget', ShadowWidget);
+
+    // ---------- IFrame element ----------
+    const frame = document.getElementById('demoFrame');
+    const frameDoc = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="UTF-8" />
+        <style>
+          body {
+            margin: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: system-ui, sans-serif;
+            background: #0b1220;
+            color: #e2e8f0;
+          }
+          p { margin: 0; font-size: 0.9rem; color: #94a3b8; }
+          button {
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+          }
+          .out { font-size: 0.85rem; color: #22c55e; min-height: 1em; }
+        </style>
+      </head>
+      <body>
+        <p>This is a separate document inside an iframe.</p>
+        <button id="frameBtn">Click me (IFrame)</button>
+        <div class="out" id="frameOut"></div>
+        <script>
+          let n = 0;
+          document.getElementById('frameBtn').addEventListener('click', function () {
+            n += 1;
+            document.getElementById('frameOut').textContent = 'Clicked ' + n + ' time(s) inside iframe.';
+            // Notify the parent page so it can log the event
+            parent.postMessage({ source: 'IFrame', message: 'Frame button clicked (' + n + ').' }, '*');
+          });
+        <\/script>
+      </body>
+      </html>
+    `;
+    frame.srcdoc = frameDoc;
+
+    // Receive messages from the iframe and log them in the parent
+    window.addEventListener('message', (event) => {
+      const data = event.data || {};
+      if (data.source === 'IFrame') {
+        log('IFrame', data.message);
+      }
+    });
+  </script>
+</body>
+</html>
