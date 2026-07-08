@@ -260,21 +260,21 @@
               <span class="tag">Shadow DOM</span>
               <h2>Shadow Host A</h2>
               <p>The button below lives inside an encapsulated shadow root (custom element).</p>
-              <shadow-widget label="Shadow A"></shadow-widget>
+              <shadow-widget class="shadow-class" label="Shadow A"></shadow-widget>
             </section>
 
             <section class="card">
               <span class="tag">Shadow DOM</span>
               <h2>Shadow Host B</h2>
               <p>The button below lives inside an encapsulated shadow root (custom element).</p>
-              <shadow-widget label="Shadow B"></shadow-widget>
+              <shadow-widget class="shadow-class" label="Shadow B"></shadow-widget>
             </section>
 
             <section class="card">
               <span class="tag">Shadow DOM</span>
               <h2>Shadow Host C</h2>
               <p>The button below lives inside an encapsulated shadow root (custom element).</p>
-              <shadow-widget label="Shadow C"></shadow-widget>
+              <shadow-widget class="shadow-class" label="Shadow C"></shadow-widget>
             </section>
 
             <!-- ============ IFRAME ELEMENTS (3) ============ -->
@@ -282,21 +282,21 @@
               <span class="tag">IFrame</span>
               <h2>Embedded Frame A</h2>
               <p>A separate document embedded via &lt;iframe&gt;. Its button lives inside the frame.</p>
-              <iframe class="demo-frame" data-label="Frame A" title="Embedded frame A with a button"></iframe>
+              <iframe class="demo-frame iframe-class" data-label="Frame A" title="Embedded frame A with a button"></iframe>
             </section>
 
             <section class="card">
               <span class="tag">IFrame</span>
               <h2>Embedded Frame B</h2>
               <p>A separate document embedded via &lt;iframe&gt;. Its button lives inside the frame.</p>
-              <iframe class="demo-frame" data-label="Frame B" title="Embedded frame B with a button"></iframe>
+              <iframe class="demo-frame iframe-class" data-label="Frame B" title="Embedded frame B with a button"></iframe>
             </section>
 
             <section class="card">
               <span class="tag">IFrame</span>
               <h2>Embedded Frame C</h2>
               <p>A separate document embedded via &lt;iframe&gt;. Its button lives inside the frame.</p>
-              <iframe class="demo-frame" data-label="Frame C" title="Embedded frame C with a button"></iframe>
+              <iframe class="demo-frame iframe-class" data-label="Frame C" title="Embedded frame C with a button"></iframe>
             </section>
           </main>
 
@@ -341,10 +341,10 @@
           .out { font-size: 0.85rem; color: #22c55e; min-height: 1em; }
         </style>
       </head>
-      <body>
-        <p>Separate document inside an iframe (${label}).</p>
-        <button id="frameBtn">Click me (IFrame)</button>
-        <div class="out" id="frameOut"></div>
+      <body class="iframe-class">
+        <p class="iframe-class">Separate document inside an iframe (${label}).</p>
+        <button id="frameBtn" class="iframe-class">Click me (IFrame)</button>
+        <div class="out iframe-class" id="frameOut"></div>
         <script>
           let n = 0;
           var label = ${JSON.stringify(label)};
@@ -418,10 +418,10 @@
             }
             .out { margin-top: 10px; font-size: 0.85rem; color: #22c55e; min-height: 1em; }
           </style>
-          <div class="box">
-            <p>Inside a shadow root (${label}).</p>
-            <button id="shadowBtn">Click me (Shadow DOM)</button>
-            <div class="out" id="shadowOut"></div>
+          <div class="box shadow-class">
+            <p class="shadow-class">Inside a shadow root (${label}).</p>
+            <button id="shadowBtn" class="shadow-class">Click me (Shadow DOM)</button>
+            <div class="out shadow-class" id="shadowOut"></div>
           </div>
         `;
 
