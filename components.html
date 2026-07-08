@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
    <!-- Start Wingify Async V3.0 SmartCode --> <link rel="preconnect" href="https://edge.wingify.net" /> <script type="text/javascript" > window._wingify_code || (function() { var account_id = 2000921, version = 3.0, settings_tolerance = 5000, hide_element = '', hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important'; /* DO NOT EDIT BELOW THIS LINE */ var t=window,n=document;if(-1<n.URL.indexOf('__wingify_disable__')||t._wingify_code)return;var i=!1,o=n.currentScript,e={sT:settings_tolerance,hES:hide_element_style,hE:hide_element};try{e=Object.assign(JSON.parse(localStorage.getItem('_wingify_'+account_id+'_config')),e)}catch(e){}var code={nonce:o.nonce,settings_tolerance:function(){return e.sT},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':e.hE},hide_element_style:function(){return'{'+e.hES+'}'},getVersion:function(){return version},finish:function(){var e;!i&&(i=!0,e=n.getElementById('_vis_opt_path_hides'))&&e.parentNode.removeChild(e)},finished:function(){return i},addScript:function(e){var t=n.createElement('script');t.src=e,o.nonce&&t.setAttribute('nonce',o.nonce),t.fetchPriority='high',n.head.appendChild(t)},init:function(){t._settings_timer=setTimeout(function(){code.finish()},this.settings_tolerance());var e=n.createElement('style');e.id='_vis_opt_path_hides',o.nonce&&e.setAttribute('nonce',o.nonce),e.textContent=this.hide_element()+this.hide_element_style(),n.head.appendChild(e),this.addScript('https://edge.wingify.net/cloud-run-test/final/'+account_id+'.js')}};t._wingify_code=code;code.init();})(); </script> <!--End Wingify Async SmartCode -->
-   <link rel="preload" href="https://try.abtasty.com/81677aa3dd7b49d4a23ac9870dfee7ce.js" as="script">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elements SPA — Normal, Shadow DOM &amp; IFrame</title>
@@ -256,20 +255,48 @@
               </div>
             </article>
 
-            <!-- ============ SHADOW DOM ELEMENT ============ -->
+            <!-- ============ SHADOW DOM ELEMENTS (3) ============ -->
             <section class="card">
               <span class="tag">Shadow DOM</span>
-              <h2>Shadow Host</h2>
+              <h2>Shadow Host A</h2>
               <p>The button below lives inside an encapsulated shadow root (custom element).</p>
-              <shadow-widget></shadow-widget>
+              <shadow-widget label="Shadow A"></shadow-widget>
             </section>
 
-            <!-- ============ IFRAME ELEMENT ============ -->
+            <section class="card">
+              <span class="tag">Shadow DOM</span>
+              <h2>Shadow Host B</h2>
+              <p>The button below lives inside an encapsulated shadow root (custom element).</p>
+              <shadow-widget label="Shadow B"></shadow-widget>
+            </section>
+
+            <section class="card">
+              <span class="tag">Shadow DOM</span>
+              <h2>Shadow Host C</h2>
+              <p>The button below lives inside an encapsulated shadow root (custom element).</p>
+              <shadow-widget label="Shadow C"></shadow-widget>
+            </section>
+
+            <!-- ============ IFRAME ELEMENTS (3) ============ -->
             <section class="card">
               <span class="tag">IFrame</span>
-              <h2>Embedded Frame</h2>
+              <h2>Embedded Frame A</h2>
               <p>A separate document embedded via &lt;iframe&gt;. Its button lives inside the frame.</p>
-              <iframe id="demoFrame" title="Embedded frame with a button"></iframe>
+              <iframe class="demo-frame" data-label="Frame A" title="Embedded frame A with a button"></iframe>
+            </section>
+
+            <section class="card">
+              <span class="tag">IFrame</span>
+              <h2>Embedded Frame B</h2>
+              <p>A separate document embedded via &lt;iframe&gt;. Its button lives inside the frame.</p>
+              <iframe class="demo-frame" data-label="Frame B" title="Embedded frame B with a button"></iframe>
+            </section>
+
+            <section class="card">
+              <span class="tag">IFrame</span>
+              <h2>Embedded Frame C</h2>
+              <p>A separate document embedded via &lt;iframe&gt;. Its button lives inside the frame.</p>
+              <iframe class="demo-frame" data-label="Frame C" title="Embedded frame C with a button"></iframe>
             </section>
           </main>
 
@@ -281,8 +308,9 @@
       `;
     }
 
-    // ---------- IFrame document (built once, injected on each render) ----------
-    const frameDoc = `
+    // ---------- IFrame document (built per-frame, injected on each render) ----------
+    function buildFrameDoc(label) {
+      return `
       <!DOCTYPE html>
       <html>
       <head>
@@ -314,20 +342,22 @@
         </style>
       </head>
       <body>
-        <p>This is a separate document inside an iframe.</p>
+        <p>Separate document inside an iframe (${label}).</p>
         <button id="frameBtn">Click me (IFrame)</button>
         <div class="out" id="frameOut"></div>
         <script>
           let n = 0;
+          var label = ${JSON.stringify(label)};
           document.getElementById('frameBtn').addEventListener('click', function () {
             n += 1;
             document.getElementById('frameOut').textContent = 'Clicked ' + n + ' time(s) inside iframe.';
-            parent.postMessage({ source: 'IFrame', message: 'Frame button clicked (' + n + ').' }, '*');
+            parent.postMessage({ source: 'IFrame', message: '[' + label + '] button clicked (' + n + ').' }, '*');
           });
         <\/script>
       </body>
       </html>
-    `;
+      `;
+    }
 
     // ---------- Render a page and wire up its buttons ----------
     function renderPage(pageNum) {
@@ -353,8 +383,10 @@
         });
       });
 
-      // IFrame element (shadow-widget upgrades itself automatically)
-      app.querySelector('#demoFrame').srcdoc = frameDoc;
+      // IFrame elements (shadow-widget instances upgrade themselves automatically)
+      app.querySelectorAll('.demo-frame').forEach((f) => {
+        f.srcdoc = buildFrameDoc(f.dataset.label);
+      });
 
       renderLog();
     }
@@ -363,6 +395,7 @@
     class ShadowWidget extends HTMLElement {
       constructor() {
         super();
+        const label = this.getAttribute('label') || 'Shadow DOM';
         const root = this.attachShadow({ mode: 'open' });
         root.innerHTML = `
           <style>
@@ -386,7 +419,7 @@
             .out { margin-top: 10px; font-size: 0.85rem; color: #22c55e; min-height: 1em; }
           </style>
           <div class="box">
-            <p>This content is inside a shadow root.</p>
+            <p>Inside a shadow root (${label}).</p>
             <button id="shadowBtn">Click me (Shadow DOM)</button>
             <div class="out" id="shadowOut"></div>
           </div>
@@ -398,7 +431,7 @@
         btn.addEventListener('click', () => {
           clicks += 1;
           out.textContent = `Clicked ${clicks} time(s) inside Shadow DOM.`;
-          log('Shadow DOM', `Encapsulated button clicked (${clicks}).`);
+          log('Shadow DOM', `[${label}] encapsulated button clicked (${clicks}).`);
         });
       }
     }
