@@ -4,7 +4,7 @@
    <!-- Start Wingify Async V3.0 SmartCode --> <link rel="preconnect" href="https://edge.wingify.net" /> <script type="text/javascript" > window._wingify_code || (function() { var account_id = 2000921, version = 3.0, settings_tolerance = 5000, hide_element = '', hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important'; /* DO NOT EDIT BELOW THIS LINE */ var t=window,n=document;if(-1<n.URL.indexOf('__wingify_disable__')||t._wingify_code)return;var i=!1,o=n.currentScript,e={sT:settings_tolerance,hES:hide_element_style,hE:hide_element};try{e=Object.assign(JSON.parse(localStorage.getItem('_wingify_'+account_id+'_config')),e)}catch(e){}var code={nonce:o.nonce,settings_tolerance:function(){return e.sT},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':e.hE},hide_element_style:function(){return'{'+e.hES+'}'},getVersion:function(){return version},finish:function(){var e;!i&&(i=!0,e=n.getElementById('_vis_opt_path_hides'))&&e.parentNode.removeChild(e)},finished:function(){return i},addScript:function(e){var t=n.createElement('script');t.src=e,o.nonce&&t.setAttribute('nonce',o.nonce),t.fetchPriority='high',n.head.appendChild(t)},init:function(){t._settings_timer=setTimeout(function(){code.finish()},this.settings_tolerance());var e=n.createElement('style');e.id='_vis_opt_path_hides',o.nonce&&e.setAttribute('nonce',o.nonce),e.textContent=this.hide_element()+this.hide_element_style(),n.head.appendChild(e),this.addScript('https://edge.wingify.net/cloud-run-test/final/'+account_id+'.js')}};t._wingify_code=code;code.init();})(); </script> <!--End Wingify Async SmartCode -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elements Demo — Normal, Shadow DOM &amp; IFrame</title>
+  <title>Elements SPA — Normal, Shadow DOM &amp; IFrame</title>
   <style>
     :root {
       --bg: #0f172a;
@@ -29,6 +29,37 @@
       padding: 40px 20px 80px;
     }
 
+    /* ---------- SPA top navigation (persistent shell) ---------- */
+    .topnav {
+      max-width: 960px;
+      margin: 0 auto 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 18px;
+    }
+    .topnav .brand { font-weight: 700; letter-spacing: 0.02em; }
+    .navlinks { display: flex; gap: 10px; }
+    .navlinks a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+    }
+    .navlinks a:hover { color: var(--text); background: rgba(99, 102, 241, 0.12); }
+    .navlinks a.active {
+      color: white;
+      background: linear-gradient(135deg, var(--accent), #4f46e5);
+    }
+
     header {
       max-width: 960px;
       margin: 0 auto 32px;
@@ -45,6 +76,20 @@
     }
 
     header p { color: var(--muted); margin: 0; font-size: 1.05rem; }
+
+    /* In-page link to the other page */
+    .page-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--accent-2);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: 1px solid var(--accent-2);
+      border-radius: 999px;
+      transition: all 0.15s ease;
+    }
+    .page-link:hover { background: rgba(34, 211, 238, 0.12); }
 
     .grid {
       max-width: 960px;
@@ -126,144 +171,116 @@
     #log .entry { padding: 2px 0; border-bottom: 1px dashed var(--border); }
     #log .entry:last-child { border-bottom: none; }
     #log .src { color: var(--accent-2); font-weight: 700; }
+
+    /* View transition */
+    .view { animation: fadeIn 0.25s ease; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Elements Demo</h1>
-    <p>Normal DOM elements, a Shadow DOM element, and an IFrame — each with its own button.</p>
-  </header>
+  <!-- Persistent SPA shell: nav links are available on every page -->
+  <nav class="topnav">
+    <span class="brand">Elements SPA</span>
+    <div class="navlinks">
+      <a href="#/page1" data-route="/page1">Page 1</a>
+      <a href="#/page2" data-route="/page2">Page 2</a>
+    </div>
+  </nav>
 
-  <main class="grid">
-    <!-- ============ NORMAL ELEMENTS ============ -->
-    <section class="card">
-      <span class="tag">Normal element</span>
-      <h2>Plain Card</h2>
-      <p>A regular element that lives directly in the main document DOM.</p>
-      <button id="normalBtn">Click me (Normal)</button>
-    </section>
-
-    <section class="card">
-      <span class="tag">Normal element</span>
-      <h2>Counter Card</h2>
-      <p>Another normal element. Its button increments a counter.</p>
-      <p>Count: <strong id="countValue">0</strong></p>
-      <button id="counterBtn">Increment (Normal)</button>
-    </section>
-
-    <article class="card">
-      <span class="tag">Normal element</span>
-      <h2>Actions Card</h2>
-      <p>Multiple buttons inside one normal element.</p>
-      <div class="list-actions">
-        <button data-action="say-hi">Say Hi</button>
-        <button data-action="say-bye">Say Bye</button>
-      </div>
-    </article>
-
-    <!-- ============ SHADOW DOM ELEMENT ============ -->
-    <section class="card">
-      <span class="tag">Shadow DOM</span>
-      <h2>Shadow Host</h2>
-      <p>The button below lives inside an encapsulated shadow root (custom element).</p>
-      <!-- Custom element; its button is created inside its shadow root -->
-      <shadow-widget></shadow-widget>
-    </section>
-
-    <!-- ============ IFRAME ELEMENT ============ -->
-    <section class="card">
-      <span class="tag">IFrame</span>
-      <h2>Embedded Frame</h2>
-      <p>A separate document embedded via &lt;iframe&gt;. Its button lives inside the frame.</p>
-      <iframe id="demoFrame" title="Embedded frame with a button"></iframe>
-    </section>
-  </main>
-
-  <div class="status">
-    <h3>Live log</h3>
-    <div id="log"></div>
-  </div>
+  <!-- The router renders the active page into this container -->
+  <div id="app"></div>
 
   <script>
-    // ---------- Shared logger (lives in the top document) ----------
-    const logEl = document.getElementById('log');
+    const app = document.getElementById('app');
+
+    // ---------- Shared SPA state (persists across route changes) ----------
+    const state = {
+      count: 0,
+      logEntries: [],
+    };
+
+    // ---------- Shared logger ----------
     function log(source, message) {
-      const entry = document.createElement('div');
-      entry.className = 'entry';
-      const time = new Date().toLocaleTimeString();
-      entry.innerHTML = `<span class="src">[${source}]</span> ${message} ` +
-                        `<span style="color:var(--muted)">— ${time}</span>`;
-      logEl.prepend(entry);
+      state.logEntries.unshift({ source, message, time: new Date().toLocaleTimeString() });
+      renderLog();
     }
-    log('system', 'Page loaded. Try the buttons above.');
 
-    // ---------- Normal elements ----------
-    document.getElementById('normalBtn').addEventListener('click', () => {
-      log('Normal', 'Plain card button clicked.');
-    });
+    function renderLog() {
+      const logEl = document.getElementById('log');
+      if (!logEl) return; // #log only exists once a page is mounted
+      logEl.innerHTML = state.logEntries.map((e) =>
+        `<div class="entry"><span class="src">[${e.source}]</span> ${e.message} ` +
+        `<span style="color:var(--muted)">— ${e.time}</span></div>`
+      ).join('');
+    }
 
-    let count = 0;
-    document.getElementById('counterBtn').addEventListener('click', () => {
-      count += 1;
-      document.getElementById('countValue').textContent = count;
-      log('Normal', `Counter incremented to ${count}.`);
-    });
+    // ---------- Page content template (identical for both pages) ----------
+    function viewHTML(pageNum) {
+      const other = pageNum === 1 ? 2 : 1;
+      return `
+        <div class="view">
+          <header>
+            <h1>Elements Demo — Page ${pageNum}</h1>
+            <p>Normal DOM elements, a Shadow DOM element, and an IFrame — each with its own button.</p>
+            <a class="page-link" href="#/page${other}">Go to Page ${other} &rarr;</a>
+          </header>
 
-    document.querySelectorAll('[data-action]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const action = btn.getAttribute('data-action');
-        log('Normal', action === 'say-hi' ? 'Hi there! 👋' : 'Goodbye! 👋');
-      });
-    });
+          <main class="grid">
+            <!-- ============ NORMAL ELEMENTS ============ -->
+            <section class="card">
+              <span class="tag">Normal element</span>
+              <h2>Plain Card</h2>
+              <p>A regular element that lives directly in the main document DOM.</p>
+              <button id="normalBtn">Click me (Normal)</button>
+            </section>
 
-    // ---------- Shadow DOM element ----------
-    class ShadowWidget extends HTMLElement {
-      constructor() {
-        super();
-        const root = this.attachShadow({ mode: 'open' });
-        root.innerHTML = `
-          <style>
-            .box {
-              border: 1px dashed #22d3ee;
-              border-radius: 10px;
-              padding: 14px;
-              text-align: center;
-              background: rgba(34, 211, 238, 0.06);
-            }
-            p { margin: 0 0 10px; color: #cbd5e1; font-size: 0.9rem; }
-            button {
-              cursor: pointer;
-              border: none;
-              border-radius: 10px;
-              padding: 10px 16px;
-              font-weight: 600;
-              color: #0f172a;
-              background: linear-gradient(135deg, #22d3ee, #06b6d4);
-            }
-            .out { margin-top: 10px; font-size: 0.85rem; color: #22c55e; min-height: 1em; }
-          </style>
-          <div class="box">
-            <p>This content is inside a shadow root.</p>
-            <button id="shadowBtn">Click me (Shadow DOM)</button>
-            <div class="out" id="shadowOut"></div>
+            <section class="card">
+              <span class="tag">Normal element</span>
+              <h2>Counter Card</h2>
+              <p>Another normal element. Its button increments a counter.</p>
+              <p>Count: <strong id="countValue">0</strong></p>
+              <button id="counterBtn">Increment (Normal)</button>
+            </section>
+
+            <article class="card">
+              <span class="tag">Normal element</span>
+              <h2>Actions Card</h2>
+              <p>Multiple buttons inside one normal element.</p>
+              <div class="list-actions">
+                <button data-action="say-hi">Say Hi</button>
+                <button data-action="say-bye">Say Bye</button>
+              </div>
+            </article>
+
+            <!-- ============ SHADOW DOM ELEMENT ============ -->
+            <section class="card">
+              <span class="tag">Shadow DOM</span>
+              <h2>Shadow Host</h2>
+              <p>The button below lives inside an encapsulated shadow root (custom element).</p>
+              <shadow-widget></shadow-widget>
+            </section>
+
+            <!-- ============ IFRAME ELEMENT ============ -->
+            <section class="card">
+              <span class="tag">IFrame</span>
+              <h2>Embedded Frame</h2>
+              <p>A separate document embedded via &lt;iframe&gt;. Its button lives inside the frame.</p>
+              <iframe id="demoFrame" title="Embedded frame with a button"></iframe>
+            </section>
+          </main>
+
+          <div class="status">
+            <h3>Live log (shared across pages)</h3>
+            <div id="log"></div>
           </div>
-        `;
-
-        const btn = root.getElementById('shadowBtn');
-        const out = root.getElementById('shadowOut');
-        let clicks = 0;
-        btn.addEventListener('click', () => {
-          clicks += 1;
-          out.textContent = `Clicked ${clicks} time(s) inside Shadow DOM.`;
-          // Reuse the top-document logger from inside the component
-          log('Shadow DOM', `Encapsulated button clicked (${clicks}).`);
-        });
-      }
+        </div>
+      `;
     }
-    customElements.define('shadow-widget', ShadowWidget);
 
-    // ---------- IFrame element ----------
-    const frame = document.getElementById('demoFrame');
+    // ---------- IFrame document (built once, injected on each render) ----------
     const frameDoc = `
       <!DOCTYPE html>
       <html>
@@ -304,22 +321,111 @@
           document.getElementById('frameBtn').addEventListener('click', function () {
             n += 1;
             document.getElementById('frameOut').textContent = 'Clicked ' + n + ' time(s) inside iframe.';
-            // Notify the parent page so it can log the event
             parent.postMessage({ source: 'IFrame', message: 'Frame button clicked (' + n + ').' }, '*');
           });
         <\/script>
       </body>
       </html>
     `;
-    frame.srcdoc = frameDoc;
+
+    // ---------- Render a page and wire up its buttons ----------
+    function renderPage(pageNum) {
+      app.innerHTML = viewHTML(pageNum);
+
+      // Normal elements
+      app.querySelector('#normalBtn').addEventListener('click', () => {
+        log('Normal', `Plain card button clicked (Page ${pageNum}).`);
+      });
+
+      const countValue = app.querySelector('#countValue');
+      countValue.textContent = state.count;
+      app.querySelector('#counterBtn').addEventListener('click', () => {
+        state.count += 1;
+        countValue.textContent = state.count;
+        log('Normal', `Counter incremented to ${state.count}.`);
+      });
+
+      app.querySelectorAll('[data-action]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const action = btn.getAttribute('data-action');
+          log('Normal', action === 'say-hi' ? 'Hi there! 👋' : 'Goodbye! 👋');
+        });
+      });
+
+      // IFrame element (shadow-widget upgrades itself automatically)
+      app.querySelector('#demoFrame').srcdoc = frameDoc;
+
+      renderLog();
+    }
+
+    // ---------- Shadow DOM custom element (defined once) ----------
+    class ShadowWidget extends HTMLElement {
+      constructor() {
+        super();
+        const root = this.attachShadow({ mode: 'open' });
+        root.innerHTML = `
+          <style>
+            .box {
+              border: 1px dashed #22d3ee;
+              border-radius: 10px;
+              padding: 14px;
+              text-align: center;
+              background: rgba(34, 211, 238, 0.06);
+            }
+            p { margin: 0 0 10px; color: #cbd5e1; font-size: 0.9rem; }
+            button {
+              cursor: pointer;
+              border: none;
+              border-radius: 10px;
+              padding: 10px 16px;
+              font-weight: 600;
+              color: #0f172a;
+              background: linear-gradient(135deg, #22d3ee, #06b6d4);
+            }
+            .out { margin-top: 10px; font-size: 0.85rem; color: #22c55e; min-height: 1em; }
+          </style>
+          <div class="box">
+            <p>This content is inside a shadow root.</p>
+            <button id="shadowBtn">Click me (Shadow DOM)</button>
+            <div class="out" id="shadowOut"></div>
+          </div>
+        `;
+
+        const btn = root.getElementById('shadowBtn');
+        const out = root.getElementById('shadowOut');
+        let clicks = 0;
+        btn.addEventListener('click', () => {
+          clicks += 1;
+          out.textContent = `Clicked ${clicks} time(s) inside Shadow DOM.`;
+          log('Shadow DOM', `Encapsulated button clicked (${clicks}).`);
+        });
+      }
+    }
+    customElements.define('shadow-widget', ShadowWidget);
+
+    // ---------- Hash-based SPA router ----------
+    function router() {
+      const path = location.hash.replace(/^#/, '') || '/page1';
+      const pageNum = path === '/page2' ? 2 : 1;
+      renderPage(pageNum);
+      log('router', `Navigated to Page ${pageNum} (no full reload).`);
+
+      // Highlight the active nav link
+      document.querySelectorAll('.navlinks a').forEach((a) => {
+        a.classList.toggle('active', a.getAttribute('data-route') === `/page${pageNum}`);
+      });
+    }
 
     // Receive messages from the iframe and log them in the parent
     window.addEventListener('message', (event) => {
       const data = event.data || {};
-      if (data.source === 'IFrame') {
-        log('IFrame', data.message);
-      }
+      if (data.source === 'IFrame') log('IFrame', data.message);
     });
+
+    window.addEventListener('hashchange', router);
+
+    log('system', 'SPA loaded. Use the top nav or in-page links to switch pages.');
+    router();
   </script>
 </body>
 </html>
