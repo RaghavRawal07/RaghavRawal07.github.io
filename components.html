@@ -139,6 +139,23 @@
     button:hover { filter: brightness(1.1); }
     button:active { transform: translateY(1px); }
 
+    a.btn-link {
+      display: inline-block;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
+      padding: 11px 18px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      transition: transform 0.06s ease, filter 0.15s ease;
+      align-self: flex-start;
+    }
+    a.btn-link:hover { filter: brightness(1.1); }
+    a.btn-link:active { transform: translateY(1px); }
+
     .list-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
     iframe {
@@ -234,7 +251,10 @@
               <span class="tag">Normal element</span>
               <h2>Plain Card</h2>
               <p>A regular element that lives directly in the main document DOM.</p>
-              <button id="normalBtn">Click me (Normal)</button>
+              <div class="list-actions">
+                <button id="normalBtn">Click me (Normal)</button>
+                <a class="btn-link" href="https://wingify.com/" target="_blank" rel="noopener noreferrer">Click me (Wingify)</a>
+              </div>
             </section>
 
             <section class="card">
@@ -242,7 +262,10 @@
               <h2>Counter Card</h2>
               <p>Another normal element. Its button increments a counter.</p>
               <p>Count: <strong id="countValue">0</strong></p>
-              <button id="counterBtn">Increment (Normal)</button>
+              <div class="list-actions">
+                <button id="counterBtn">Increment (Normal)</button>
+                <a class="btn-link" href="https://wingify.com/" target="_blank" rel="noopener noreferrer">Click me (Wingify)</a>
+              </div>
             </section>
 
             <article class="card">
@@ -252,6 +275,7 @@
               <div class="list-actions">
                 <button data-action="say-hi">Say Hi</button>
                 <button data-action="say-bye">Say Bye</button>
+                <a class="btn-link" href="https://wingify.com/" target="_blank" rel="noopener noreferrer">Click me (Wingify)</a>
               </div>
             </article>
 
@@ -329,7 +353,7 @@
             color: #e2e8f0;
           }
           p { margin: 0; font-size: 0.9rem; color: #94a3b8; }
-          button {
+          button, a.btn-link {
             cursor: pointer;
             border: none;
             border-radius: 10px;
@@ -337,13 +361,24 @@
             font-weight: 600;
             color: white;
             background: linear-gradient(135deg, #f59e0b, #f97316);
+            text-decoration: none;
+            display: inline-block;
+            font-family: system-ui, sans-serif;
+            font-size: 0.9rem;
           }
+          a.btn-link {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+          }
+          .actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
           .out { font-size: 0.85rem; color: #22c55e; min-height: 1em; }
         </style>
       </head>
       <body class="iframe-class">
         <p class="iframe-class">Separate document inside an iframe (${label}).</p>
-        <button id="frameBtn" class="iframe-class">Click me (IFrame)</button>
+        <div class="actions iframe-class">
+          <button id="frameBtn" class="iframe-class">Click me (IFrame)</button>
+          <a class="btn-link iframe-class" href="https://wingify.com/" target="_blank" rel="noopener noreferrer">Click me (Wingify)</a>
+        </div>
         <div class="out iframe-class" id="frameOut"></div>
         <script>
           let n = 0;
@@ -407,7 +442,7 @@
               background: rgba(34, 211, 238, 0.06);
             }
             p { margin: 0 0 10px; color: #cbd5e1; font-size: 0.9rem; }
-            button {
+            button, a.btn-link {
               cursor: pointer;
               border: none;
               border-radius: 10px;
@@ -415,12 +450,24 @@
               font-weight: 600;
               color: #0f172a;
               background: linear-gradient(135deg, #22d3ee, #06b6d4);
+              text-decoration: none;
+              display: inline-block;
+              font-family: system-ui, sans-serif;
+              font-size: 0.9rem;
             }
+            a.btn-link {
+              background: linear-gradient(135deg, #0ea5e9, #0284c7);
+              color: white;
+            }
+            .actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
             .out { margin-top: 10px; font-size: 0.85rem; color: #22c55e; min-height: 1em; }
           </style>
           <div class="box shadow-class">
             <p class="shadow-class">Inside a shadow root (${label}).</p>
-            <button id="shadowBtn" class="shadow-class">Click me (Shadow DOM)</button>
+            <div class="actions shadow-class">
+              <button id="shadowBtn" class="shadow-class">Click me (Shadow DOM)</button>
+              <a class="btn-link shadow-class" href="https://wingify.com/" target="_blank" rel="noopener noreferrer">Click me (Wingify)</a>
+            </div>
             <div class="out shadow-class" id="shadowOut"></div>
           </div>
         `;
