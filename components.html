@@ -158,12 +158,32 @@
 
     .list-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+    .image-row img.rounded-full {
+      border-radius: 999px;
+      object-fit: cover;
+    }
+    .image-row img.object-contain {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
     iframe {
       width: 100%;
       height: 190px;
       border: 1px solid var(--border);
       border-radius: 10px;
       background: #0b1220;
+    }
+    iframe.demo-frame-images {
+      height: 220px;
     }
 
     /* Live log / status area */
@@ -279,6 +299,21 @@
               </div>
             </article>
 
+            <section class="card">
+              <span class="tag">Normal element</span>
+              <h2>Images Card</h2>
+              <p>Three images in a normal DOM card.</p>
+              <div class="image-row">
+                <img alt="Parrot" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="rounded-full object-cover" style="color:transparent" srcset="/_next/image?url=%2Fimages%2Fparrot-nav.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fimages%2Fparrot-nav.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fimages%2Fparrot-nav.png&amp;w=96&amp;q=75">
+                <img src="images/autumn-leaves.png" alt="Autumn leaves" width="40" height="40" class="rounded-full object-cover">
+                <img src="images/1015-800x500.webp" alt="Mountain landscape with lake" class="h-12 w-auto object-contain rounded" loading="lazy">
+              </div>
+              <div class="list-actions">
+                <button id="imagesNormalBtn">Click me (Normal Images)</button>
+                <a class="btn-link" href="https://wingify.com/">Click me (Wingify)</a>
+              </div>
+            </section>
+
             <!-- ============ SHADOW DOM ELEMENTS (3) ============ -->
             <section class="card">
               <span class="tag">Shadow DOM</span>
@@ -299,6 +334,13 @@
               <h2>Shadow Host C</h2>
               <p>The button below lives inside an encapsulated shadow root (custom element).</p>
               <shadow-widget class="shadow-class" label="Shadow C"></shadow-widget>
+            </section>
+
+            <section class="card">
+              <span class="tag">Shadow DOM</span>
+              <h2>Shadow Images</h2>
+              <p>Three images inside an encapsulated shadow root.</p>
+              <shadow-images class="shadow-class" label="Shadow Images"></shadow-images>
             </section>
 
             <!-- ============ IFRAME ELEMENTS (3) ============ -->
@@ -322,6 +364,13 @@
               <p>A separate document embedded via &lt;iframe&gt;. Its button lives inside the frame.</p>
               <iframe class="demo-frame iframe-class" data-label="Frame C" title="Embedded frame C with a button"></iframe>
             </section>
+
+            <section class="card">
+              <span class="tag">IFrame</span>
+              <h2>Embedded Frame Images</h2>
+              <p>Three images inside a separate document embedded via &lt;iframe&gt;.</p>
+              <iframe class="demo-frame demo-frame-images iframe-class" data-label="Frame Images" data-kind="images" title="Embedded frame with images"></iframe>
+            </section>
           </main>
 
           <div class="status">
@@ -332,13 +381,24 @@
       `;
     }
 
+    // ---------- Shared image markup (used in normal / shadow / iframe cards) ----------
+    const imagesHTML = `
+      <img alt="Parrot" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="rounded-full object-cover" style="color:transparent" srcset="/_next/image?url=%2Fimages%2Fparrot-nav.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fimages%2Fparrot-nav.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fimages%2Fparrot-nav.png&amp;w=96&amp;q=75">
+      <img src="images/autumn-leaves.png" alt="Autumn leaves" width="40" height="40" class="rounded-full object-cover">
+      <img src="images/1015-800x500.webp" alt="Mountain landscape with lake" class="h-12 w-auto object-contain rounded" loading="lazy">
+    `;
+
     // ---------- IFrame document (built per-frame, injected on each render) ----------
-    function buildFrameDoc(label) {
+    function buildFrameDoc(label, kind) {
+      const imagesBlock = kind === 'images'
+        ? `<div class="image-row iframe-class">${imagesHTML}</div>`
+        : '';
       return `
       <!DOCTYPE html>
       <html>
       <head>
         <meta charset="UTF-8" />
+        <base href="${new URL('.', location.href).href}">
         <style>
           body {
             margin: 0;
@@ -351,6 +411,7 @@
             font-family: system-ui, sans-serif;
             background: #0b1220;
             color: #e2e8f0;
+            padding: 12px;
           }
           p { margin: 0; font-size: 0.9rem; color: #94a3b8; }
           button, a.btn-link {
@@ -370,11 +431,29 @@
             background: linear-gradient(135deg, #0ea5e9, #0284c7);
           }
           .actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+          .image-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+          }
+          .image-row img.rounded-full {
+            border-radius: 999px;
+            object-fit: cover;
+          }
+          .image-row img.object-contain {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 8px;
+          }
           .out { font-size: 0.85rem; color: #22c55e; min-height: 1em; }
         </style>
       </head>
       <body class="iframe-class">
         <p class="iframe-class">Separate document inside an iframe (${label}).</p>
+        ${imagesBlock}
         <div class="actions iframe-class">
           <button id="frameBtn" class="iframe-class">Click me (IFrame)</button>
           <a class="btn-link iframe-class" href="https://wingify.com/">Click me (Wingify)</a>
@@ -418,9 +497,16 @@
         });
       });
 
-      // IFrame elements (shadow-widget instances upgrade themselves automatically)
+      const imagesNormalBtn = app.querySelector('#imagesNormalBtn');
+      if (imagesNormalBtn) {
+        imagesNormalBtn.addEventListener('click', () => {
+          log('Normal', `Images card button clicked (Page ${pageNum}).`);
+        });
+      }
+
+      // IFrame elements (shadow widgets upgrade themselves automatically)
       app.querySelectorAll('.demo-frame').forEach((f) => {
-        f.srcdoc = buildFrameDoc(f.dataset.label);
+        f.srcdoc = buildFrameDoc(f.dataset.label, f.dataset.kind);
       });
 
       renderLog();
@@ -483,6 +569,83 @@
       }
     }
     customElements.define('shadow-widget', ShadowWidget);
+
+    // ---------- Shadow DOM images custom element ----------
+    class ShadowImages extends HTMLElement {
+      constructor() {
+        super();
+        const label = this.getAttribute('label') || 'Shadow Images';
+        const root = this.attachShadow({ mode: 'open' });
+        root.innerHTML = `
+          <style>
+            .box {
+              border: 1px dashed #22d3ee;
+              border-radius: 10px;
+              padding: 14px;
+              text-align: center;
+              background: rgba(34, 211, 238, 0.06);
+            }
+            p { margin: 0 0 10px; color: #cbd5e1; font-size: 0.9rem; }
+            button, a.btn-link {
+              cursor: pointer;
+              border: none;
+              border-radius: 10px;
+              padding: 10px 16px;
+              font-weight: 600;
+              color: #0f172a;
+              background: linear-gradient(135deg, #22d3ee, #06b6d4);
+              text-decoration: none;
+              display: inline-block;
+              font-family: system-ui, sans-serif;
+              font-size: 0.9rem;
+            }
+            a.btn-link {
+              background: linear-gradient(135deg, #0ea5e9, #0284c7);
+              color: white;
+            }
+            .actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+            .image-row {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              margin-bottom: 10px;
+            }
+            .image-row img.rounded-full {
+              border-radius: 999px;
+              object-fit: cover;
+            }
+            .image-row img.object-contain {
+              height: 48px;
+              width: auto;
+              object-fit: contain;
+              border-radius: 8px;
+            }
+            .out { margin-top: 10px; font-size: 0.85rem; color: #22c55e; min-height: 1em; }
+          </style>
+          <div class="box shadow-class">
+            <p class="shadow-class">Images inside a shadow root (${label}).</p>
+            <div class="image-row shadow-class">${imagesHTML}</div>
+            <div class="actions shadow-class">
+              <button id="shadowBtn" class="shadow-class">Click me (Shadow DOM)</button>
+              <a class="btn-link shadow-class" href="https://wingify.com/">Click me (Wingify)</a>
+            </div>
+            <div class="out shadow-class" id="shadowOut"></div>
+          </div>
+        `;
+
+        const btn = root.getElementById('shadowBtn');
+        const out = root.getElementById('shadowOut');
+        let clicks = 0;
+        btn.addEventListener('click', () => {
+          clicks += 1;
+          out.textContent = `Clicked ${clicks} time(s) inside Shadow DOM.`;
+          log('Shadow DOM', `[${label}] encapsulated button clicked (${clicks}).`);
+        });
+      }
+    }
+    customElements.define('shadow-images', ShadowImages);
 
     // ---------- Hash-based SPA router ----------
     function router() {
