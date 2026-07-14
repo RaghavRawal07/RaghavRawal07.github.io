@@ -304,9 +304,9 @@
               <h2>Images Card</h2>
               <p>Three images in a normal DOM card.</p>
               <div class="image-row">
-                <img alt="Parrot" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="rounded-full object-cover" style="color:transparent" srcset="/_next/image?url=%2Fimages%2Fparrot-nav.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fimages%2Fparrot-nav.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fimages%2Fparrot-nav.png&amp;w=96&amp;q=75">
-                <img src="images/autumn-leaves.png" alt="Autumn leaves" width="40" height="40" class="rounded-full object-cover">
-                <img src="images/1015-800x500.webp" alt="Mountain landscape with lake" class="h-12 w-auto object-contain rounded" loading="lazy">
+                <img alt="Parrot" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="rounded-full object-cover" style="color:transparent" srcset="/images/parrot-nav-48.webp 1x, /images/parrot-nav.png 2x" src="/images/parrot-nav.png">
+                <img src="/images/autumn-leaves.png" alt="Autumn leaves" width="40" height="40" class="rounded-full object-cover">
+                <img src="/images/1015-800x500.webp" alt="Mountain landscape with lake" class="h-12 w-auto object-contain rounded" loading="lazy">
               </div>
               <div class="list-actions">
                 <button id="imagesNormalBtn">Click me (Normal Images)</button>
@@ -383,9 +383,9 @@
 
     // ---------- Shared image markup (used in normal / shadow / iframe cards) ----------
     const imagesHTML = `
-      <img alt="Parrot" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="rounded-full object-cover" style="color:transparent" srcset="/_next/image?url=%2Fimages%2Fparrot-nav.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fimages%2Fparrot-nav.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fimages%2Fparrot-nav.png&amp;w=96&amp;q=75">
-      <img src="images/autumn-leaves.png" alt="Autumn leaves" width="40" height="40" class="rounded-full object-cover">
-      <img src="images/1015-800x500.webp" alt="Mountain landscape with lake" class="h-12 w-auto object-contain rounded" loading="lazy">
+      <img alt="Parrot" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="rounded-full object-cover" style="color:transparent" srcset="/images/parrot-nav-48.webp 1x, /images/parrot-nav.png 2x" src="/images/parrot-nav.png">
+      <img src="/images/autumn-leaves.png" alt="Autumn leaves" width="40" height="40" class="rounded-full object-cover">
+      <img src="/images/1015-800x500.webp" alt="Mountain landscape with lake" class="h-12 w-auto object-contain rounded" loading="lazy">
     `;
 
     // ---------- IFrame document (built per-frame, injected on each render) ----------
